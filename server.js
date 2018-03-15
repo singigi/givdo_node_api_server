@@ -1,5 +1,4 @@
 var express = require('express');
-//var methodOverride = require('method-override');
 var connection = require('./connection');
 var bodyParser = require('body-parser');
 var morganLogger = require ('morgan');
@@ -9,7 +8,6 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morganLogger('dev'));
-//app.use(methodOverride);
 app.use(cors());
 
 /*app.get('/users', function(req, res){
