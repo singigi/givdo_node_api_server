@@ -1,19 +1,27 @@
 # givdo_node_api_server
 A Node.js API server for the Givdo app
 
-To use this server, you must have a local instance of the Givdo MariaDB database set up and running. 
-When the database has been created and the MariaDB service is running, follow these steps:
+To use this server, you must have a local instance of MariaDB set up and running. The database will be created automatically. When the MariaDB service is running, follow these steps:
 
 Clone repository:
 'git clone git@github.com:Givdo/givdo_node_api_server.git'
 
-cd into it:
+Change into the directory:
 'cd givdo_node_api_server'
 
 Install dependencies from package.json:
 'npm install'
 
+Create database: 
+node_modules/.bin/sequelize db:create
+
+Set up database models (this is done automatically in development mode):
+node_modules/.bin/sequelize db:migrate
+
+Seed database:
+sequelize db:seed:all
+
 Start server: 
-'node .' or 'node server.js'
+./bin/www
 
 The server should be connected to the database and listening on port 3000.

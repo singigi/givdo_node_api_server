@@ -33,4 +33,6 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+// Export Sequelize object containing models and database schema definition. 
+// We just import this object when we want to apply operations to the database.
 module.exports = db;
