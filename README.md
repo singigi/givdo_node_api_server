@@ -13,15 +13,15 @@ Install dependencies from package.json:
 'npm install'
 
 Create database: 
-node_modules/.bin/sequelize db:create
+'node_modules/.bin/sequelize db:create'
 
-Set up database models (this is done automatically in development mode):
-node_modules/.bin/sequelize db:migrate
+Set up database models:
+'node_modules/.bin/sequelize db:migrate'
 
 Seed database:
-sequelize db:seed:all
+'node_modules/.bin/sequelize db:seed:all'
 
 Start server: 
-./bin/www
+'./bin/www'
 
 The server should be connected to the database and listening on port 3000.

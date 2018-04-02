@@ -22,7 +22,8 @@ db.sequelize.authenticate().then(function() {
   server.on('listening', onListening);
 
   if(app.get('env') === 'development'){
-    db.sequelize.sync();
+    //uncomment if you want to sync the db every time you start the development server
+    // db.sequelize.sync();
   }
 });
 
