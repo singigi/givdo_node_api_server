@@ -18,9 +18,9 @@ router.get('/', function (req, res, next) {
 
 //E2: GET user by id
 router.get('/:id', function (req, res, next) {
-    model.users.findAll({
+    model.users.findAll({where:{
         id: req.params.id
-    })
+    }})
         .then(users => res.json({
             error: false,
             data: users
@@ -52,7 +52,6 @@ router.delete('/:id', function (req, res, next) {
 //E4: Add user
 //still need to validate email address
 router.post('/insert', function (req, res, next) {
-
     model.users.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
