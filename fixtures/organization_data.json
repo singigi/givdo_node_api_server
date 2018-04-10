@@ -1,0 +1,20 @@
+[
+        {
+            "model": "organizations",
+            "data": {
+				"name": "Charity1",
+				"state": "AZ",
+                "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z"
+            }
+        },
+        {
+            "model": "organizations",
+            "data": {
+                "name": "baz",
+				"state": "FL",
+                "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z"
+            }
+        }
+    ]
