@@ -72,7 +72,6 @@ router.delete('/:id', function (req, res, next) {
 
 
 //E4: Add badge
-//still need to validate email address
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -112,7 +111,6 @@ router.post('/insert',function (req, res, next) {
 });
 
 //E5: Update badge
-// still need to add email validation
 router.post('/:id', function (req, res, next) {
 
     /**
