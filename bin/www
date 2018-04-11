@@ -28,7 +28,9 @@ db.sequelize.authenticate().then(function() {
   if(app.get('env') === 'development'){
     //Change this depending on what files you wnt to load; I was just testing this one.
     //We can also load the entire directory at once.
-    sequelize_fixtures.loadFile('fixtures/organization_data.json', db);
+    //sequelize_fixtures.loadFile('fixtures/organization_data.json', db);
+    //sequelize_fixtures.loadFile('fixtures/cause_data.json', db);
+    //sequelize_fixtures.loadFile('fixtures/badge_data.json', db);
   }
 });
 

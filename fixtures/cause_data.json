@@ -1,0 +1,27 @@
+[
+        {
+            "model": "causes",
+            "data": {
+				"name": "Human Rights",
+                "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z"
+            }
+        },
+        {
+            "model": "causes",
+            "data": {
+                "name": "Child Labour",
+                "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z"
+            }
+        },
+        {
+            "model": "causes",
+            "data": {
+                "name": "Social Change",
+                "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z",
+                "active": 0
+            }
+        }
+]

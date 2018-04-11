@@ -1,0 +1,30 @@
+[
+        {
+            "model": "badges",
+            "data": {
+				"name": "Rookie",
+				"score": "100",
+                "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z"
+            }
+        },
+        {
+            "model": "badges",
+            "data": {
+                "name": "Titan",
+                "score": "200",
+                "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z"
+            }
+        },
+        {
+            "model": "badges",
+            "data": {
+                "name": "Diamond",
+                "score": "300",
+                "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z",
+                "active": 0
+            }
+        }
+]
