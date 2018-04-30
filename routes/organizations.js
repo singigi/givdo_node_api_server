@@ -109,7 +109,7 @@ router.post('/insert',function (req, res, next) {
         '3 chars and at most 255 chars');
 
     // mission validation
-    req.checkBody('mission').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Street should be at least ' +
+    req.checkBody('mission').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Mission should be at least ' +
         '10 chars and at most 2000 chars');
 
     var errors = req.validationErrors();
@@ -183,7 +183,7 @@ router.post('/:id', function (req, res, next) {
         '3 chars and at most 255 chars');
 
     // mission validation
-    req.checkBody('mission').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Street should be at least ' +
+    req.checkBody('mission').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Mission should be at least ' +
         '10 chars and at most 2000 chars');
 
     var errors = req.validationErrors();
