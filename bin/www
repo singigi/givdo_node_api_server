@@ -26,8 +26,11 @@ db.sequelize.authenticate().then(function() {
   server.on('listening', onListening);
 
   if(app.get('env') === 'development'){
-    //Change this depending on what files you wnt to load; I was just testing this one.
-    //We can also load the entire directory at once.
+    //Change this depending on what files you want to load; I was just testing this one.
+    //We can also load the entire directory at once with glob syntax (* ?, etc.)
+    //Note: Duplicate entries will not be added, so it is fine to leave these here
+    sequelize_fixtures.loadFile('fixtures/*.json', db);
+
     //sequelize_fixtures.loadFile('fixtures/organization_data.json', db);
     //sequelize_fixtures.loadFile('fixtures/cause_data.json', db);
     //sequelize_fixtures.loadFile('fixtures/badge_data.json', db);
