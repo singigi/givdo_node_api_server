@@ -2,17 +2,17 @@ var express = require('express');
 var router = express.Router();
 var model = require('../models/index');
 var check = require('express-validator/check');
-var questions = model.questions;
+var question_options = model.question_options;
 
-//E1: GET all questions
+//E1: GET all question options
 router.get('/', function (req, res, next) {
-    questions.findAll({
-            attributes: ['id', 'question', 'category_id'],
+    question_options.findAll({
+            attributes: ['id', 'text', 'question_id', 'is_correct'],
             where: {'active': 1}
         })
-        .then(questions => res.json({
+        .then(question_options => res.json({
         error: false,
-        data: questions
+        data: question_options
     }))
     .catch(error => res.json({
         error: true,
@@ -21,17 +21,17 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//E2: GET question by id
+//E2: GET question option by id
 router.get('/:id', function (req, res, next) {
-    questions.findOne({
-            attributes: ['id', 'question', 'category_id'],
+    question_options.findOne({
+            attributes: ['id', 'text', 'question_id', 'is_correct'],
             where:{
                 id: req.params.id,
                 'active': 1
             }})
-        .then(questions => res.json({
+        .then(question_options => res.json({
         error: false,
-        data: questions
+        data: question_options
     }))
     .catch(error => res.json({
         error: true,
@@ -40,7 +40,7 @@ router.get('/:id', function (req, res, next) {
     }));
 });
 
-//E3: Delete question by id
+//E3: Delete question option by id
 router.delete('/:id', function (req, res, next) {
 
     /**
@@ -56,12 +56,12 @@ router.delete('/:id', function (req, res, next) {
         res.json(errors);
     }
     else {
-        questions.destroy({where: {
+        question_options.destroy({where: {
                 id: req.params.id
             }})
             .then(status => res.status(201).json({
             error: false,
-            message: 'Question has been deleted.'
+            message: 'Question Option has been deleted.'
         }))
     .catch(error => res.json({
             error: true,
@@ -71,36 +71,41 @@ router.delete('/:id', function (req, res, next) {
 });
 
 
-//E4: Add question
+//E4: Add question option
 router.post('/insert',function (req, res, next) {
 
     /**
      * Validations
      */
 
-    // question validation
-    req.checkBody('question').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Question should be at least ' +
-        '10 chars and at most 2000 chars');
+    // text validation
+    req.checkBody('text').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Question Option Text should be at least ' +
+        '2 chars and at most 255 chars');
 
-    // category_id validation
-    req.checkBody('category_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Category Id should be at least ' +
+    // question_id validation
+    req.checkBody('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    // is_correct validation
+    req.checkBody('is_correct').trim().escape().isLength({ min: 1, max: 1 }).withMessage('Is Correct should be at least ' +
+        '1 char and at most 1 char').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
 
     var errors = req.validationErrors();
     if(errors){
         res.json(errors);
     }
     else {
-        questions.create({
-                question: req.body.question,
-                category_id: req.body.category_id,
+        question_options.create({
+                text: req.body.text,
+                question_id: req.body.question_id,
+                is_correct: req.body.is_correct,
                 created_at: new Date(),
                 updated_at: new Date()
             })
             .then(question => res.status(201).json({
             error: false,
             data: question,
-            message: 'New question created.'
+            message: 'New question Option Created.'
         }))
     .catch(error => res.json({
             error: true,
@@ -110,7 +115,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//E5: Update question
+//E5: Update question option
 router.post('/:id', function (req, res, next) {
 
     /**
@@ -121,22 +126,27 @@ router.post('/:id', function (req, res, next) {
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // question validation
-    req.checkBody('question').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Question should be at least ' +
-        '10 chars and at most 2000 chars');
+    // text validation
+    req.checkBody('text').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Question Option Text should be at least ' +
+        '2 chars and at most 255 chars');
 
-    // category_id validation
-    req.checkBody('category_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Category Id should be at least ' +
+    // question_id validation
+    req.checkBody('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    // is_correct validation
+    req.checkBody('is_correct').trim().escape().isLength({ min: 1, max: 1 }).withMessage('Is Correct should be at least ' +
+        '1 char and at most 1 char').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
 
     var errors = req.validationErrors();
     if(errors){
         res.json(errors);
     }
     else {
-        questions.update({
-                question: req.body.question,
-                category_id: req.body.category_id,
+        question_options.update({
+                text: req.body.text,
+                question_id: req.body.question_id,
+                is_correct: req.body.is_correct,
                 updated_at: new Date()
             }, {
                 where: {
@@ -145,7 +155,7 @@ router.post('/:id', function (req, res, next) {
             })
             .then(question => res.status(201).json({
             error: false,
-            message: 'Question data updated.'
+            message: 'Question Option data updated.'
         }))
     .catch(error => res.json({
             error: true,
