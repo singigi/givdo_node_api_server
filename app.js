@@ -10,6 +10,7 @@ var badges = require('./routes/badges');
 var causes = require('./routes/causes');
 var organizations = require('./routes/organizations');
 var questions = require('./routes/questions');
+var question_options = require('./routes/question_options');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use('/badges', badges);
 app.use('/causes', causes);
 app.use('/organizations', organizations);
 app.use('/questions', questions);
+app.use('/question_options', question_options);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
