@@ -83,11 +83,18 @@ router.post('/insert',function (req, res, next) {
      * Validations
      */
 
+    //Currently we are not doing validations on email for users because due to Facebook login procedures we may not have emails for everyone.
+
     req.checkBody('first_name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('First name should be at least ' +
         '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic characters are allowed');
         
     req.checkBody('last_name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Last name should be at least ' +
         '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic character are allowed');  
+
+    if(req.checkBody('email').exists){
+        req.checkBody('email').trim().escape().isEmail.withMessage('Invalid email');
+    }
+              
    
 
     var errors = req.validationErrors();
