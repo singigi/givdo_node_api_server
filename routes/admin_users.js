@@ -83,11 +83,11 @@ router.post('/insert',function (req, res, next) {
      * Validations
      */
 
-    req.checkBody('first_name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('First name should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic characters are allowed');
+    req.checkBody('first_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('First name should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic characters are allowed');
         
-    req.checkBody('last_name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Last name should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic character are allowed');  
+    req.checkBody('last_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Last name should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic character are allowed');  
           
     req.checkBody('encrypted_password').trim().escape().isLength({ min: 7, max: 15 }).withMessage('Password should be at least ' +
         '7 chars and at most 15 chars');    
@@ -128,11 +128,11 @@ router.put('/:id', function (req, res, next) {
      * Validations
      */
 
-    req.checkBody('first_name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('First name should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic characters are allowed');
+    req.checkBody('first_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('First name should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic characters are allowed');
         
-    req.checkBody('last_name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Last name should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic character are allowed');  
+    req.checkBody('last_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Last name should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic character are allowed');  
           
     req.checkBody('encrypted_password').trim().escape().isLength({ min: 7, max: 15 }).withMessage('Password should be at least ' +
         '7 chars and at most 15 chars');    
