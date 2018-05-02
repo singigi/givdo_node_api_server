@@ -1,0 +1,22 @@
+[
+    {
+        "model": "users",
+        "data": {
+            "first_name": "Sam",
+            "last_name": "Spade",
+            "email": "sam@email.com",
+            "created_at": "2016-08-12T10:42:30.754Z",
+            "updated_at": "2016-08-12T10:42:30.754Z"
+        }
+    },
+    {
+        "model": "users",
+        "data": {
+            "first_name": "Mickey",
+            "last_name": "Mouse",
+            "email": "mousy@email.com",
+            "created_at": "2016-08-12T10:42:30.754Z",
+            "updated_at": "2016-08-12T10:42:30.754Z"
+        }
+    }
+]

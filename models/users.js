@@ -24,6 +24,10 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
+		facebook_id: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
 		created_at: {
 			type: DataTypes.DATE,
 			allowNull: false,

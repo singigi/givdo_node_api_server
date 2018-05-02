@@ -66,7 +66,7 @@ router.delete('/:id', function (req, res, next) {
             })
             .then(admins => res.status(201).json({
                 error: false,
-                message: 'Admin user inactivated (To permanently delete all record, use database tools).'
+                message: 'Admin user inactivated (to permanently delete all record, use database tools).'
             }))
             .catch(error => res.json({
                 error: true,

@@ -12,11 +12,7 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		image: {
-			type: DataTypes.STRING,
-			allowNull: true
-		},
-		link: {
+		image_link: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
@@ -63,7 +59,7 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		active: {
 			type: DataTypes.INTEGER(1),
-			allowNull: true,
+			allowNull: false,
 			defaultValue: "1"
 		}
 	}, {

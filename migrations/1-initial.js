@@ -168,7 +168,8 @@ var migrationCommands = [{
                 },
                 "active": {
                     "type": Sequelize.INTEGER(1),
-                    "allowNull": true
+                    "allowNull": false,
+                    "defaultValue": 1
                 }
             },
             {}
@@ -330,11 +331,7 @@ var migrationCommands = [{
                     "type": Sequelize.STRING,
                     "allowNull": true
                 },
-                "image": {
-                    "type": Sequelize.STRING,
-                    "allowNull": true
-                },
-                "link": {
+                "image_link": {
                     "type": Sequelize.STRING,
                     "allowNull": true
                 },
@@ -535,6 +532,10 @@ var migrationCommands = [{
                     "allowNull": true
                 },
                 "email": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true
+                },
+                "facebook_id": {
                     "type": Sequelize.STRING,
                     "allowNull": true
                 },
