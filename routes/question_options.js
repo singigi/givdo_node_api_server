@@ -101,7 +101,8 @@ router.post('/insert',function (req, res, next) {
          */
         question_options.count({
             where:{
-                question_id: req.body.question_id
+                question_id: req.body.question_id,
+                active: 1
             },
             distinct: true,
             col: 'id'
