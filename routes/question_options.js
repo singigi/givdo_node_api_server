@@ -95,23 +95,50 @@ router.post('/insert',function (req, res, next) {
         res.json(errors);
     }
     else {
-        question_options.create({
-                text: req.body.text,
-                question_id: req.body.question_id,
-                is_correct: req.body.is_correct,
-                created_at: new Date(),
-                updated_at: new Date()
+
+        /**
+         * Check Max 4 options limit per question
+         */
+        question_options.count({
+            where:{
+                question_id: req.body.question_id
+            },
+            distinct: true,
+            col: 'id'
             })
-            .then(question => res.status(201).json({
-            error: false,
-            data: question,
-            message: 'New question Option Created.'
-        }))
-    .catch(error => res.json({
-            error: true,
-            data: [],
-            error: error
-        }));
+            .then(function(question_options){
+                if(question_options <=3) {
+                    question_options.create({
+                         text: req.body.text,
+                         question_id: req.body.question_id,
+                         is_correct: req.body.is_correct,
+                         created_at: new Date(),
+                         updated_at: new Date()
+                     })
+                     .then(question => res.status(201).json({
+                         error: false,
+                         data: question,
+                         message: 'New question Option Created.'
+                     }))
+                     .catch(error => res.json({
+                         error: true,
+                         data: [],
+                         error: error
+                     }));
+                }
+                else {
+                    res.json({
+                        error: true,
+                        data: [],
+                        message: "Maximum four options can be inserted against a question"
+                    });
+                }
+            })
+            .catch(error => res.json({
+                error: true,
+                data: [],
+                error: error
+            }));
     }
 });
 
