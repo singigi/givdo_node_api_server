@@ -36,7 +36,7 @@ router.get('/:user_id', function (req, res, next) {
     }
 });
 
-//E3: Inactivate a user_cause by cause_id and user_id
+//E2: Inactivate a user_cause by cause_id and user_id
 /***** MUST UPDATE DOCS *****/
 router.delete('/:cause_id/:user_id', function (req, res, next) {
 
@@ -78,7 +78,7 @@ router.delete('/:cause_id/:user_id', function (req, res, next) {
 });
 
 
-//E4: Add user_cause
+//E3: Add user_cause
 router.post('/insert',function (req, res, next) {
 
     /**
