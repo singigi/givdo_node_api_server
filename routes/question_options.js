@@ -27,7 +27,7 @@ router.get('/:question_id', function (req, res, next) {
                     'question_id': req.params.question_id
                 }
             })
-            .then(question_options => res.json({
+        .then(question_options => res.json({
             error: false,
             data: question_options
         }))
@@ -76,7 +76,9 @@ router.get('/:question_id/:id', function (req, res, next) {
                 data: [],
                 error: error
             }));
-    }
+        }
+});
+
 
 //E3: Delete question option by id
 router.delete('/:id', function (req, res, next) {
@@ -85,7 +87,7 @@ router.delete('/:id', function (req, res, next) {
      * Validations
      */
 
-        // id validation
+    // id validation
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
