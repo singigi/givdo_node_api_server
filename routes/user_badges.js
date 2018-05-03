@@ -23,7 +23,7 @@ router.get('/:user_id', function (req, res, next) {
     else {
         sequelize.query('SELECT `badges`.`id`, `badges`.`name`, `badges`.`image_link` FROM badges' +
         ' LEFT JOIN `user_badges` ON `badges`.`id` = `user_badges`.`badge_id` WHERE ' +
-        'user_id = ' + req.params.user_id)
+        'user_id = ' + req.params.user_id + ' `user_badges`.`active` = 1')
         .then(user_badges => res.json({
             error: false,
             data: user_badges
@@ -104,9 +104,9 @@ router.post('/insert',function (req, res, next) {
                 created_at: new Date(),
                 updated_at: new Date()
             })
-            .then(user_badges => res.status(201).json({
+            .then(user_badge => res.status(201).json({
             error: false,
-            data: user_badges,
+            data: user_badge,
             message: 'New User Badge created.'
         }))
         .catch(error => res.json({
