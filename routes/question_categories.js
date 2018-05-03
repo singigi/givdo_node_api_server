@@ -65,7 +65,7 @@ router.delete('/:id', function (req, res, next) {
                     id: req.params.id
                 }
             })
-            .then(ads => res.status(201).json({
+            .then(question_category => res.status(201).json({
             error: false,
             message: 'Question Category inactivated (to permanently delete all record of this ad, use database tools).'
         }))

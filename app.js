@@ -13,6 +13,7 @@ var organizations = require('./routes/organizations');
 var questions = require('./routes/questions');
 var question_options = require('./routes/question_options');
 var advertisements = require('./routes/advertisements');
+var user_badges = require('./routes/user_badges');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/organizations', organizations);
 app.use('/questions', questions);
 app.use('/question_options', question_options);
 app.use('/advertisements', advertisements);
+app.use('/user_badges', user_badges);
 
 
 // catch 404 and forward to error handler
