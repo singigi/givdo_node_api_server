@@ -436,18 +436,11 @@ var migrationCommands = [{
                     "allowNull": true
                 },
                 "single_player": {
-                    "type": Sequelize.INTEGER(4),
+                    "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
                     "allowNull": true
-                },
-                "category_id": {
-                    "type": Sequelize.INTEGER(11),
-                    "allowNull": true
-                },
-                "organization_id": {
-                    "type": Sequelize.STRING,
-                    "allowNull": false
                 }
+                
             },
             {}
         ]

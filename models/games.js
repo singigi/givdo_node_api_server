@@ -27,18 +27,11 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		},
 		single_player: {
-			type: DataTypes.INTEGER(4),
+			type: DataTypes.INTEGER(1),
 			allowNull: true,
 			defaultValue: "1"
-		},
-		category_id: {
-			type: DataTypes.INTEGER(11),
-			allowNull: true
-		},
-		organization_id: {
-			type: DataTypes.STRING,
-			allowNull: false
 		}
+		
 	}, {
 		tableName: 'games',
 		freezeTableName: true,
