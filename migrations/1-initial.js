@@ -41,15 +41,17 @@ var migrationCommands = [{
                     "type": Sequelize.INTEGER(11),
                     "autoIncrement": true,
                     "primaryKey": true,
-                    "allowNull": false
+                    "allowNull": false,
                 },
                 "facebook_id": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
+                    "allowNull": true,
+                    "unique": true
                 },
                 "name": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
+                    "allowNull": true,
+                    "unique": true
                 },
                 "picture": {
                     "type": Sequelize.STRING,
@@ -92,7 +94,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 }
             },
             {}
@@ -119,12 +121,11 @@ var migrationCommands = [{
                 },
                 "email": {
                     "type": Sequelize.STRING,
-                    "defaultValue": "",
-                    "allowNull": false
+                    "allowNull": false,
+                    "unique": true
                 },
                 "encrypted_password": {
                     "type": Sequelize.STRING,
-                    "defaultValue": "",
                     "allowNull": false
                 },
                 "reset_password_token": {
@@ -188,7 +189,8 @@ var migrationCommands = [{
                 },
                 "name": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
+                    "allowNull": false,
+                    "unique": true
                 },
                 "score": {
                     "type": Sequelize.INTEGER(11),
@@ -207,7 +209,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 }
             },
             {}
@@ -226,7 +228,8 @@ var migrationCommands = [{
                 },
                 "name": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
+                    "allowNull": true,
+                    "unique": true
                 },
                 "created_at": {
                     "type": Sequelize.DATE,
@@ -241,7 +244,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 }
             },
             {}
@@ -261,6 +264,11 @@ var migrationCommands = [{
                 "category": {
                     "type": Sequelize.STRING,
                     "allowNull": true
+                },
+                "name": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true,
+                    "unique": true
                 },
                 "description": {
                     "type": Sequelize.STRING,
@@ -298,11 +306,13 @@ var migrationCommands = [{
                 },
                 "name": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
+                    "allowNull": true,
+                    "unique": true
                 },
                 "active": {
                     "type": Sequelize.INTEGER(1),
-                    "allowNull": true
+                    "allowNull": false,
+                    "defaultValue": 1
                 },
                 "created_at": {
                     "type": Sequelize.DATE,
@@ -333,7 +343,8 @@ var migrationCommands = [{
                 },
                 "image_link": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
+                    "allowNull": false,
+                    "unique": true
                 },
                 "impressions": {
                     "type": Sequelize.INTEGER(11),
@@ -379,7 +390,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 }
             },
             {}
@@ -442,9 +453,10 @@ var migrationCommands = [{
                     "primaryKey": true,
                     "allowNull": false
                 },
-                "question": {
+                "question_text": {
                     "type": Sequelize.TEXT,
-                    "allowNull": true
+                    "allowNull": true,
+                    "unique": true
                 },
                 "category_id": {
                     "type": Sequelize.INTEGER(11),
@@ -467,7 +479,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 }
             },
             {}
@@ -533,11 +545,13 @@ var migrationCommands = [{
                 },
                 "email": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
+                    "allowNull": true,
+                    "unique": true
                 },
                 "facebook_id": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
+                    "allowNull": true,
+                    "unique": true
                 },
                 "created_at": {
                     "type": Sequelize.DATE,
@@ -565,7 +579,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 }
             },
             {}
@@ -612,7 +626,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 }
             },
             {}
@@ -746,7 +760,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 },
                 "created_at": {
                     "type": Sequelize.DATE,
@@ -786,7 +800,7 @@ var migrationCommands = [{
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
-                    "allowNull": true
+                    "allowNull": false
                 },
                 "created_at": {
                     "type": Sequelize.DATE,

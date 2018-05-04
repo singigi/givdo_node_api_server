@@ -22,11 +22,13 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		email: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: true,
+			unique: true
 		},
 		facebook_id: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: true,
+			unique: true
 		},
 		created_at: {
 			type: DataTypes.DATE,
@@ -53,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		active: {
 			type: DataTypes.INTEGER(1),
-			allowNull: true,
+			allowNull: false,
 			defaultValue: "1"
 		}
 	}, {

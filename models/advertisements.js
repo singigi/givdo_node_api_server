@@ -14,7 +14,8 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		image_link: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false,
+			unique: true
 		},
 		impressions: {
 			type: DataTypes.INTEGER(11),

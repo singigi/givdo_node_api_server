@@ -19,12 +19,11 @@ module.exports = function(sequelize, DataTypes) {
 		email: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			defaultValue: ""
+			unique: true
 		},
 		encrypted_password: {
 			type: DataTypes.STRING,
-			allowNull: false,
-			defaultValue: ""
+			allowNull: false
 		},
 		reset_password_token: {
 			type: DataTypes.STRING,

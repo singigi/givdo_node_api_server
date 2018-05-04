@@ -10,11 +10,12 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		name: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: true,
+			unique: true
 		},
 		active: {
 			type: DataTypes.INTEGER(1),
-			allowNull: true
+			allowNull: false
 		}
 	}, {
 		tableName: 'question_categories',

@@ -10,11 +10,13 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		facebook_id: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: true,
+			unique: true
 		},
 		name: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: true,
+			unique: true
 		},
 		picture: {
 			type: DataTypes.STRING,
@@ -56,7 +58,7 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		active: {
 			type: DataTypes.INTEGER(1),
-			allowNull: true,
+			allowNull: false,
 			defaultValue: "1"
 		}
 	}, {

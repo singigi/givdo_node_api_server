@@ -10,7 +10,8 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		name: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false,
+			unique: true
 		},
 		score: {
 			type: DataTypes.INTEGER(11),
@@ -28,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		active: {
 			type: DataTypes.INTEGER(1),
-			allowNull: true,
+			allowNull: false,
 			defaultValue: "1"
 		}
 	}, {

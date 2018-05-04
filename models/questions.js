@@ -8,9 +8,10 @@ module.exports = function(sequelize, DataTypes) {
 			primaryKey: true,
 			autoIncrement: true
 		},
-		question: {
+		question_text: {
 			type: DataTypes.TEXT,
-			allowNull: true
+			allowNull: true,
+			unique: true
 		},
 		category_id: {
 			type: DataTypes.INTEGER(11),
@@ -30,7 +31,8 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		active: {
 			type: DataTypes.INTEGER(1),
-			allowNull: true
+			allowNull: false,
+			defaultValue: "1"
 		}
 	}, {
 		tableName: 'questions',
