@@ -192,6 +192,11 @@ var migrationCommands = [{
                     "allowNull": false,
                     "unique": true
                 },
+                "image_link": {
+                    "type": Sequelize.STRING,
+                    "allowNull": false,
+                    "unique": true
+                },
                 "score": {
                     "type": Sequelize.INTEGER(11),
                     "allowNull": true
@@ -229,6 +234,11 @@ var migrationCommands = [{
                 "name": {
                     "type": Sequelize.STRING,
                     "allowNull": true,
+                    "unique": true
+                },
+                "image_link": {
+                    "type": Sequelize.STRING,
+                    "allowNull": false,
                     "unique": true
                 },
                 "created_at": {

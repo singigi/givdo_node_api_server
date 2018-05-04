@@ -13,6 +13,11 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false,
 			unique: true
 		},
+		image_link: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true
+		},
 		score: {
 			type: DataTypes.INTEGER(11),
 			allowNull: true

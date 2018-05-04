@@ -13,6 +13,11 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true,
 			unique: true
 		},
+		image_link: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true
+		},
 		created_at: {
 			type: DataTypes.DATE,
 			allowNull: false,
