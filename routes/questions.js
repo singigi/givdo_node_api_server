@@ -7,7 +7,7 @@ var questions = model.questions;
 //E1: GET all questions
 router.get('/', function (req, res, next) {
     questions.findAll({
-            attributes: ['id', 'question', 'category_id'],
+            attributes: ['id', 'question_text', 'category_id'],
             where: {'active': 1}
         })
         .then(questions => res.json({
@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
 //E2: GET question by id
 router.get('/:id', function (req, res, next) {
     questions.findOne({
-            attributes: ['id', 'question', 'category_id'],
+            attributes: ['id', 'question_text', 'category_id'],
             where:{
                 id: req.params.id,
                 'active': 1
@@ -79,7 +79,7 @@ router.post('/insert',function (req, res, next) {
      */
 
     // question validation
-    req.checkBody('question').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Question should be at least ' +
+    req.checkBody('question_text').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Question should be at least ' +
         '10 chars and at most 2000 chars');
 
     // category_id validation
@@ -122,7 +122,7 @@ router.post('/:id', function (req, res, next) {
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // question validation
-    req.checkBody('question').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Question should be at least ' +
+    req.checkBody('question_text').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Question should be at least ' +
         '10 chars and at most 2000 chars');
 
     // category_id validation
@@ -135,7 +135,7 @@ router.post('/:id', function (req, res, next) {
     }
     else {
         questions.update({
-                question: req.body.question,
+                question_text: req.body.question,
                 category_id: req.body.category_id,
                 updated_at: new Date()
             }, {
