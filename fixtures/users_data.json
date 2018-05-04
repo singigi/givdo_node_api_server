@@ -1,6 +1,7 @@
 [
     {
         "model": "users",
+        "keys": ["email"],
         "data": {
             "first_name": "Sam",
             "last_name": "Spade",
@@ -11,6 +12,7 @@
     },
     {
         "model": "users",
+        "keys": ["email"],
         "data": {
             "first_name": "Mickey",
             "last_name": "Mouse",

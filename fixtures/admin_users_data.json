@@ -1,6 +1,7 @@
 [
     {
         "model": "admin_users",
+        "keys": ["email"],
         "data": {
             "first_name": "Admin",
             "last_name": "One",
@@ -12,6 +13,7 @@
     },
     {
         "model": "admin_users",
+        "keys": ["email"],
         "data": {
             "first_name": "Admin",
             "last_name": "Two",

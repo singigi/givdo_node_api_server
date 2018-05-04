@@ -1,6 +1,7 @@
 [
     {
         "model": "donation_items",
+        "keys": ["name"],
         "data": {
             "name": "Widget",
             "category": "Amazing Things",
@@ -11,10 +12,11 @@
     },
     {
         "model": "donation_items",
+        "keys": ["name"],
         "data": {
             "name": "Fiffle",
             "category": "Fantastic Things",
-            "description": "A really great item that can be donated for a good cause",
+            "description": "You'll never find it anywhere else!",
             "created_at": "2016-08-12T10:42:30.754Z",
             "updated_at": "2016-08-12T10:42:30.754Z"
         }

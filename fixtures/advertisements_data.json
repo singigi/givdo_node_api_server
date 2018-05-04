@@ -1,6 +1,7 @@
 [
     {
         "model": "advertisements",
+        "keys": ["company_name"],
         "data": {
             "company_name": "CompanyA",
             "image_link": "http://www.myCMP.com/image1",
@@ -10,6 +11,7 @@
     },
     {
         "model": "advertisements",
+        "keys": ["company_name"],
         "data": {
             "company_name": "CompanyB",
             "image_link": "http://www.myCMP.com/image2",
