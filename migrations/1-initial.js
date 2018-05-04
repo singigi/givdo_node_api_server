@@ -464,7 +464,7 @@ var migrationCommands = [{
                     "allowNull": false
                 },
                 "question_text": {
-                    "type": Sequelize.TEXT,
+                    "type": Sequelize.STRING(256),
                     "allowNull": true,
                     "unique": true
                 },

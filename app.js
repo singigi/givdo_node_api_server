@@ -15,6 +15,7 @@ var question_options = require('./routes/question_options');
 var advertisements = require('./routes/advertisements');
 var user_badges = require('./routes/user_badges');
 var user_causes = require('./routes/user_causes');
+var donation_items = require('./routes/donation_items');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/question_options', question_options);
 app.use('/advertisements', advertisements);
 app.use('/user_badges', user_badges);
 app.use('/user_causes', user_causes);
+app.use('/donation_items', donation_items);
 
 
 // catch 404 and forward to error handler

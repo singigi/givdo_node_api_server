@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
 			autoIncrement: true
 		},
 		question_text: {
-			type: DataTypes.TEXT,
+			type: DataTypes.TEXT(256),
 			allowNull: true,
 			unique: true
 		},

@@ -1,0 +1,22 @@
+[
+    {
+        "model": "donation_items",
+        "data": {
+            "name": "Widget",
+            "category": "Amazing Things",
+            "description": "A really great item that can be donated for a good cause",
+            "created_at": "2016-08-12T10:42:30.754Z",
+            "updated_at": "2016-08-12T10:42:30.754Z"
+        }
+    },
+    {
+        "model": "donation_items",
+        "data": {
+            "name": "Fiffle",
+            "category": "Fantastic Things",
+            "description": "A really great item that can be donated for a good cause",
+            "created_at": "2016-08-12T10:42:30.754Z",
+            "updated_at": "2016-08-12T10:42:30.754Z"
+        }
+    }
+]
