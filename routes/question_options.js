@@ -4,41 +4,81 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var question_options = model.question_options;
 
-//E1: GET all question options
-router.get('/', function (req, res, next) {
-    question_options.findAll({
-            attributes: ['id', 'text', 'question_id', 'is_correct'],
-            where: {'active': 1}
-        })
+//E1: GET all question options by question_id
+router.get('/:question_id', function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    // question_id validation
+    req.checkParams('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+        question_options.findAll({
+                attributes: ['id', 'text', 'is_correct'],
+                where: {
+                    'active': 1,
+                    'question_id': req.params.question_id
+                }
+            })
         .then(question_options => res.json({
-        error: false,
-        data: question_options
-    }))
-    .catch(error => res.json({
-        error: true,
-        data: [],
-        error: error
-    }));
+            error: false,
+            data: question_options
+        }))
+        .catch(error => res.json({
+            error: true,
+            data: [],
+            error: error
+        }));
+    }
 });
 
-//E2: GET question option by id
-router.get('/:id', function (req, res, next) {
-    question_options.findOne({
-            attributes: ['id', 'text', 'question_id', 'is_correct'],
+//E2: GET question option by question_id and question option id
+router.get('/:question_id/:id', function (req, res, next) {
+
+    /**
+    * Validations
+    */
+
+    // question_id validation
+    req.checkParams('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    // id validation
+    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Option Id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+
+        question_options.findOne({
+            attributes: ['id', 'text', 'is_correct'],
             where:{
                 id: req.params.id,
+                question_id: req.params.question_id,
                 'active': 1
             }})
-        .then(question_options => res.json({
-        error: false,
-        data: question_options
-    }))
-    .catch(error => res.json({
-        error: true,
-        data: [],
-        error: error
-    }));
+            .then(question_options => res.json({
+                error: false,
+                data: question_options
+            }))
+            .catch(error => res.json({
+                error: true,
+                data: [],
+                error: error
+            }));
+        }
 });
+
 
 //E3: Delete question option by id
 router.delete('/:id', function (req, res, next) {
@@ -47,7 +87,7 @@ router.delete('/:id', function (req, res, next) {
      * Validations
      */
 
-        // id validation
+    // id validation
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
