@@ -849,7 +849,7 @@ var migrationCommands = [{
                     "allowNull": true
                 },
                 "won": {
-                    "type": Sequelize.INTEGER(4),
+                    "type": Sequelize.INTEGER(1),
                     "allowNull": true
                 },
                 "created_at": {

@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		},
 		won: {
-			type: DataTypes.INTEGER(4),
+			type: DataTypes.INTEGER(1),
 			allowNull: true
 		}
 	}, {
