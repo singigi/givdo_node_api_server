@@ -16,20 +16,26 @@ router.get('/:user_id', function (req, res, next) {
     req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    games.findOne({
-        attributes: ['id', 'created_at', 'updated_at', 'finished_at', 'single_player'],
-        where:{
-            creator_user_id: req.params.user_id
-        }})
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+        games.findAll({
+            attributes: ['id', 'created_at', 'updated_at', 'finished_at', 'single_player'],
+            where:{
+                creator_user_id: req.params.user_id
+            }})
         .then(games => res.json({
-        error: false,
-        data: games
-    }))
-.catch(error => res.json({
-        error: true,
-        data: [],
-        error: error
-    }));
+            error: false,
+            data: games
+        }))
+        .catch(error => res.json({
+            error: true,
+            data: [],
+            error: error
+        }));
+    }
 });
 
 //E2: Add a game record

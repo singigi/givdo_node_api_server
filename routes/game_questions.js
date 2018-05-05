@@ -16,7 +16,7 @@ router.get('/:game_id', function (req, res, next) {
     req.checkParams('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Game Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    game_questions.findOne({
+    game_questions.findAll({
         attributes: ['question_id', 'created_at', 'updated_at'],
         where:{
             game_id: req.params.game_id
