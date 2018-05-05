@@ -650,6 +650,14 @@ var migrationCommands = [{
                     "type": Sequelize.INTEGER(11),
                     "allowNull": true
                 },
+                "game_id": {
+                    "type": Sequelize.INTEGER(11),
+                    "references": {
+                        "model": "games",
+                        "key": "id"
+                    },
+                    "allowNull": false
+                },
                 "question_id": {
                     "type": Sequelize.INTEGER(11),
                     "references": {
