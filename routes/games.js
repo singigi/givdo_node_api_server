@@ -103,7 +103,7 @@ router.put('/:id', function (req, res, next) {
             updated_at: new Date()
         }, {
             where: {
-                id: req.params.id
+                id: req.params.id,
                 creator_user_id: req.body.user_id
             }
         })
