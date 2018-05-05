@@ -112,7 +112,7 @@ router.put('/:id', function (req, res, next) {
         }))
         .catch(error => res.json({
             error: true,
-            error: error
+            message: error
         }));
     }
 });

@@ -49,7 +49,7 @@ router.delete('/:id', function (req, res, next) {
      * Validations
      */
 
-        // id validation
+    // id validation
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
@@ -58,17 +58,22 @@ router.delete('/:id', function (req, res, next) {
         res.json(errors);
     }
     else {
-        organizations.destroy({where: {
+        organizations.update({
+            active: 0,
+            updated_at: new Date()
+        }, {
+            where: {
                 id: req.params.id
-            }})
-            .then(status => res.status(201).json({
+            }
+        })
+        .then(organization => res.status(201).json({
             error: false,
-            message: 'Organization has been deleted.'
+            message: 'Organization inactivated (to permanently delete all record, use database tools).'
         }))
-    .catch(error => res.json({
+        .catch(error => res.json({
             error: true,
-            error: error
-        }))
+            message: error
+        }));
     }
 });
 

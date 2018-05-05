@@ -96,17 +96,22 @@ router.delete('/:id', function (req, res, next) {
         res.json(errors);
     }
     else {
-        question_options.destroy({where: {
+        question_options.update({
+            active: 0,
+            updated_at: new Date()
+        }, {
+            where: {
                 id: req.params.id
-            }})
-            .then(status => res.status(201).json({
+            }
+        })
+        .then(question_option => res.status(201).json({
             error: false,
-            message: 'Question Option has been deleted.'
+            message: 'Question Option inactivated (to permanently delete all record, use database tools).'
         }))
-    .catch(error => res.json({
+        .catch(error => res.json({
             error: true,
-            error: error
-        }))
+            message: error
+        }));
     }
 });
 
@@ -227,7 +232,7 @@ router.put('/:id', function (req, res, next) {
         }))
     .catch(error => res.json({
             error: true,
-            error: error
+            message: error
         }));
     }
 });

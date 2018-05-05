@@ -72,7 +72,7 @@ router.delete('/:badge_id/:user_id', function (req, res, next) {
         }))
         .catch(error => res.json({
             error: true,
-            error: error
+            message: error
         }));
     }
 });

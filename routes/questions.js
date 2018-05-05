@@ -56,17 +56,22 @@ router.delete('/:id', function (req, res, next) {
         res.json(errors);
     }
     else {
-        questions.destroy({where: {
+        questions.update({
+            active: 0,
+            updated_at: new Date()
+        }, {
+            where: {
                 id: req.params.id
-            }})
-            .then(status => res.status(201).json({
+            }
+        })
+        .then(question => res.status(201).json({
             error: false,
-            message: 'Question has been deleted.'
+            message: 'Question inactivated (to permanently delete all record, use database tools).'
         }))
-    .catch(error => res.json({
+        .catch(error => res.json({
             error: true,
-            error: error
-        }))
+            message: error
+        }));
     }
 });
 
@@ -149,7 +154,7 @@ router.put('/:id', function (req, res, next) {
         }))
         .catch(error => res.json({
             error: true,
-            error: error
+            message: error
         }));
     }
 });

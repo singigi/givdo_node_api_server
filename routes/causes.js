@@ -56,17 +56,22 @@ router.delete('/:id', function (req, res, next) {
         res.json(errors);
     }
     else {
-        causes.destroy({where: {
+        causes.update({
+            active: 0,
+            updated_at: new Date()
+        }, {
+            where: {
                 id: req.params.id
-            }})
-            .then(status => res.status(201).json({
+            }
+        })
+        .then(cause => res.status(201).json({
             error: false,
-            message: 'Cause has been deleted.'
+            message: 'Cause inactivated (to permanently delete all record, use database tools).'
         }))
-    .catch(error => res.json({
+        .catch(error => res.json({
             error: true,
-            error: error
-        }))
+            message: error
+        }));
     }
 });
 
@@ -78,7 +83,7 @@ router.post('/insert',function (req, res, next) {
      * Validations
      */
 
-        // name validation
+    // name validation
     req.checkBody('name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Name should be at least ' +
         '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabets are allowed');
 
