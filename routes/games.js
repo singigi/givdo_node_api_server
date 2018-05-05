@@ -99,12 +99,12 @@ router.put('/:id', function (req, res, next) {
     }
     else {
         games.update({
-            question_text: req.body.question,
-            category_id: req.body.category_id,
+            single_player: req.body.single_player,
             updated_at: new Date()
         }, {
             where: {
                 id: req.params.id
+                creator_user_id: req.body.user_id
             }
         })
             .then(question => res.status(201).json({
