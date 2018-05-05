@@ -111,7 +111,7 @@ router.post('/insert',function (req, res, next) {
 });
 
 //E5: Update badge
-router.post('/:id', function (req, res, next) {
+router.put('/:id', function (req, res, next) {
 
     /**
      * Validations

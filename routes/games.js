@@ -43,7 +43,7 @@ router.post('/insert',function (req, res, next) {
     req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // is_correct validation
+    // single_player validation
     req.checkBody('single_player').trim().escape().isLength({ min: 1, max: 1 }).withMessage('Single Player should be at least ' +
         '1 char and at most 1 char').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
 
@@ -59,12 +59,12 @@ router.post('/insert',function (req, res, next) {
             updated_at: new Date(),
             finished_at: new Date()
         })
-            .then(question => res.status(201).json({
+        .then(game => res.status(201).json({
             error: false,
             data: question,
             message: 'New Game created.'
         }))
-    .catch(error => res.json({
+        .catch(error => res.json({
             error: true,
             data: [],
             error: error
@@ -89,7 +89,7 @@ router.put('/:id', function (req, res, next) {
     req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // is_correct validation
+    // single_player validation
     req.checkBody('single_player').trim().escape().isLength({ min: 1, max: 1 }).withMessage('Single Player should be at least ' +
         '1 char and at most 1 char').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
 
@@ -99,19 +99,19 @@ router.put('/:id', function (req, res, next) {
     }
     else {
         games.update({
-            question_text: req.body.question,
-            category_id: req.body.category_id,
+            single_player: req.body.single_player,
             updated_at: new Date()
         }, {
             where: {
-                id: req.params.id
+                id: req.params.id,
+                creator_user_id: req.body.user_id
             }
         })
-            .then(question => res.status(201).json({
+        .then(game => res.status(201).json({
             error: false,
             message: 'Game Record updated.'
         }))
-    .catch(error => res.json({
+        .catch(error => res.json({
             error: true,
             error: error
         }));

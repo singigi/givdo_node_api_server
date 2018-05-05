@@ -184,7 +184,7 @@ router.post('/insert',function (req, res, next) {
 });
 
 //E5: Update question option
-router.post('/:id', function (req, res, next) {
+router.put('/:id', function (req, res, next) {
 
     /**
      * Validations

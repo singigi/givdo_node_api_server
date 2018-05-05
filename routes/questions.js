@@ -47,7 +47,7 @@ router.delete('/:id', function (req, res, next) {
      * Validations
      */
 
-        // id validation
+    // id validation
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
@@ -111,7 +111,7 @@ router.post('/insert',function (req, res, next) {
 });
 
 //E5: Update question
-router.post('/:id', function (req, res, next) {
+router.put('/:id', function (req, res, next) {
 
     /**
      * Validations
@@ -143,11 +143,11 @@ router.post('/:id', function (req, res, next) {
                     id: req.params.id
                 }
             })
-            .then(question => res.status(201).json({
+         .then(question => res.status(201).json({
             error: false,
             message: 'Question data updated.'
         }))
-    .catch(error => res.json({
+        .catch(error => res.json({
             error: true,
             error: error
         }));
