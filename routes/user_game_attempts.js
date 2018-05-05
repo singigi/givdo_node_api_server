@@ -73,7 +73,7 @@ router.post('/insert',function (req, res, next) {
             created_at: new Date(),
             updated_at: new Date()
         })
-        .then(question => res.status(201).json({
+        .then(user_game_attempt => res.status(201).json({
         error: false,
         data: question,
         message: 'New User Game Attempt created.'
@@ -131,7 +131,7 @@ router.put('/:id', function (req, res, next) {
                 game_id: req.params.game_id,
             }
         })
-        .then(question => res.status(201).json({
+        .then(user_game_attempt => res.status(201).json({
             error: false,
             message: 'User Game Attempt Record updated.'
         }))
