@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
 
 //E2: GET admin user by id; returns NULL if no active admin with specified id exists
 router.get('/:id', function (req, res, next) {
-    admins.findOne({
+    admins.findAll({
         attributes: ['id', 'first_name', 'last_name', 'email'],
         where:{
             id: req.params.id,
@@ -40,43 +40,7 @@ router.get('/:id', function (req, res, next) {
     }));
 });
 
-//E3: Inactivate admin user by id
-/***** MUST UPDATE DOCS *****/
-router.delete('/:id', function (req, res, next) {
-
-    /**
-     * Validations
-     */
-
-    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
-    var errors = req.validationErrors();
-    if(errors){
-        res.json(errors);
-    }
-    else {
-        admins.update({
-            active: 0,
-            updated_at: new Date()
-            }, {
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(admins => res.status(201).json({
-                error: false,
-                message: 'Admin user inactivated (to permanently delete all record, use database tools).'
-            }))
-            .catch(error => res.json({
-                error: true,
-                error: error
-            }));
-        }
-    }
-);
-
-//E4: Add admin user
+//E3: Add admin user
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -121,7 +85,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//E5: Update admin user
+//E4: Update admin user
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -158,6 +122,41 @@ router.put('/:id', function (req, res, next) {
             .then(admins => res.status(201).json({
                 error: false,
                 message: 'Admin user data updated.'
+            }))
+            .catch(error => res.json({
+                error: true,
+                error: error
+            }));
+        }
+    }
+);
+
+//E5: Inactivate admin user by id
+router.delete('/:id', function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+        admins.update({
+            active: 0,
+            updated_at: new Date()
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(admins => res.status(201).json({
+                error: false,
+                message: 'Admin user inactivated (to permanently delete all record, use database tools).'
             }))
             .catch(error => res.json({
                 error: true,

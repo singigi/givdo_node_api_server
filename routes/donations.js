@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
 
 //?2: GET donation item by id; returns NULL if no active admin with specified id exists
 router.get('/:id', function (req, res, next) {
-    donations.findOne({
+    donations.findAll({
         attributes: ['user_id', 'item_id', 'organization_id', 'is_monetary', 'amount'],
         where:{
             id: req.params.id            

@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
 
 //?2: GET donation item by id; returns NULL if no active admin with specified id exists
 router.get('/:id', function (req, res, next) {
-    donation_items.findOne({
+    donation_items.findAll({
         attributes: ['id', 'name', 'category', 'description'],
         where:{
             id: req.params.id,
@@ -133,7 +133,6 @@ router.put('/:id', function (req, res, next) {
 );
 
 //?5: Inactivate donation item by id
-/***** MUST UPDATE DOCS *****/
 router.delete('/:id', function (req, res, next) {
 
     /**

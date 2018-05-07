@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var ads = model.advertisements;
 
-//E1: GET all advertisements users; returns NULL if no active ads exist
+//E1: GET all advertisements; returns NULL if no active ads exist
 router.get('/', function (req, res, next) {
     ads.findAll({
         attributes: ['id', 'company_name', 'image_link', 'impressions', 'default' ],
@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
 
 //E2: GET admin user by id; returns NULL if no active admin with specified id exists
 router.get('/:id', function (req, res, next) {
-    ads.findOne({
+    ads.findAll({
         attributes: ['id', 'company_name', 'image_link', 'impressions', 'default' ],
         where:{
             id: req.params.id,

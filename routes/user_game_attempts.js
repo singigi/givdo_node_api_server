@@ -20,7 +20,7 @@ router.get('/:game_id/:user_id', function (req, res, next) {
     req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    user_game_attempts.findOne({
+    user_game_attempts.findAll({
         attributes: ['id', 'score', 'won', 'created_at', 'updated_at'],
         where:{
             user_id: req.params.user_id,

@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
 
 //E2: GET user by id; returns NULL if no active user with specified id exists
 router.get('/:id', function (req, res, next) {
-    users.findOne({
+    users.findAll({
         attributes: ['id', 'first_name', 'last_name', 'email', 'facebook_id'],
         where:{
             id: req.params.id,
@@ -41,7 +41,6 @@ router.get('/:id', function (req, res, next) {
 });
 
 //E3: Inactivate user by id
-/***** MUST UPDATE DOCS *****/
 router.delete('/:id', function (req, res, next) {
 
     /**
