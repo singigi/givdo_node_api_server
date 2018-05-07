@@ -12,6 +12,14 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.INTEGER(11),
 			allowNull: true
 		},
+		game_id: {
+			type: DataTypes.INTEGER(11),
+			allowNull: false,
+			references: {
+				model: 'games',
+				key: 'id'
+			}
+		},
 		question_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
