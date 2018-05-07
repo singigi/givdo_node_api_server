@@ -421,6 +421,11 @@ var migrationCommands = [{
                     "type": Sequelize.INTEGER(11),
                     "allowNull": true
                 },
+                "single_player": {
+                    "type": Sequelize.INTEGER(1),
+                    "defaultValue": "1",
+                    "allowNull": true
+                },
                 "created_at": {
                     "type": Sequelize.DATE,
                     "defaultValue": Sequelize.literal('CURRENT_TIMESTAMP(3)'),
@@ -433,11 +438,6 @@ var migrationCommands = [{
                 },
                 "finished_at": {
                     "type": Sequelize.DATE,
-                    "allowNull": true
-                },
-                "single_player": {
-                    "type": Sequelize.INTEGER(1),
-                    "defaultValue": "1",
                     "allowNull": true
                 }
                 

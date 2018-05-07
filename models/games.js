@@ -12,6 +12,11 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.INTEGER(11),
 			allowNull: true
 		},
+		single_player: {
+			type: DataTypes.INTEGER(1),
+			allowNull: true,
+			defaultValue: "1"
+		},
 		created_at: {
 			type: DataTypes.DATE,
 			allowNull: false,
@@ -25,13 +30,8 @@ module.exports = function(sequelize, DataTypes) {
 		finished_at: {
 			type: DataTypes.DATE,
 			allowNull: true
-		},
-		single_player: {
-			type: DataTypes.INTEGER(1),
-			allowNull: true,
-			defaultValue: "1"
 		}
-		
+				
 	}, {
 		tableName: 'games',
 		freezeTableName: true,
