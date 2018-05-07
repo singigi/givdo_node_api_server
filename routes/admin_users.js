@@ -92,6 +92,9 @@ router.put('/:id', function (req, res, next) {
      * Validations
      */
 
+    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
+    '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
     req.checkBody('first_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('First name should be at least ' +
         '2 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic characters are allowed');
         

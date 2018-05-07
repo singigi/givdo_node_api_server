@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//E2: GET admin user by id; returns NULL if no active admin with specified id exists
+//E2: GET advertisement by id; returns NULL if no active ad with specified id exists
 router.get('/:id', function (req, res, next) {
     ads.findAll({
         attributes: ['id', 'company_name', 'image_link', 'impressions', 'default' ],
@@ -40,7 +40,84 @@ router.get('/:id', function (req, res, next) {
     }));
 });
 
-//E3: Inactivate advertisement by id
+
+
+//E3: Add advertisement
+router.post('/insert',function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    req.checkBody('company_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('company_name should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z0-9_]+$/i).withMessage('Only alphanumeric characters and underscores are allowed');
+        
+        
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+        ads.create({
+             company_name: req.body.company_name,
+             image_link: req.body.image_link,
+             created_at: new Date(),
+             updated_at: new Date()
+         })
+         .then(ads => res.status(201).json({
+             error: false,
+             data: ads,
+             message: 'New advertisement created.'
+         }))
+         .catch(error => res.json({
+             error: true,
+             data: [],
+             error: error
+         }));
+    }
+});
+
+//E4: Update advertisement by id; will update active or inactive ads
+router.put('/:id', function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed'); 
+
+    req.checkBody('company_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('company_name should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z0-9_]+$/i).withMessage('Only alphanumeric characters and underscores are allowed');
+        
+       
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+        ads.update({
+            company_name: req.body.company_name,
+            image_link: req.body.image_link,
+            updated_at: new Date()
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(ads => res.status(201).json({
+                error: false,
+                message: 'Advertisement data updated.'
+            }))
+            .catch(error => res.json({
+                error: true,
+                error: error
+            }));
+        }
+    }
+);
+
+//E5: Inactivate advertisement by id
 /***** MUST UPDATE DOCS *****/
 router.delete('/:id', function (req, res, next) {
 
@@ -75,79 +152,5 @@ router.delete('/:id', function (req, res, next) {
         }
     }
 );
-
-//E4: Add advertisement
-router.post('/insert',function (req, res, next) {
-
-    /**
-     * Validations
-     */
-
-    req.checkBody('company_name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('First name should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic characters are allowed');
-        
-        
-    var errors = req.validationErrors();
-    if(errors){
-        res.json(errors);
-    }
-    else {
-        ads.create({
-             company_name: req.body.company_name,
-             image_link: req.body.image_link,
-             created_at: new Date(),
-             updated_at: new Date()
-         })
-         .then(ads => res.status(201).json({
-             error: false,
-             data: ads,
-             message: 'New advertisement created.'
-         }))
-         .catch(error => res.json({
-             error: true,
-             data: [],
-             error: error
-         }));
-    }
-});
-
-//E5: Update advertisement by id; will update active or inactive ads
-router.put('/:id', function (req, res, next) {
-
-    /**
-     * Validations
-     */
-
-    req.checkBody('company_name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('First name should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic characters are allowed');
-        
-       
-    var errors = req.validationErrors();
-    if(errors){
-        res.json(errors);
-    }
-    else {
-        ads.update({
-            company_name: req.body.company_name,
-            image_link: req.body.image_link,
-            updated_at: new Date()
-            }, {
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(ads => res.status(201).json({
-                error: false,
-                message: 'Advertisement data updated.'
-            }))
-            .catch(error => res.json({
-                error: true,
-                error: error
-            }));
-        }
-    }
-);
-
-
 
 module.exports = router;
