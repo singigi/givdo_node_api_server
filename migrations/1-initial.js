@@ -179,6 +179,71 @@ var migrationCommands = [{
     {
         fn: "createTable",
         params: [
+            "users",
+            {
+                "id": {
+                    "type": Sequelize.INTEGER(11),
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "allowNull": false
+                },
+                "first_name": {
+                    "type": Sequelize.STRING,
+                    "allowNull": false
+                },
+                "last_name": {
+                    "type": Sequelize.STRING,
+                    "allowNull": false
+                },
+                "image": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true
+                },
+                "email": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true,
+                    "unique": true
+                },
+                "facebook_id": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true,
+                    "unique": true
+                },
+                "created_at": {
+                    "type": Sequelize.DATE,
+                    "defaultValue": Sequelize.literal('CURRENT_TIMESTAMP(3)'),
+                    "allowNull": false
+                },
+                "updated_at": {
+                    "type": Sequelize.DATE,
+                    "defaultValue": Sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)'),
+                    "allowNull": false
+                },
+                "organization_id": {
+                    "type": Sequelize.INTEGER(11),
+                    "references": {
+                        "model": "organizations",
+                        "key": "id"
+                    },
+                    "allowNull": true
+                },
+                "has_create_privileges": {
+                    "type": Sequelize.INTEGER(4),
+                    "defaultValue": "1",
+                    "allowNull": false
+                },
+                "active": {
+                    "type": Sequelize.INTEGER(1),
+                    "defaultValue": "1",
+                    "allowNull": false
+                }
+            },
+            {}
+        ]
+    },
+    {
+        fn: "createTable",
+        params: [
             "badges",
             {
                 "id": {
@@ -419,7 +484,11 @@ var migrationCommands = [{
                 },
                 "creator_user_id": {
                     "type": Sequelize.INTEGER(11),
-                    "allowNull": true
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "allowNull": false
                 },
                 "single_player": {
                     "type": Sequelize.INTEGER(1),
@@ -517,71 +586,6 @@ var migrationCommands = [{
                 },
                 "updated_at": {
                     "type": Sequelize.DATE,
-                    "allowNull": false
-                }
-            },
-            {}
-        ]
-    },
-    {
-        fn: "createTable",
-        params: [
-            "users",
-            {
-                "id": {
-                    "type": Sequelize.INTEGER(11),
-                    "autoIncrement": true,
-                    "primaryKey": true,
-                    "allowNull": false
-                },
-                "first_name": {
-                    "type": Sequelize.STRING,
-                    "allowNull": false
-                },
-                "last_name": {
-                    "type": Sequelize.STRING,
-                    "allowNull": false
-                },
-                "image": {
-                    "type": Sequelize.STRING,
-                    "allowNull": true
-                },
-                "email": {
-                    "type": Sequelize.STRING,
-                    "allowNull": true,
-                    "unique": true
-                },
-                "facebook_id": {
-                    "type": Sequelize.STRING,
-                    "allowNull": true,
-                    "unique": true
-                },
-                "created_at": {
-                    "type": Sequelize.DATE,
-                    "defaultValue": Sequelize.literal('CURRENT_TIMESTAMP(3)'),
-                    "allowNull": false
-                },
-                "updated_at": {
-                    "type": Sequelize.DATE,
-                    "defaultValue": Sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)'),
-                    "allowNull": false
-                },
-                "organization_id": {
-                    "type": Sequelize.INTEGER(11),
-                    "references": {
-                        "model": "organizations",
-                        "key": "id"
-                    },
-                    "allowNull": true
-                },
-                "has_create_privileges": {
-                    "type": Sequelize.INTEGER(4),
-                    "defaultValue": "1",
-                    "allowNull": false
-                },
-                "active": {
-                    "type": Sequelize.INTEGER(1),
-                    "defaultValue": "1",
                     "allowNull": false
                 }
             },
