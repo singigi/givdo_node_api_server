@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var donations = model.donations;
 
-//?1: GET all donation items; returns NULL if no active donation items exist
+//?1: GET all donation records
 router.get('/', function (req, res, next) {
     donations.findAll({
         attributes: ['user_id', 'item_id', 'organization_id', 'is_monetary', 'amount']        
@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//?2: GET donation item by id; returns NULL if no active admin with specified id exists
+//?2: GET donation record by id;
 router.get('/:id', function (req, res, next) {
     donations.findAll({
         attributes: ['user_id', 'item_id', 'organization_id', 'is_monetary', 'amount'],
@@ -39,7 +39,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 
-//?3: Add donation item
+//?3: Add donation record
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -58,7 +58,7 @@ router.post('/insert',function (req, res, next) {
     req.checkBody('is_monetary').trim().escape().isLength({ min: 1, max: 1 }).withMessage('is_monetary should be a ' +
         '1one digit boolean value (0 or 1)').matches(/^[0-1]$/i).withMessage('Only binary values (1 for TRUE and 0 for FALSE) are allowed');     
 
-    req.checkBody('amount').trim().escape().isLength({ min: 1, max: 11 }).withMessage('amount should be at least ' +
+    req.checkBody('amount').optional().trim().escape().isLength({ min: 1, max: 11 }).withMessage('amount should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
    
 
@@ -89,7 +89,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?4: Update donation item (we may not need this, and should evaluate before deployment to avoid accounting discrepancies)
+//?4: Update donation record (we may not need this, and should evaluate before deployment to avoid accounting discrepancies)
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -108,7 +108,7 @@ router.put('/:id', function (req, res, next) {
     req.checkBody('is_monetary').trim().escape().isLength({ min: 1, max: 1 }).withMessage('is_monetary should be a ' +
         '1one digit boolean value (0 or 1)').matches(/^[0-1]$/i).withMessage('Only binary values (1 for TRUE and 0 for FALSE) are allowed');     
 
-    req.checkBody('amount').trim().escape().isLength({ min: 1, max: 11 }).withMessage('amount should be at least ' +
+    req.checkBody('amount').optional().trim().escape().isLength({ min: 1, max: 11 }).withMessage('amount should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
     
     

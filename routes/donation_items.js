@@ -52,8 +52,8 @@ router.post('/insert',function (req, res, next) {
     req.checkBody('name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Name should be at least ' +
         '2 chars and at most 255 chars').matches(/^[a-z0-9_]+$/i).withMessage('Only alphanumeric characters and underscores are allowed');
         
-    req.checkBody('category_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('category_id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');;  
+    req.checkBody('category').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Category should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabetic character are allowed');  
           
     req.checkBody('description').trim().escape().isLength({ min: 2, max: 1000 }).withMessage('Description should be at least ' +
         '2 chars and at most 1000 chars');    
@@ -105,7 +105,7 @@ router.put('/:id', function (req, res, next) {
         '2 chars and at most 1000 chars'); 
     
     
-        var errors = req.validationErrors();
+    var errors = req.validationErrors();
     if(errors){
         res.json(errors);
     }

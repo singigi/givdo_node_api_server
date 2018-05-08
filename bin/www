@@ -31,12 +31,13 @@ db.sequelize.authenticate().then(function() {
     //sequelize_fixtures.loadFile('fixtures/*.json', db);
 
     sequelize_fixtures.loadFile('fixtures/organizations_data.json', db);
-    //sequelize_fixtures.loadFile('fixtures/advertisements_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/advertisements_data.json', db);
     sequelize_fixtures.loadFile('fixtures/admin_users_data.json', db);
     sequelize_fixtures.loadFile('fixtures/users_data.json', db);
     sequelize_fixtures.loadFile('fixtures/badges_data.json', db);
     sequelize_fixtures.loadFile('fixtures/causes_data.json', db);
     sequelize_fixtures.loadFile('fixtures/donation_items_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/donations_data.json', db);
   }
 });
 
