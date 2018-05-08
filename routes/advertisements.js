@@ -50,7 +50,7 @@ router.post('/insert',function (req, res, next) {
      */
 
     req.checkBody('company_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('company_name should be at least ' +
-        '2 chars and at most 255 chars').matches(/^[a-z0-9_]+$/i).withMessage('Only alphanumeric characters and underscores are allowed');
+        '2 chars and at most 255 chars').matches(/^[a-z0-9 ]+$/i).withMessage('Only alphanumeric characters and spaces are allowed');
         
         
     var errors = req.validationErrors();
@@ -78,6 +78,7 @@ router.post('/insert',function (req, res, next) {
 });
 
 //E4: Update advertisement by id; will update active or inactive ads
+//Will only update an EXISTING ads with the given id; non-existing ads will not be created.
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -88,7 +89,7 @@ router.put('/:id', function (req, res, next) {
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed'); 
 
     req.checkBody('company_name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('company_name should be at least ' +
-        '2 chars and at most 255 chars').matches(/^[a-z0-9_]+$/i).withMessage('Only alphanumeric characters and underscores are allowed');
+        '2 chars and at most 255 chars').matches(/^[a-z0-9 ]+$/i).withMessage('Only alphanumeric characters and spaces are allowed');
         
        
     var errors = req.validationErrors();

@@ -337,8 +337,8 @@ var migrationCommands = [{
                     "allowNull": false
                 },
                 "category": {
-                    "type": Sequelize.STRING,
-                    "allowNull": true
+                    "type": Sequelize.INTEGER(11),
+                    "allowNull": false
                 },
                 "name": {
                     "type": Sequelize.STRING,

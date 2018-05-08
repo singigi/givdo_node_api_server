@@ -85,7 +85,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//E4: Update admin user
+//E4: Update admin user; will only update an EXISTING user with the given id. Non-existing users will not be created.
 router.put('/:id', function (req, res, next) {
 
     /**
