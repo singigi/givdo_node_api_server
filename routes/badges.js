@@ -7,7 +7,7 @@ var badges = model.badges;
 //E1: GET all badges
 router.get('/', function (req, res, next) {
     badges.findAll({
-        attributes: ['id', 'name', 'score'],
+        attributes: ['id', 'name', 'image_link', 'score'],
         where: {'active': 1}
     })
     .then(badges => res.json({
@@ -23,8 +23,8 @@ router.get('/', function (req, res, next) {
 
 //E2: GET badge by id
 router.get('/:id', function (req, res, next) {
-    badges.findOne({
-        attributes: ['id', 'name', 'score'],
+    badges.findAll({
+        attributes: ['id', 'name', 'image_link', 'score'],
         where:{
             id: req.params.id,
             'active': 1
@@ -87,6 +87,10 @@ router.post('/insert',function (req, res, next) {
     req.checkBody('name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Name should be at least ' +
         '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabets are allowed');
 
+    // image_link validation
+    req.checkBody('image_link').trim().escape().isLength({ min: 15, max: 255 }).withMessage('Image Link should be at least ' +
+        '15 chars and at most 255 chars');
+
     // score validation
     req.checkBody('score').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Score should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
@@ -99,6 +103,7 @@ router.post('/insert',function (req, res, next) {
         badges.create({
              name: req.body.name,
              score: req.body.score,
+             image_link: req.body.image_link,
              created_at: new Date(),
              updated_at: new Date()
          })
@@ -130,6 +135,10 @@ router.put('/:id', function (req, res, next) {
     req.checkBody('name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Name should be at least ' +
         '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabets are allowed');
 
+    // image_link validation
+    req.checkBody('image_link').trim().escape().isLength({ min: 15, max: 255 }).withMessage('Image Link should be at least ' +
+        '15 chars and at most 255 chars');
+
     // score validation
     req.checkBody('score').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Score should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
@@ -141,6 +150,7 @@ router.put('/:id', function (req, res, next) {
     else {
         badges.update({
             name: req.body.name,
+            image_link: req.body.image_link,
             score: req.body.score,
             }, {
                 where: {

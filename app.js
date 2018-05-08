@@ -21,6 +21,7 @@ var games = require('./routes/games');
 var donations = require('./routes/donations');
 var user_game_attempts = require('./routes/user_game_attempts');
 var game_questions = require('./routes/game_questions');
+var question_categories = require('./routes/question_categories');
 
 var app = express();
 
@@ -47,6 +48,7 @@ app.use('/games', games);
 app.use('/donations', donations);
 app.use('/user_game_attempts', user_game_attempts);
 app.use('/game_questions', game_questions);
+app.use('/question_categories', question_categories);
 
 
 // catch 404 and forward to error handler

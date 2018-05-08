@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
 
 //E2: GET organization by id
 router.get('/:id', function (req, res, next) {
-    organizations.findOne({
+    organizations.findAll({
             attributes: ['id', 'facebook_id', 'name', 'picture', 'state',
                 'city', 'zip', 'street', 'mission'],
             where:{
@@ -86,28 +86,25 @@ router.post('/insert',function (req, res, next) {
      */
 
     // facebook_id validation
-    req.checkBody('facebook_id').trim().escape().notEmpty().withMessage('Facebook URL is required').
-    matches('https://www.facebook.com/*').withMessage('Enter a valid Facebook URL');
+    req.checkBody('facebook_id').trim().escape().notEmpty().withMessage('Facebook URL is required');
 
     // name validation
     req.checkBody('name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Name should be at least ' +
         '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabets are allowed');
 
     // picture validation
-    req.checkBody('picture').trim().escape().notEmpty().withMessage('Picture URL is required').
-    matches('https://*').withMessage('Enter a valid pciture URL');
+    req.checkBody('picture').trim().escape().notEmpty().withMessage('Picture URL is required');
 
     // state validation
-    req.checkBody('state').trim().escape().isLength({ min: 3, max: 255 }).withMessage('State should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
+    req.checkBody('state').trim().escape().isLength({ min: 2, max: 255 }).withMessage('State should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
 
     // city validation
-    req.checkBody('city').trim().escape().isLength({ min: 3, max: 255 }).withMessage('City should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
+    req.checkBody('city').trim().escape().isLength({ min: 2, max: 255 }).withMessage('City should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
 
     // zip validation
-    req.checkBody('zip').trim().escape().notEmpty().withMessage('Zip is required').
-        isPostalCode().withMessage('Enter a valid Zip');
+    req.checkBody('zip').trim().escape().notEmpty().withMessage('Zip is required');
 
     // street validation
     req.checkBody('street').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Street should be at least ' +
@@ -142,7 +139,7 @@ router.post('/insert',function (req, res, next) {
     .catch(error => res.json({
             error: true,
             data: [],
-            error: error
+            message: error
         }));
     }
 });
@@ -160,28 +157,25 @@ router.put('/:id', function (req, res, next) {
 
 
     // facebook_id validation
-    req.checkBody('facebook_id').trim().escape().notEmpty().withMessage('Facebook URL is required').
-    matches('https://www.facebook.com/*').withMessage('Enter a valid Facebook URL');
+    req.checkBody('facebook_id').trim().escape().notEmpty().withMessage('Facebook URL is required');
 
     // name validation
     req.checkBody('name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Name should be at least ' +
         '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabets are allowed');
 
     // picture validation
-    req.checkBody('picture').trim().escape().notEmpty().withMessage('Picture URL is required').
-    matches('https://*').withMessage('Enter a valid pciture URL');
+    req.checkBody('picture').trim().escape().notEmpty().withMessage('Picture URL is required');
 
     // state validation
-    req.checkBody('state').trim().escape().isLength({ min: 3, max: 255 }).withMessage('State should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
+    req.checkBody('state').trim().escape().isLength({ min: 2, max: 255 }).withMessage('State should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
 
     // city validation
-    req.checkBody('city').trim().escape().isLength({ min: 3, max: 255 }).withMessage('City should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
+    req.checkBody('city').trim().escape().isLength({ min: 2, max: 255 }).withMessage('City should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
 
     // zip validation
-    req.checkBody('zip').trim().escape().notEmpty().withMessage('Zip is required').
-    isPostalCode().withMessage('Enter a valid Zip');
+    req.checkBody('zip').trim().escape().notEmpty().withMessage('Zip is required');
 
     // street validation
     req.checkBody('street').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Street should be at least ' +
