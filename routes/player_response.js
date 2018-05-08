@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
 
 //?2: GET player response by id; returns NULL if no active admin with specified id exists
 router.get('/:id', function (req, res, next) {
-    player_response.findOne({
+    player_response.findAll({
         attributes: ['user_id', 'item_id', 'organization_id', 'is_monetary', 'amount'],
         where:{
             id: req.params.id            

@@ -20,27 +20,21 @@ router.get('/:game_id/:user_id', function (req, res, next) {
     req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    var errors = req.validationErrors();
-    if(errors){
-        res.json(errors);
-    }
-    else {
-        user_game_attempts.findOne({
-            attributes: ['id', 'score', 'won', 'created_at', 'updated_at'],
-            where:{
-                user_id: req.params.user_id,
-                game_id: req.params.game_id
-            }})
-            .then(user_game_attempts => res.json({
-            error: false,
-            data: user_game_attempts
-        }))
-        .catch(error => res.json({
-            error: true,
-            data: [],
-            error: error
-        }));
-    }
+    user_game_attempts.findAll({
+        attributes: ['id', 'score', 'won', 'created_at', 'updated_at'],
+        where:{
+            user_id: req.params.user_id,
+            game_id: req.params.game_id
+        }})
+        .then(user_game_attempts => res.json({
+        error: false,
+        data: user_game_attempts
+    }))
+    .catch(error => res.json({
+        error: true,
+        data: [],
+        error: error
+    }));
 });
 
 //E2: Add a user_game_attempt record
@@ -143,7 +137,7 @@ router.put('/:id', function (req, res, next) {
         }))
         .catch(error => res.json({
             error: true,
-            message: error
+            error: error
         }));
     }
 });

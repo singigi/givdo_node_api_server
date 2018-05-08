@@ -46,7 +46,7 @@ router.get('/:creator_user_id', function (req, res, next) {
     }
     else {
         games.findAll({
-            attributes: ['id', 'creator_user_id', 'created_at', 'single_player', 'updated_at', 'finished_at'],
+            attributes: ['id', 'creator_user_id', 'single_player', 'created_at', 'updated_at', 'finished_at'],
             where:{
                 creator_user_id: req.params.creator_user_id
             }})
