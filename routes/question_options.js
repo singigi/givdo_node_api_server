@@ -60,7 +60,7 @@ router.get('/:question_id/:id', function (req, res, next) {
     }
     else {
 
-        question_options.findOne({
+        question_options.findAll({
             attributes: ['id', 'text', 'is_correct'],
             where:{
                 id: req.params.id,

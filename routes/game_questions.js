@@ -74,18 +74,14 @@ router.post('/insert',function (req, res, next) {
 //E3: Update a game_question record by id and game_id
 
 /** Need to rethink about this route before deployment **/
-router.put('/:id', function (req, res, next) {
+router.put('/:game_id', function (req, res, next) {
 
     /**
      * Validations
      */
 
-    // id validation
-    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
     // game_id validation
-    req.checkBody('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Game Id should be at least ' +
+    req.checkParams('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Game Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // question_id validation
@@ -102,7 +98,6 @@ router.put('/:id', function (req, res, next) {
             updated_at: new Date()
         }, {
             where: {
-                id: req.params.id,
                 game_id: req.body.game_id
             }
         })

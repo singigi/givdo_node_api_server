@@ -36,8 +36,12 @@ db.sequelize.authenticate().then(function() {
     sequelize_fixtures.loadFile('fixtures/users_data.json', db);
     sequelize_fixtures.loadFile('fixtures/badges_data.json', db);
     sequelize_fixtures.loadFile('fixtures/causes_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/donation_items_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/donations_data.json', db);
+    // sequelize_fixtures.loadFile('fixtures/donation_items_data.json', db);
+    // sequelize_fixtures.loadFile('fixtures/donations_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/question_categories_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/questions_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/game_questions_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/question_options_data.json', db);
   }
 });
 

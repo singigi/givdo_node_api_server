@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
 
 //E2: GET question by id
 router.get('/:id', function (req, res, next) {
-    questions.findOne({
+    questions.findAll({
             attributes: ['id', 'question_text', 'category_id'],
             where:{
                 id: req.params.id,
@@ -97,7 +97,7 @@ router.post('/insert',function (req, res, next) {
     }
     else {
         questions.create({
-                question: req.body.question,
+                question_text: req.body.question_text,
                 category_id: req.body.category_id,
                 created_at: new Date(),
                 updated_at: new Date()
@@ -140,7 +140,7 @@ router.put('/:id', function (req, res, next) {
     }
     else {
         questions.update({
-                question_text: req.body.question,
+                question_text: req.body.question_text,
                 category_id: req.body.category_id,
                 updated_at: new Date()
             }, {

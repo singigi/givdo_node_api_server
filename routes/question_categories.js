@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
 
 //E2: GET question_category by id
 router.get('/:id', function (req, res, next) {
-    question_categories.findOne({
+    question_categories.findAll({
             attributes: ['id', 'name'],
             where:{
                 id: req.params.id,
