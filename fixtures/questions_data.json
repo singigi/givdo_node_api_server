@@ -1,7 +1,7 @@
 [
         {
             "model": "questions",
-            "keys": ["name"],
+            "keys": ["question_text"],
             "data": {
 				"question_text": "What is someone who shoes horses called?",
 				"category_id": 1,
@@ -12,10 +12,21 @@
         },
         {
             "model": "questions",
-            "keys": ["name"],
+            "keys": ["question_text"],
             "data": {
                 "question_text": "What is another word for lexicon?",
                 "category_id": 2,
+                "active": 1,
+                "created_at": "2016-08-12T10:42:30.754Z",
+                "updated_at": "2016-08-12T10:42:30.754Z"
+            }
+        },
+        {
+            "model": "questions",
+            "keys": ["question_text"],
+            "data": {
+                "question_text": "What was the name of Rembrandt's wife?",
+                "category_id": 1,
                 "active": 1,
                 "created_at": "2016-08-12T10:42:30.754Z",
                 "updated_at": "2016-08-12T10:42:30.754Z"

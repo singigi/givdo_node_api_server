@@ -1,7 +1,7 @@
 [
         {
             "model": "question_options",
-            "keys": ["name"],
+            "keys": ["text", "question_id"],
             "data": {
 				"text": "Leo",
 				"question_id": 1,
@@ -12,7 +12,7 @@
         },
         {
             "model": "question_options",
-            "keys": ["name"],
+            "keys": ["text", "question_id"],
             "data": {
                 "text": "Virgo",
                 "question_id": 1,
@@ -23,7 +23,7 @@
         },
         {
             "model": "question_options",
-            "keys": ["name"],
+            "keys": ["text", "question_id"],
             "data": {
                 "text": "Cancer",
                 "question_id": 1,
@@ -34,7 +34,7 @@
         },
         {
             "model": "question_options",
-            "keys": ["name"],
+            "keys": ["text", "question_id"],
             "data": {
                 "text": "Taurus",
                 "question_id": 1,

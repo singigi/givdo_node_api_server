@@ -20,5 +20,16 @@
             "created_at": "2016-08-12T10:42:30.754Z",
             "updated_at": "2016-08-12T10:42:30.754Z"
         }
+    },
+    {
+        "model": "users",
+        "keys": ["email"],
+        "data": {
+            "first_name": "Albert",
+            "last_name": "Einstein",
+            "email": "einstein@email.com",
+            "created_at": "2016-08-12T10:42:30.754Z",
+            "updated_at": "2016-08-12T10:42:30.754Z"
+        }
     }
 ]

@@ -1,7 +1,7 @@
 [
         {
             "model": "game_questions",
-            "keys": ["name"],
+            "keys": ["game_id", "question_id"],
             "data": {
 				"game_id": 1,
                 "question_id": 1,
@@ -11,11 +11,21 @@
         },
         {
             "model": "game_questions",
-            "keys": ["name"],
+            "keys": ["game_id", "question_id"],
             "data": {
                 "game_id": 1,
                 "question_id": 2,
                 "created_at": "2016-08-12T10:42:30.754Z",
+				"updated_at": "2016-08-12T10:42:30.754Z"
+            }
+        },
+        {
+            "model": "game_questions",
+            "keys": ["game_id", "question_id"],
+            "data": {
+                "game_id": 3,
+                "question_id": 2,
+                "created_at": "2016-09-12T10:42:30.754Z",
 				"updated_at": "2016-08-12T10:42:30.754Z"
             }
         }
