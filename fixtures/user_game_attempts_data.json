@@ -1,0 +1,32 @@
+[
+    {
+        "model": "user_game_attempts",
+        "keys": ["game_id", "user_id"],
+        "data": {
+            "user_id": 1,
+            "game_id": 4,
+            "score": "1",
+            "won": "0"
+        }
+    },
+    {
+        "model": "user_game_attempts",
+        "keys": ["game_id", "user_id"],
+        "data": {
+            "user_id": 3,
+            "game_id": 1,
+            "score": "10",
+            "won": "1"
+        }
+    },
+    {
+        "model": "user_game_attempts",
+        "keys": ["game_id", "user_id"],
+        "data": {
+            "user_id": 2,
+            "game_id": 3,
+            "score": "9",
+            "won": "1"
+        }
+    }
+]

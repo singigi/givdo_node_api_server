@@ -43,6 +43,12 @@ db.sequelize.authenticate().then(function() {
     sequelize_fixtures.loadFile('fixtures/questions_data.json', db);
     sequelize_fixtures.loadFile('fixtures/game_questions_data.json', db);
     sequelize_fixtures.loadFile('fixtures/question_options_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/player_response_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/user_badges_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/user_causes_data.json', db);
+    sequelize_fixtures.loadFile('fixtures/user_game_attempts_data.json', db);
+
+
   }
 });
 

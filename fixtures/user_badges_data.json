@@ -1,0 +1,32 @@
+[
+    {
+        "model": "user_badges",
+        "keys": ["user_id", "cause_id"],
+        "data": {
+            "user_id": 2,
+            "badge_id": 1,
+            "created_at": "2016-08-12T10:42:30.754Z",
+            "updated_at": "2016-08-12T10:42:30.754Z"
+        }
+    },
+    {
+        "model": "user_badges",
+        "keys": ["user_id", "cause_id"],
+        "data": {
+            "user_id": 3,
+            "badge_id": 1,
+            "created_at": "2016-08-12T10:42:30.754Z",
+            "updated_at": "2016-08-12T10:42:30.754Z"
+        }
+    },
+    {
+        "model": "user_badges",
+        "keys": ["user_id", "cause_id"],
+        "data": {
+            "user_id": 1,
+            "badge_id": 2,
+            "created_at": "2016-08-12T10:42:30.754Z",
+            "updated_at": "2016-08-12T10:42:30.754Z"
+        }
+    }
+]
