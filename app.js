@@ -16,12 +16,12 @@ var advertisements = require('./routes/advertisements');
 var user_badges = require('./routes/user_badges');
 var user_causes = require('./routes/user_causes');
 var donation_items = require('./routes/donation_items');
-
 var games = require('./routes/games');
 var donations = require('./routes/donations');
 var user_game_attempts = require('./routes/user_game_attempts');
 var game_questions = require('./routes/game_questions');
 var question_categories = require('./routes/question_categories');
+var player_response = require('./routes/player_response');
 
 var app = express();
 
@@ -49,6 +49,7 @@ app.use('/donations', donations);
 app.use('/user_game_attempts', user_game_attempts);
 app.use('/game_questions', game_questions);
 app.use('/question_categories', question_categories);
+app.use('/player_response', player_response);
 
 
 // catch 404 and forward to error handler
