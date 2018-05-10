@@ -5,7 +5,7 @@ var sequelize = model.sequelize;
 var check = require('express-validator/check');
 var user_badges = model.user_badges;
 
-//E1: GET all user_badges by user_id
+//?1: GET user_badges by user_id
 router.get('/:user_id', function (req, res, next) {
 
     /**
@@ -13,7 +13,7 @@ router.get('/:user_id', function (req, res, next) {
      */
 
     // user_id validation
-    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
+    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     var errors = req.validationErrors();
@@ -36,49 +36,7 @@ router.get('/:user_id', function (req, res, next) {
     }
 });
 
-//E2: Inactivate a user_badge by badge_id and user_id
-/***** MUST UPDATE DOCS *****/
-router.delete('/:badge_id/:user_id', function (req, res, next) {
-
-    /**
-     * Validations
-     */
-
-    // badge_id validation
-    req.checkParams('badge_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Badge Id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
-    // user_id validation
-    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
-    var errors = req.validationErrors();
-    if(errors){
-        res.json(errors);
-    }
-    else {
-        user_badges.update({
-                active: 0,
-                updated_at: new Date()
-            }, {
-                where: {
-                    badge_id: req.params.badge_id,
-                    user_id: req.params.user_id
-                }
-            })
-            .then(user_badge => res.status(201).json({
-            error: false,
-            message: 'User Badge inactivated (to permanently delete all record of this ad, use database tools).'
-        }))
-        .catch(error => res.json({
-            error: true,
-            message: error
-        }));
-    }
-});
-
-
-//E3: Add user_badge
+//?2: Add user_badge
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -86,11 +44,11 @@ router.post('/insert',function (req, res, next) {
      */
 
     // badge_id validation
-    req.checkParams('badge_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Badge Id should be at least ' +
+    req.checkParams('badge_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('badge_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // user_id validation
-    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
+    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     var errors = req.validationErrors();
@@ -113,6 +71,46 @@ router.post('/insert',function (req, res, next) {
             error: true,
             data: [],
             error: error
+        }));
+    }
+});
+
+//?3: Inactivate a user_badge by badge_id and user_id
+router.delete('/:user_id/:badge_id', function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    // badge_id validation
+    req.checkParams('badge_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('badge_id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    // user_id validation
+    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+        user_badges.update({
+                active: 0,
+                updated_at: new Date()
+            }, {
+                where: {
+                    badge_id: req.params.badge_id,
+                    user_id: req.params.user_id
+                }
+            })
+            .then(user_badge => res.status(201).json({
+            error: false,
+            message: 'User Badge inactivated (to permanently delete all record, use database tools).'
+        }))
+        .catch(error => res.json({
+            error: true,
+            message: error
         }));
     }
 });
