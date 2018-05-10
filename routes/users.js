@@ -7,7 +7,7 @@ var users = model.users;
 //E1: GET all active users; returns NULL if no active users exist
 router.get('/', function (req, res, next) {
     users.findAll({
-        attributes: ['id', 'first_name', 'last_name', 'email', 'facebook_id'],
+        attributes: ['id', 'first_name', 'last_name', 'image_link', 'email', 'facebook_id'],
         where: {'active': 1}
     })
     .then(users => res.json({

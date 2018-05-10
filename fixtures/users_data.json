@@ -16,6 +16,7 @@
         "data": {
             "first_name": "Mickey",
             "last_name": "Mouse",
+            "image_link": "www.mouse.com/1",
             "email": "mousy@email.com",
             "created_at": "2016-08-12T10:42:30.754Z",
             "updated_at": "2016-08-12T10:42:30.754Z"

@@ -195,7 +195,7 @@ var migrationCommands = [{
                     "type": Sequelize.STRING,
                     "allowNull": false
                 },
-                "image": {
+                "image_link": {
                     "type": Sequelize.STRING,
                     "allowNull": true
                 },
