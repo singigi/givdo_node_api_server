@@ -219,14 +219,6 @@ var migrationCommands = [{
                     "defaultValue": Sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)'),
                     "allowNull": false
                 },
-                "organization_id": {
-                    "type": Sequelize.INTEGER(11),
-                    "references": {
-                        "model": "organizations",
-                        "key": "id"
-                    },
-                    "allowNull": true
-                },
                 "has_create_privileges": {
                     "type": Sequelize.INTEGER(4),
                     "defaultValue": "1",

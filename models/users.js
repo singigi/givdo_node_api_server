@@ -40,14 +40,6 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false,
 			defaultValue: sequelize.fn('current_timestamp')
 		},
-		organization_id: {
-			type: DataTypes.INTEGER(11),
-			allowNull: true,
-			references: {
-				model: 'organizations',
-				key: 'id'
-			}
-		},
 		has_create_privileges: {
 			type: DataTypes.INTEGER(4),
 			allowNull: false,
