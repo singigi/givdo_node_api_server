@@ -16,7 +16,7 @@ router.get('/:user_id', function (req, res, next) {
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     
-    ar errors = req.validationErrors();
+    var errors = req.validationErrors();
     if(errors){
         res.json(errors);
     }
@@ -44,11 +44,12 @@ router.post('/insert',function (req, res, next) {
      * Validations
      */
 
-    req.checkParams('cause_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('cause_id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
     req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    req.checkParams('cause_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('cause_id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+    
 
     
     var errors = req.validationErrors();
@@ -57,8 +58,8 @@ router.post('/insert',function (req, res, next) {
     }
     else {
         user_causes.create({
-                cause_id: req.body.cause_id,
                 user_id: req.body.user_id,
+                cause_id: req.body.cause_id,
                 created_at: new Date(),
                 updated_at: new Date()
             })
@@ -82,13 +83,13 @@ router.delete('/:user_id/:cause_id', function (req, res, next) {
      * Validations
      */
 
-    req.checkParams('cause_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('cause_id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
     req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    
+    req.checkParams('cause_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('cause_id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+       
     var errors = req.validationErrors();
     if(errors){
         res.json(errors);
