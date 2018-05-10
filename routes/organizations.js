@@ -42,53 +42,17 @@ router.get('/:id', function (req, res, next) {
     }));
 });
 
-//E3: Inactivate organization by id
-router.delete('/:id', function (req, res, next) {
-
-    /**
-     * Validations
-     */
-
-    // id validation
-    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
-    var errors = req.validationErrors();
-    if(errors){
-        res.json(errors);
-    }
-    else {
-        organizations.update({
-            active: 0,
-            updated_at: new Date()
-        }, {
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(organization => res.status(201).json({
-            error: false,
-            message: 'Organization inactivated (to permanently delete all record, use database tools).'
-        }))
-        .catch(error => res.json({
-            error: true,
-            message: error
-        }));
-    }
-});
 
 
-//E4: Add organization
+//?3: Add organization
 router.post('/insert',function (req, res, next) {
 
     /**
      * Validations
      */
 
-    req.checkBody('name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Name should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabets are allowed');
-
-    req.checkBody('picture').trim().escape().notEmpty().withMessage('Picture URL is required');
+    req.checkBody('name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Name should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z0-9 ]+$/i).withMessage('Only alphanumeric characters and spaces are allowed');
 
     req.checkBody('state').trim().escape().isLength({ min: 2, max: 255 }).withMessage('State should be at least ' +
         '2 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabet characters are allowed');
@@ -134,7 +98,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//E5: Update organization
+//?4: Update organization
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -144,9 +108,9 @@ router.put('/:id', function (req, res, next) {
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    req.checkBody('name').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Name should be at least ' +
-        '3 chars and at most 255 chars').matches(/^[a-z\s]+$/i).withMessage('Only alphabets are allowed');
-
+    req.checkBody('name').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Name should be at least ' +
+        '2 chars and at most 255 chars').matches(/^[a-z0-9 ]+$/i).withMessage('Only alphanumeric characters and spaces are allowed'); 
+    
     req.checkBody('state').trim().escape().isLength({ min: 2, max: 255 }).withMessage('State should be at least ' +
         '2 chars and at most 255 chars').matches(/^[a-z\-\s]+$/i).withMessage('Only alphabets and hypens are allowed');
 
@@ -192,6 +156,42 @@ router.put('/:id', function (req, res, next) {
         }
     }
 );
+
+//?5: Inactivate organization by id
+router.delete('/:id', function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    // id validation
+    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+        organizations.update({
+            active: 0,
+            updated_at: new Date()
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(organization => res.status(201).json({
+            error: false,
+            message: 'Organization inactivated (to permanently delete all record, use database tools).'
+        }))
+        .catch(error => res.json({
+            error: true,
+            message: error
+        }));
+    }
+});
+
 
 
 module.exports = router;
