@@ -23,7 +23,7 @@ router.get('/:user_id', function (req, res, next) {
     else {
         sequelize.query('SELECT `causes`.`id`, `causes`.`name`, `causes`.`image_link` FROM causes' +
                 ' LEFT JOIN `user_causes` ON `causes`.`id` = `user_causes`.`cause_id` WHERE ' +
-                'user_id = ' + req.params.user_id + ' `user_causes`.`active` = 1')
+                'user_id = ' + req.params.user_id + ' AND `user_causes`.`active` = 1', { type: sequelize.QueryTypes.SELECT })
             .then(user_causes => res.json({
             error: false,
             data: user_causes
@@ -44,10 +44,10 @@ router.post('/insert',function (req, res, next) {
      * Validations
      */
 
-    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
+    req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    req.checkParams('cause_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('cause_id should be at least ' +
+    req.checkBody('cause_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('cause_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
     
 
