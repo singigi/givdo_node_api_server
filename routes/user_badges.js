@@ -23,7 +23,7 @@ router.get('/:user_id', function (req, res, next) {
     else {
         sequelize.query('SELECT `badges`.`id`, `badges`.`name`, `badges`.`image_link` FROM badges' +
         ' LEFT JOIN `user_badges` ON `badges`.`id` = `user_badges`.`badge_id` WHERE ' +
-        'user_id = ' + req.params.user_id + ' AND `user_badges`.`active` = 1;')
+        'user_id = ' + req.params.user_id + ' AND `user_badges`.`active` = 1;', { type: sequelize.QueryTypes.SELECT })
         .then(user_badges => res.json({
             error: false,
             data: user_badges
