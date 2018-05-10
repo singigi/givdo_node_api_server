@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var question_options = model.question_options;
 
-//E1: GET all question options by question_id
+//?1: GET all question_option records by question_id
 router.get('/:question_id', function (req, res, next) {
 
     /**
@@ -21,7 +21,7 @@ router.get('/:question_id', function (req, res, next) {
     }
     else {
         question_options.findAll({
-                attributes: ['id', 'text', 'is_correct'],
+                attributes: ['id', 'text', 'question_id', 'is_correct', 'created_at', 'updated_at'],
                 where: {
                     'active': 1,
                     'question_id': req.params.question_id
@@ -39,18 +39,16 @@ router.get('/:question_id', function (req, res, next) {
     }
 });
 
-//E2: GET question option by question_id and question option id
+//?2: GET question option by question_id and question option id
 router.get('/:question_id/:id', function (req, res, next) {
 
     /**
     * Validations
     */
 
-    // question_id validation
     req.checkParams('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // id validation
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Option Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
@@ -61,7 +59,7 @@ router.get('/:question_id/:id', function (req, res, next) {
     else {
 
         question_options.findAll({
-            attributes: ['id', 'text', 'is_correct'],
+            attributes: ['id', 'text', 'question_id', 'is_correct', 'created_at', 'updated_at'],
             where:{
                 id: req.params.id,
                 question_id: req.params.question_id,
@@ -80,60 +78,22 @@ router.get('/:question_id/:id', function (req, res, next) {
 });
 
 
-//E3: Delete question option by id
-router.delete('/:id', function (req, res, next) {
-
-    /**
-     * Validations
-     */
-
-    // id validation
-    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
-    var errors = req.validationErrors();
-    if(errors){
-        res.json(errors);
-    }
-    else {
-        question_options.update({
-            active: 0,
-            updated_at: new Date()
-        }, {
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(question_option => res.status(201).json({
-            error: false,
-            message: 'Question Option inactivated (to permanently delete all record, use database tools).'
-        }))
-        .catch(error => res.json({
-            error: true,
-            message: error
-        }));
-    }
-});
-
-
-//E4: Add question option
+//?3: Add question_option record
 router.post('/insert',function (req, res, next) {
 
     /**
      * Validations
      */
 
-    // text validation
-    req.checkBody('text').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Question Option Text should be at least ' +
+    req.checkBody('text').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Question option text should be at least ' +
         '2 chars and at most 255 chars');
 
-    // question_id validation
-    req.checkBody('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Id should be at least ' +
+    req.checkBody('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('question_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // is_correct validation
-    req.checkBody('is_correct').trim().escape().isLength({ min: 1, max: 1 }).withMessage('Is Correct should be at least ' +
-        '1 char and at most 1 char').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
+    req.checkBody('is_correct').trim().escape().isLength({ min: 1, max: 1 }).withMessage('is_correct should be a single' +
+        'digit (0 or 1)').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
+
 
     var errors = req.validationErrors();
     if(errors){
@@ -164,7 +124,7 @@ router.post('/insert',function (req, res, next) {
                      .then(question => res.status(201).json({
                          error: false,
                          data: question,
-                         message: 'New question Option Created.'
+                         message: 'New question_option record created.'
                      }))
                      .catch(error => res.json({
                          error: true,
@@ -176,7 +136,7 @@ router.post('/insert',function (req, res, next) {
                     res.json({
                         error: true,
                         data: [],
-                        message: "Maximum four options can be inserted against a question"
+                        message: "A maximum of four options can be inserted for a single question"
                     });
                 }
             })
@@ -188,29 +148,26 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//E5: Update question option
+//?4: Update question_option record 
 router.put('/:id', function (req, res, next) {
 
     /**
      * Validations
      */
 
-    // id validation
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // text validation
-    req.checkBody('text').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Question Option Text should be at least ' +
+    req.checkBody('text').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Question option text should be at least ' +
         '2 chars and at most 255 chars');
 
-    // question_id validation
-    req.checkBody('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Question Id should be at least ' +
+    req.checkBody('question_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('question_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // is_correct validation
-    req.checkBody('is_correct').trim().escape().isLength({ min: 1, max: 1 }).withMessage('Is Correct should be at least ' +
-        '1 char and at most 1 char').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
+    req.checkBody('is_correct').trim().escape().isLength({ min: 1, max: 1 }).withMessage('is_correct should be a single' +
+        'digit (0 or 1)').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
 
+ 
     var errors = req.validationErrors();
     if(errors){
         res.json(errors);
@@ -228,9 +185,44 @@ router.put('/:id', function (req, res, next) {
             })
             .then(question => res.status(201).json({
             error: false,
-            message: 'Question Option data updated.'
+            message: 'question_option record updated.'
         }))
     .catch(error => res.json({
+            error: true,
+            message: error
+        }));
+    }
+});
+
+//?5: Inactivate question_option record by id
+router.delete('/:id', function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+
+    var errors = req.validationErrors();
+    if(errors){
+        res.json(errors);
+    }
+    else {
+        question_options.update({
+            active: 0,
+            updated_at: new Date()
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(question_option => res.status(201).json({
+            error: false,
+            message: 'question_option record inactivated (to permanently delete this record, use database tools).'
+        }))
+        .catch(error => res.json({
             error: true,
             message: error
         }));
