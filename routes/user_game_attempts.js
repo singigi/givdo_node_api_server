@@ -4,24 +4,67 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var user_game_attempts = model.user_game_attempts;
 
-//E1: GET all user_game_attempts by game_id and user_id
-
-router.get('/:game_id/:user_id', function (req, res, next) {
+router.get('', function (req, res, next) {
 
     /**
      * Validations
      */
 
-    // game_id validation
-    req.checkParams('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Game Id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+    user_game_attempts.findAll({
+        attributes: ['id', 'user_id', 'game_id', 'score', 'won', 'created_at', 'updated_at']
+        })
+        .then(user_game_attempts => res.json({
+        error: false,
+        data: user_game_attempts
+    }))
+    .catch(error => res.json({
+        error: true,
+        data: [],
+        error: error
+    }));
+});
 
-    // user_id validation
-    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
+//E2: GET user_game_attempt by user_id
+router.get('/:user_id/', function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     user_game_attempts.findAll({
-        attributes: ['id', 'score', 'won', 'created_at', 'updated_at'],
+        attributes: ['id', 'user_id', 'game_id', 'score', 'won', 'created_at', 'updated_at'],
+        where:{
+            user_id: req.params.user_id
+        }})
+        .then(user_game_attempts => res.json({
+        error: false,
+        data: user_game_attempts
+    }))
+    .catch(error => res.json({
+        error: true,
+        data: [],
+        error: error
+    }));
+});
+
+//E2: GET user_game_attempt by user_id and game_id
+router.get('/:user_id/:game_id/', function (req, res, next) {
+
+    /**
+     * Validations
+     */
+
+    req.checkParams('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('game_id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
+
+    user_game_attempts.findAll({
+        attributes: ['id', 'user_id', 'game_id', 'score', 'won', 'created_at', 'updated_at'],
         where:{
             user_id: req.params.user_id,
             game_id: req.params.game_id
@@ -37,7 +80,7 @@ router.get('/:game_id/:user_id', function (req, res, next) {
     }));
 });
 
-//E2: Add a user_game_attempt record
+//E3: Add a user_game_attempt record
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -45,15 +88,15 @@ router.post('/insert',function (req, res, next) {
      */
 
     // game_id validation
-    req.checkParams('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Game Id should be at least ' +
+    req.checkBody('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('game_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // user_id validation
-    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
+    req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // score validation
-    req.checkParams('score').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Score should be at least ' +
+    req.checkBody('score').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Score should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // won validation
@@ -76,7 +119,7 @@ router.post('/insert',function (req, res, next) {
         .then(user_game_attempt => res.status(201).json({
         error: false,
         data: question,
-        message: 'New User Game Attempt created.'
+        message: 'New User Game Attempt record created.'
         }))
         .catch(error => res.json({
             error: true,
@@ -86,9 +129,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//E3: Update a user_game_attempt record
-
-/** Need to rethink about this route before deployment **/
+//E4: Update a user_game_attempt record; consider removing this route before deployment if a valid use is not found
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -100,15 +141,15 @@ router.put('/:id', function (req, res, next) {
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // game_id validation
-    req.checkParams('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Game Id should be at least ' +
+    req.checkBody('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('game_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // user_id validation
-    req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('User Id should be at least ' +
+    req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // score validation
-    req.checkParams('score').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Score should be at least ' +
+    req.checkBody('score').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Score should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
     // won validation
@@ -121,19 +162,19 @@ router.put('/:id', function (req, res, next) {
     }
     else {
         user_game_attempts.update({
+            user_id: req.body.user_id,
+            game_id: req.body.game_id,
             score: req.body.score,
             won: req.body.won,
             updated_at: new Date()
         }, {
             where: {
-                id: req.params.id,
-                user_id: req.params.user_id,
-                game_id: req.params.game_id,
+                id: req.params.id                
             }
         })
         .then(user_game_attempt => res.status(201).json({
             error: false,
-            message: 'User Game Attempt Record updated.'
+            message: 'User Game Attempt record updated.'
         }))
         .catch(error => res.json({
             error: true,
