@@ -7,8 +7,8 @@ var organizations = model.organizations;
 //E1: GET all organizations
 router.get('/', function (req, res, next) {
     organizations.findAll({
-            attributes: ['id', 'name', 'facebook_id', 'picture', 'state', 
-                'city', 'zip', 'street', 'mission', 'created_at', 'updated_at'],
+            attributes: ['id', 'name', 'facebook_id', 'image_link', 'state', 
+                'city', 'zip', 'street_address', 'mission', 'created_at', 'updated_at'],
             where: {'active': 1}
         })
         .then(organizations => res.json({
@@ -25,8 +25,8 @@ router.get('/', function (req, res, next) {
 //E2: GET organization by id
 router.get('/:id', function (req, res, next) {
     organizations.findAll({
-            attributes: ['id', 'name', 'facebook_id', 'picture', 'state', 
-                'city', 'zip', 'street', 'mission', 'created_at', 'updated_at'],
+            attributes: ['id', 'name', 'facebook_id', 'image_link', 'state', 
+                'city', 'zip', 'street_address', 'mission', 'created_at', 'updated_at'],
             where:{
                 id: req.params.id,
                 'active': 1
@@ -62,7 +62,7 @@ router.post('/insert',function (req, res, next) {
 
     req.checkBody('zip').trim().escape().notEmpty().withMessage('Zip is required');
 
-    req.checkBody('street').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Street should be at least ' +
+    req.checkBody('street_address').trim().escape().isLength({ min: 3, max: 255 }).withMessage('street_address should be at least ' +
         '3 chars and at most 255 chars');
 
     req.checkBody('mission').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Mission should be at least ' +
@@ -76,12 +76,12 @@ router.post('/insert',function (req, res, next) {
         organizations.create({
                 name: req.body.name,    
                 facebook_id: req.body.facebook_id,
-                picture: req.body.picture,
+                image_link: req.body.image_link,
                 mission: req.body.mission,
                 state: req.body.state,
                 city: req.body.city,
                 zip: req.body.zip,
-                street: req.body.street,
+                street_address: req.body.street_address,
                 created_at: new Date(),
                 updated_at: new Date()
             })
@@ -119,7 +119,7 @@ router.put('/:id', function (req, res, next) {
 
     req.checkBody('zip').trim().escape().notEmpty().withMessage('Zip is required');
 
-    req.checkBody('street').trim().escape().isLength({ min: 3, max: 255 }).withMessage('Street should be at least ' +
+    req.checkBody('street_address').trim().escape().isLength({ min: 3, max: 255 }).withMessage('street_address should be at least ' +
         '3 chars and at most 255 chars');
 
     req.checkBody('mission').trim().escape().isLength({ min: 10, max: 2000 }).withMessage('Mission should be at least ' +
@@ -133,12 +133,12 @@ router.put('/:id', function (req, res, next) {
             organizations.update({
                 name: req.body.name,    
                 facebook_id: req.body.facebook_id,
-                picture: req.body.picture,
+                image_link: req.body.image_link,
                 mission: req.body.mission,
                 state: req.body.state,
                 city: req.body.city,
                 zip: req.body.zip,
-                street: req.body.street,                
+                street_address: req.body.street_address,                
                 updated_at: new Date()
                 }, {
                     where: {
