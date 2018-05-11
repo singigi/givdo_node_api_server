@@ -6,7 +6,7 @@ var user_game_attempts = model.user_game_attempts;
 
 
 //GET all user_game_attempt records
-router.get('', function (req, res, next) {
+router.get('/', function (req, res, next) {
 
     /**
      * Validations
