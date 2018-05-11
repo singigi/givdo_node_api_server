@@ -30,6 +30,11 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true,
 			unique: true
 		},
+		has_create_privileges: {
+			type: DataTypes.INTEGER(4),
+			allowNull: false,
+			defaultValue: "0"
+		},
 		created_at: {
 			type: DataTypes.DATE,
 			allowNull: false,
@@ -39,12 +44,7 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.DATE,
 			allowNull: false,
 			defaultValue: sequelize.fn('current_timestamp')
-		},
-		has_create_privileges: {
-			type: DataTypes.INTEGER(4),
-			allowNull: false,
-			defaultValue: "1"
-		},
+		},		
 		active: {
 			type: DataTypes.INTEGER(1),
 			allowNull: false,

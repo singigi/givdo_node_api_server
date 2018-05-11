@@ -209,6 +209,11 @@ var migrationCommands = [{
                     "allowNull": true,
                     "unique": true
                 },
+                "has_create_privileges": {
+                    "type": Sequelize.INTEGER(4),
+                    "defaultValue": "0",
+                    "allowNull": false
+                },
                 "created_at": {
                     "type": Sequelize.DATE,
                     "defaultValue": Sequelize.literal('CURRENT_TIMESTAMP(3)'),
@@ -218,12 +223,7 @@ var migrationCommands = [{
                     "type": Sequelize.DATE,
                     "defaultValue": Sequelize.literal('CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)'),
                     "allowNull": false
-                },
-                "has_create_privileges": {
-                    "type": Sequelize.INTEGER(4),
-                    "defaultValue": "1",
-                    "allowNull": false
-                },
+                },                
                 "active": {
                     "type": Sequelize.INTEGER(1),
                     "defaultValue": "1",
