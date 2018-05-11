@@ -81,10 +81,7 @@ router.get('/:question_id/:id', function (req, res, next) {
 //?3: Add question_option record
 router.post('/insert',function (req, res, next) {
 
-    /**
-     * Validations
-     */
-
+    
     req.checkBody('text').trim().escape().isLength({ min: 2, max: 255 }).withMessage('Question option text should be at least ' +
         '2 chars and at most 255 chars');
 
@@ -96,24 +93,24 @@ router.post('/insert',function (req, res, next) {
 
 
     var errors = req.validationErrors();
+    var num;
     if(errors){
         res.json(errors);
     }
     else {
-
-        /**
-         * Check Max 4 options limit per question
-         */
+        
         question_options.count({
             where:{
                 question_id: req.body.question_id,
                 active: 1
             },
-            distinct: true,
-            col: 'id'
             })
-            .then(function(question_options){
-                if(question_options <=3) {
+            .then(c => {
+                num = c;
+            })
+            .then(function(c){
+                
+                if(num <=3) {
                     question_options.create({
                          text: req.body.text,
                          question_id: req.body.question_id,
@@ -146,7 +143,8 @@ router.post('/insert',function (req, res, next) {
                 error: error
             }));
     }
-});
+}); 
+
 
 //?4: Update question_option record 
 router.put('/:id', function (req, res, next) {
