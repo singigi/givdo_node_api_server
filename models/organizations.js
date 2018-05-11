@@ -8,33 +8,17 @@ module.exports = function(sequelize, DataTypes) {
 			primaryKey: true,
 			autoIncrement: true
 		},
-		facebook_id: {
-			type: DataTypes.STRING,
-			allowNull: true,
-			unique: true
-		},
 		name: {
 			type: DataTypes.STRING,
 			allowNull: true,
 			unique: true
 		},
-		picture: {
+		facebook_id: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: true,
+			unique: true
 		},
-		state: {
-			type: DataTypes.STRING,
-			allowNull: true
-		},
-		city: {
-			type: DataTypes.STRING,
-			allowNull: true
-		},
-		zip: {
-			type: DataTypes.STRING,
-			allowNull: true
-		},
-		street: {
+		image_link: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
@@ -42,6 +26,22 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.TEXT,
 			allowNull: true
 		},
+		street_address: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		city: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		state: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},		
+		zip: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},		
 		created_at: {
 			type: DataTypes.DATE,
 			allowNull: false,

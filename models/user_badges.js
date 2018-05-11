@@ -2,21 +2,22 @@
 
 module.exports = function(sequelize, DataTypes) {
 	return sequelize.define('user_badges', {
-		badge_id: {
-			type: DataTypes.INTEGER(11),
-			allowNull: false,
-			primaryKey: true,
-			references: {
-				model: 'badges',
-				key: 'id'
-			}
-		},
+		
 		user_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true,
 			references: {
 				model: 'users',
+				key: 'id'
+			}
+		},
+		badge_id: {
+			type: DataTypes.INTEGER(11),
+			allowNull: false,
+			primaryKey: true,
+			references: {
+				model: 'badges',
 				key: 'id'
 			}
 		},

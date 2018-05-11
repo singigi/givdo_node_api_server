@@ -40,7 +40,12 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.DATE,
 			allowNull: false,
 			defaultValue: sequelize.fn('current_timestamp')
-		}
+		},
+		updated_at: {
+			type: DataTypes.DATE,
+			allowNull: false,
+			defaultValue: sequelize.fn('current_timestamp')
+		},
 	}, {
 		tableName: 'player_response',
 		freezeTableName: true,

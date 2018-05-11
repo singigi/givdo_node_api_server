@@ -43,21 +43,25 @@ var migrationCommands = [{
                     "primaryKey": true,
                     "allowNull": false,
                 },
-                "facebook_id": {
-                    "type": Sequelize.STRING,
-                    "allowNull": true,
-                    "unique": true
-                },
                 "name": {
                     "type": Sequelize.STRING,
                     "allowNull": true,
                     "unique": true
                 },
-                "picture": {
+                "facebook_id": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true,
+                    "unique": true
+                },                
+                "image_link": {
                     "type": Sequelize.STRING,
                     "allowNull": true
                 },
-                "state": {
+                "mission": {
+                    "type": Sequelize.TEXT,
+                    "allowNull": true
+                },
+                "street_address": {
                     "type": Sequelize.STRING,
                     "allowNull": true
                 },
@@ -65,16 +69,12 @@ var migrationCommands = [{
                     "type": Sequelize.STRING,
                     "allowNull": true
                 },
+                "state": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true
+                },                
                 "zip": {
                     "type": Sequelize.STRING,
-                    "allowNull": true
-                },
-                "street": {
-                    "type": Sequelize.STRING,
-                    "allowNull": true
-                },
-                "mission": {
-                    "type": Sequelize.TEXT,
                     "allowNull": true
                 },
                 "created_at": {
@@ -376,11 +376,6 @@ var migrationCommands = [{
                     "allowNull": true,
                     "unique": true
                 },
-                "active": {
-                    "type": Sequelize.INTEGER(1),
-                    "allowNull": false,
-                    "defaultValue": 1
-                },
                 "created_at": {
                     "type": Sequelize.DATE,
                     "allowNull": false
@@ -388,6 +383,11 @@ var migrationCommands = [{
                 "updated_at": {
                     "type": Sequelize.DATE,
                     "allowNull": false
+                },
+                "active": {
+                    "type": Sequelize.INTEGER(1),
+                    "allowNull": false,
+                    "defaultValue": 1
                 }
             },
             {}
@@ -746,19 +746,19 @@ var migrationCommands = [{
         params: [
             "user_badges",
             {
-                "badge_id": {
+                "user_id": {
                     "type": Sequelize.INTEGER(11),
                     "references": {
-                        "model": "badges",
+                        "model": "users",
                         "key": "id"
                     },
                     "primaryKey": true,
                     "allowNull": false
                 },
-                "user_id": {
+                "badge_id": {
                     "type": Sequelize.INTEGER(11),
                     "references": {
-                        "model": "users",
+                        "model": "badges",
                         "key": "id"
                     },
                     "primaryKey": true,
