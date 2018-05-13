@@ -26,29 +26,13 @@ db.sequelize.authenticate().then(function() {
   server.on('listening', onListening);
 
   if(app.get('env') === 'development'){
-    //Change this depending on what files you want to load; I was just testing this one.
-    //We can also load the entire directory at once with glob syntax (* ?, etc.); just uncomment next line
-    //sequelize_fixtures.loadFile('fixtures/*.json', db);
-
-    sequelize_fixtures.loadFile('fixtures/organizations_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/advertisements_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/admin_users_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/users_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/badges_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/causes_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/donation_items_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/donations_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/question_categories_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/games_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/questions_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/game_questions_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/question_options_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/player_response_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/user_badges_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/user_causes_data.json', db);
-    sequelize_fixtures.loadFile('fixtures/user_game_attempts_data.json', db); 
-
-
+    
+    sequelize_fixtures.loadFiles(['fixtures/organizations_data.json', 'fixtures/advertisements_data.json',
+        'fixtures/admin_users_data.json', 'fixtures/users_data.json', 'fixtures/games_data.json', 'fixtures/badges_data.json', 
+        'fixtures/causes_data.json', 'fixtures/donation_items_data.json', 'fixtures/question_categories_data.json', 
+        'fixtures/questions_data.json', 'fixtures/game_questions_data.json', 'fixtures/question_options_data.json', 
+        'fixtures/user_badges_data.json', 'fixtures/user_causes_data.json', 'fixtures/user_game_attempts_data.json', 
+        'fixtures/player_response_data.json', 'fixtures/donations_data.json'], db);
   }
 });
 

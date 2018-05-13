@@ -4,7 +4,7 @@
         "keys": ["game_id", "user_id"],
         "data": {
             "user_id": 1,
-            "game_id": 4,
+            "game_id": 2,
             "score": "1",
             "won": "0"
         }
