@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var logger = require ('morgan');
-//var cors = require('cors');
+var cors = require('cors');
 var path = require('path');
 var validator = require('express-validator');
 
@@ -26,7 +26,7 @@ var player_response = require('./routes/player_response');
 var app = express();
 
 app.use(bodyParser.json());
-//app.use(cors());
+app.use(cors());
 app.use(validator());
 app.use(logger('dev'));
 app.use(bodyParser.json());
