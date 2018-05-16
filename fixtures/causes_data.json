@@ -4,7 +4,7 @@
             "keys": ["name"],
             "data": {
                 "name": "Human Rights",
-                "image_link": "www.ourhost.com/image1",
+                "image_link": "http://via.placeholder.com/300x300",
                 "created_at": "2016-08-12T10:42:30.754Z",
 				"updated_at": "2016-08-12T10:42:30.754Z"
             }
@@ -14,7 +14,7 @@
             "keys": ["name"],
             "data": {
                 "name": "Child Labour",
-                "image_link": "www.ourhost.com/image2",
+                "image_link": "http://via.placeholder.com/310x310",
                 "created_at": "2016-08-12T10:42:30.754Z",
 				"updated_at": "2016-08-12T10:42:30.754Z"
             }
@@ -24,7 +24,7 @@
             "keys": ["name"],
             "data": {
                 "name": "Social Change",
-                "image_link": "www.ourhost.com/image3",
+                "image_link": "http://via.placeholder.com/320x320",
                 "created_at": "2016-08-12T10:42:30.754Z",
 				"updated_at": "2016-08-12T10:42:30.754Z"
             }
