@@ -22,6 +22,10 @@ var user_game_attempts = require('./routes/user_game_attempts');
 var game_questions = require('./routes/game_questions');
 var question_categories = require('./routes/question_categories');
 var player_response = require('./routes/player_response');
+var jwt = require('jsonwebtoken');
+var passport = require('passport');
+var expressJwt = require('express-jwt');
+
 
 var app = express();
 
@@ -50,6 +54,63 @@ app.use('/user_game_attempts', user_game_attempts);
 app.use('/game_questions', game_questions);
 app.use('/question_categories', question_categories);
 app.use('/player_response', player_response);
+
+//Begin Facebook authentication section
+var model = require('./models/index');
+var passportConfig = require('./passport');
+
+var router = express.Router()
+var user = model.users;
+app.use('/api/v1', router);
+
+//setup configuration for facebook login
+passportConfig();
+
+var createToken = function(auth) {
+  return jwt.sign({
+    id: auth.id
+  }, 'my-secret',
+  {
+    expiresIn: 60 * 120
+  });
+};
+
+var generateToken = function (req, res, next) {
+  req.token = createToken(req.auth);
+  next();
+};
+
+var sendToken = function (req, res) {
+  res.setHeader('x-auth-token', req.token);
+  res.status(200).send(req.auth);
+};
+
+router.route('/auth/facebook')
+  .post(passport.authenticate('facebook-token', {session: false}), function(req, res, next) {
+    if (!req.user) {
+      return res.send(401, 'User Not Authenticated');
+    }
+
+    // prepare token for API
+    req.auth = {
+      id: req.user.id
+    };
+
+    next();
+  }, generateToken, sendToken);
+
+//token handling middleware
+var authenticate = expressJwt({
+  secret: 'my-secret',
+  requestProperty: 'auth',
+  getToken: function(req) {
+    if (req.headers['x-auth-token']) {
+      return req.headers['x-auth-token'];
+    }
+    return null;
+  }
+});
+//end Facebook authentication section
 
 
 // catch 404 and forward to error handler
