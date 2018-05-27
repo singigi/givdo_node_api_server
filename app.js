@@ -91,10 +91,12 @@ router.route('/oauth/facebook/callback')
       return res.send(401, 'User Not Authenticated');
     }
 
-    // prepare token for API
+    /* prepare token for API
     req.auth = {
       id: req.user.id
-    };
+    };*/
+
+    console.log("Something");
 
     next();
   }, generateToken, sendToken);

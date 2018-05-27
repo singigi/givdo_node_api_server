@@ -12,6 +12,20 @@ var methods = {};
 
 methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
     //Check to see if the users exist in our database and add if not. Return to the callback function.
+    console.log(profile);
+    console.log(profile.first_name);
+    console.log(profile.last_name);
+    console.log("displayName: " + profile.displayName);
+    console.log("Name: " + profile.name);
+    //console.log(profile[0]);
+    console.log(profile[0]);
+
+    console.log(profile.displayName.split(' ')[0]);
+    console.log(profile.displayName.split(' ')[1]);
+    //console.log(profile.Name[familyName]);
+    //console.log(profile.givenName);
+
+
     users.findAll({
         where: {'facebook_id': profile.id}
     })
@@ -19,21 +33,22 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
         if (users_res.length == 0) {
             users.create({
                 facebook_id: profile.id,
-                first_name: profile.first_name,
-                last_name: profile.last_name,
-                image_link: req.body.picture,
+                //first_name: profile.displayName.split(' ')[0],
+                first_name: profile.displayName.split(' ')[0],
+                last_name: profile.displayName.split(' ')[1],
+               // image_link: profile.picture,
                 created_at: new Date(),
                 updated_at: new Date()
             })
             .then(function(user){
-                return cb(false, user)
+                return cb(false, profile)
             })
             .catch(function(error){
                 return cb(error, []);
             });
         }
         else {
-            cb(false, users_res);
+            cb(false, profile);
         }
     })
     .catch(function(error){
