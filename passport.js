@@ -2,9 +2,8 @@
 
 var passport = require('passport');
 var FacebookTokenStrategy = require('passport-facebook-token');
-//var User = require('mongoose').model('User');
 var model = require('./models/index');
-var user = model.users;
+var users = require('./models/users');
 var utils = require('./utils');
 
 module.exports = function () {
