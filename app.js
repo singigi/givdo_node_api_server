@@ -30,7 +30,7 @@ var expressJwt = require('express-jwt');
 var app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+//app.use(cors());
 app.use(validator());
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -63,10 +63,26 @@ var router = express.Router()
 var user = model.users;
 app.use('/api/v1', router);
 
+/*/Configure cors to expose proper headers for authentication
+var corsOption = {
+  origin: 'http://localhost:8100',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  exposedHeaders: ['x-auth-token']
+};
+app.use(cors(corsOption)); */
+
+app.use(cors({
+  origin: 'http://localhost:8100',
+  exposedHeaders: ['x-auth-token']
+}));
+
 //setup configuration for facebook login
 passportConfig();
 
 var createToken = function(auth) {
+  console.log("createToken");
+
   return jwt.sign({
     id: auth.id
   }, 'my-secret',
@@ -77,10 +93,13 @@ var createToken = function(auth) {
 
 var generateToken = function (req, res, next) {
   req.token = createToken(req.auth);
+  console.log("generateToken");
   next();
 };
 
 var sendToken = function (req, res) {
+  console.log("sendToken");
+
   res.setHeader('x-auth-token', req.token);
   res.status(200).send(req.auth);
 };
@@ -91,10 +110,10 @@ router.route('/oauth/facebook/callback')
       return res.send(401, 'User Not Authenticated');
     }
 
-    /* prepare token for API
+    //prepare token for API
     req.auth = {
       id: req.user.id
-    };*/
+    };
 
     console.log("Something");
 
@@ -112,6 +131,26 @@ var authenticate = expressJwt({
     return null;
   }
 });
+
+var getCurrentUser = function(req, res, next) {
+  User.findById(req.auth.id, function(err, user) {
+    if (err) {
+      next(err);
+    } else {
+      req.user = user;
+      next();
+    }
+  });
+};
+
+var getOne = function (req, res) {
+  var user = req.user.toObject();
+
+  delete user['facebookProvider'];
+  delete user['__v'];
+
+  res.json(user);
+};
 //end Facebook authentication section
 
 
@@ -137,5 +176,7 @@ app.use(function(err, req, res, next) {
 return;
 });
 
+router.route('/auth/me')
+  .get(authenticate, getCurrentUser, getOne);
 
 module.exports = app;
