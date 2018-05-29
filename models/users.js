@@ -30,6 +30,11 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true,
 			unique: true
 		},
+		access_token: {
+			type: DataTypes.STRING,
+			allowNull: true,
+			unique: false
+		},
 		has_create_privileges: {
 			type: DataTypes.INTEGER(4),
 			allowNull: false,

@@ -24,7 +24,7 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
     console.log(profile.displayName.split(' ')[1]);
     //console.log(profile.Name[familyName]);
     //console.log(profile.givenName);
-
+    profile.access_token = accessToken;
 
     users.findAll({
         where: {'facebook_id': profile.id}
@@ -36,7 +36,8 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
                 //first_name: profile.displayName.split(' ')[0],
                 first_name: profile.displayName.split(' ')[0],
                 last_name: profile.displayName.split(' ')[1],
-               // image_link: profile.picture,
+                // image_link: profile.picture,
+                access_token: accessToken,
                 created_at: new Date(),
                 updated_at: new Date()
             })

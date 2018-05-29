@@ -209,6 +209,11 @@ var migrationCommands = [{
                     "allowNull": true,
                     "unique": true
                 },
+                "access_token": {
+                    "type": Sequelize.STRING,
+                    "allowNull": true,
+                    "unique": false
+                },
                 "has_create_privileges": {
                     "type": Sequelize.INTEGER(4),
                     "defaultValue": "0",

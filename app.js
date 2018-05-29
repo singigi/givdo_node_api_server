@@ -58,6 +58,8 @@ app.use('/player_response', player_response);
 //Begin Facebook authentication section
 var model = require('./models/index');
 var passportConfig = require('./passport');
+var model = require('./models/index');
+var users = model.users;
 
 var router = express.Router()
 var user = model.users;
@@ -99,7 +101,8 @@ var generateToken = function (req, res, next) {
 
 var sendToken = function (req, res) {
   console.log("sendToken");
-
+  console.log(req.auth);
+  console.log(req.token);
   res.setHeader('x-auth-token', req.token);
   res.status(200).send(req.auth);
 };
@@ -120,6 +123,7 @@ router.route('/oauth/facebook/callback')
     next();
   }, generateToken, sendToken);
 
+  
 //token handling middleware
 var authenticate = expressJwt({
   secret: 'my-secret',
@@ -133,22 +137,28 @@ var authenticate = expressJwt({
 });
 
 var getCurrentUser = function(req, res, next) {
-  User.findById(req.auth.id, function(err, user) {
-    if (err) {
-      next(err);
-    } else {
-      req.user = user;
-      next();
-    }
-  });
+  users.findAll({
+    where: {facebook_id: req.auth}
+  })
+  .then(users => res.json({
+    error: false,
+    data: users
+  }))
+  .catch(error => res.json({
+    error: true,
+    data: [],
+    error: error
+  }));
 };
 
 var getOne = function (req, res) {
+  console.log("line 155 " + req);
+ 
   var user = req.user.toObject();
 
   delete user['facebookProvider'];
   delete user['__v'];
-
+  console.log("line 161 " + user);
   res.json(user);
 };
 //end Facebook authentication section
