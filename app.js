@@ -137,22 +137,33 @@ var authenticate = expressJwt({
 });
 
 var getCurrentUser = function(req, res, next) {
+  console.log("in getCurrentUser");
   users.findAll({
     where: {facebook_id: req.auth}
+    
   })
-  .then(users => res.json({
+  .then(function(model_users){
+    req.user = model_users;
+    console.log("line 147: " + model_users.id);
+    res.json({
     error: false,
-    data: users
-  }))
-  .catch(error => res.json({
-    error: true,
-    data: [],
-    error: error
-  }));
+    data: model_users
+    });
+    next();
+})
+  .catch(function(model_users){
+    req.user = model_users;
+    console.log("line 147: " + model_users);
+    res.json({
+    error: false,
+    data: model_users
+    });
+    next();
+});
 };
 
 var getOne = function (req, res) {
-  console.log("line 155 " + req);
+  console.log("line 155 " + req.id);
  
   var user = req.user.toObject();
 
@@ -171,7 +182,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handler
+/* error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -184,9 +195,28 @@ app.use(function(err, req, res, next) {
     error: err
 });
 return;
-});
+});*/
 
 router.route('/auth/me')
-  .get(authenticate, getCurrentUser, getOne);
+  .get(authenticate, getCurrentUser, getOne); 
+
+
+
+  //router.route('/auth/me').get(authenticate, getCurrentUser, next)
+
+  /*
+  router.route('/auth/me', function (req, res, next) {
+    console.log('the response will be sent by the next function ...')
+    next()
+  }, function (req, res) {
+    res.send('Hello from B!')
+  })  */
+
+/*  
+router.get('/auth/me', function (req, res, next) {
+    console.log("line 195");
+    console.log(req);
+    getCurrentUser(req, res, next);
+});  */
 
 module.exports = app;
