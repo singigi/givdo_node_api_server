@@ -145,10 +145,10 @@ var getCurrentUser = function(req, res, next) {
   .then(function(model_users){
     req.user = model_users;
     console.log("line 147: " + model_users.id);
-    res.json({
+    /*res.json({
     error: false,
     data: model_users
-    });
+    });*/
     next();
 })
   .catch(function(model_users){
