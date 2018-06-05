@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
+var jwt = require('jsonwebtoken');
+var passport = require('passport');
+var expressJwt = require('express-jwt');
 var model = require('./models/index');
-var check = require('express-validator/check');
 var users = model.users;
 
 /* 
@@ -41,10 +41,60 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
     .catch(function(error){
         cb(error, []);
     });
+};
 
-    console.log("checkFacebookUser called - need to implement this method in utils.js");
-    console.log("View SELECT statement two lines above this to see your facebook user id");
+//token handling middleware
+methods.authenticate = expressJwt({
+    secret: 'my-secret',
+    requestProperty: 'auth',
+    getToken: function(req) {
+        if (req.headers['x-auth-token']) {
+            return req.headers['x-auth-token'];
+        }
+        return null;
+    }
+});
 
+methods.createToken = function(auth) {
+    return jwt.sign({
+            id: auth.id
+        }, 'my-secret',
+        {
+            expiresIn: 60 * 120
+        });
+};
+
+methods.generateToken = function (req, res, next) {
+    req.token = methods.createToken(req.auth);
+    next();
+};
+
+methods.sendToken = function (req, res) {
+    res.setHeader('x-auth-token', req.token);
+    res.status(200).send(req.auth);
+};
+
+
+methods.getCurrentUser = function(req, res, next) {
+    users.findAll({
+        where: {facebook_id: req.auth.id},
+        raw: true
+    })
+        .then(function(model_users){
+            req.user = model_users;
+            next();
+        })
+        .catch(function(model_users){
+            req.user = model_users;
+            next();
+        });
+};
+
+methods.getOne = function (req, res) {
+    var user = req.user;
+    delete user['facebookProvider'];
+    delete user['__v'];
+    res.json(user);
 };
 
 /*
