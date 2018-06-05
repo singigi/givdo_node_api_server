@@ -83,8 +83,6 @@ app.use(cors({
 passportConfig();
 
 var createToken = function(auth) {
-  console.log("createToken");
-
   return jwt.sign({
     id: auth.id
   }, 'my-secret',
@@ -95,14 +93,10 @@ var createToken = function(auth) {
 
 var generateToken = function (req, res, next) {
   req.token = createToken(req.auth);
-  console.log("generateToken");
   next();
 };
 
 var sendToken = function (req, res) {
-  console.log("sendToken");
-  console.log(req.auth);
-  console.log(req.token);
   res.setHeader('x-auth-token', req.token);
   res.status(200).send(req.auth);
 };
@@ -137,43 +131,27 @@ var authenticate = expressJwt({
 });
 
 var getCurrentUser = function(req, res, next) {
-  console.log("in getCurrentUser");
   users.findAll({
-    where: {facebook_id: req.auth}
-    
+    where: {facebook_id: req.auth.id},
+    raw: true
   })
   .then(function(model_users){
     req.user = model_users;
-    console.log("line 147: " + model_users.id);
-    /*res.json({
-    error: false,
-    data: model_users
-    });*/
     next();
 })
   .catch(function(model_users){
     req.user = model_users;
-    console.log("line 147: " + model_users);
-    res.json({
-    error: false,
-    data: model_users
-    });
     next();
 });
 };
 
 var getOne = function (req, res) {
-  console.log("line 155 " + req.id);
- 
-  var user = req.user.toObject();
-
+  var user = req.user;
   delete user['facebookProvider'];
   delete user['__v'];
-  console.log("line 161 " + user);
   res.json(user);
 };
 //end Facebook authentication section
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
