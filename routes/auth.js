@@ -17,7 +17,7 @@ router.post('/facebook/callback', passport.authenticate('facebook-token', {sessi
     next();
 }, utils.generateToken, utils.sendToken);
 
-//E2: Get current facebook user route
+//E2: Get currently logged in user
 router.get('/get_user', utils.authenticate, utils.getCurrentUser, utils.getOne);
 
 module.exports = router;
