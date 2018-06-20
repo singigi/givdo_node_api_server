@@ -13,7 +13,7 @@ module.exports = function () {
     },
     function (access_token, refreshToken, profile, done) {
       utils.checkFacebookUser(access_token, refreshToken, profile, function(err, user) {
-        return done(err, user);
+        return done(err, user);   //Now user is the facebook profile
       });
     }));
 
