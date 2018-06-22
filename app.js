@@ -25,6 +25,7 @@ var player_response = require('./routes/player_response');
 var auth = require('./routes/auth');
 
 var passportConfig = require('./config/passport');
+var router = express.Router();
 
 var app = express();
 
@@ -55,10 +56,10 @@ app.use('/question_categories', question_categories);
 app.use('/player_response', player_response);
 app.use('/auth', auth);
 
-var router = express.Router();
+//var router = express.Router();
 
 //setup configuration for facebook login
-passportConfig();
+//passportConfig(); //commented out for auth restructure
 
 /*/Configure cors to expose proper headers for authentication
 var corsOption = {

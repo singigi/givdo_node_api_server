@@ -43,7 +43,7 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
             .then(function(user){
                 //we could return the raw json result above and then send 'user' instead of 'profile'.
                 var new_profile = setProfileContent(user);
-                return cb(false, profile)           //returning FACEBOOK profile
+                return cb(false, new_profile)           //returning our profile
             })
             .catch(function(error){
                 return cb(error, []);
@@ -74,16 +74,22 @@ methods.authenticate = expressJwt({
 });
 
 methods.createToken = function(auth) {
+    //These are the attributes that will be encoded in the jwt
     return jwt.sign({
-            id: auth.id
-        }, 'my-secret',         //change this
+            id: auth.id,
+            first_name: auth.first_name,
+            last_name: auth.last_name,
+            email: auth.email,
+            image_link: auth.image_link
+        }, 'secret',         //change this
         {
             expiresIn: 60 * 120
         });
 };
 
 methods.generateToken = function (req, res, next) {
-    req.token = methods.createToken(req.auth);      //req.auth has one attribute, which is id. It is the facebook id. We probably need to switch it for our id.
+    //req.token = methods.createToken(req.auth);      //req.auth has one attribute, which is id. It is the facebook id. We probably need to switch it for our id.
+    req.token = methods.createToken(req.user);          
     next();
 };
 
