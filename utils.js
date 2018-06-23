@@ -93,12 +93,12 @@ methods.generateToken = function (req, res, next) {
     next();
 };
 
-methods.sendToken = function (req, res) {
+methods.sendToken3 = function (req, res) {
     res.setHeader('x-auth-token', req.token);
     res.status(200).send(req.auth);
 };
 
-methods.sendToken3 = function (req, res) {
+methods.sendToken = function (req, res) {
     res.status(200).json({
         token: 'JWT ' + req.token,
         user: req.user

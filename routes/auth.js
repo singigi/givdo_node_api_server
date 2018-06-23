@@ -6,7 +6,7 @@ var passportService = require('../config/passport');
 
 //var requireAuth = passport.authenticate('jwt', {session: false});       //Use this for protected routes
 var facebookLogin = passport.authenticate('facebook-token', {session: false});
-var requireAuth = passport.authenticate('jwt', {session: false});
+var requireAuth = passport.authenticate('jwt', {session: false});         //Use this for protected routes
 
 //E1: Facebook Server side auth route
 router.post('/facebook/callback', facebookLogin, function(req, res, next) {
@@ -20,7 +20,7 @@ router.post('/facebook/callback', facebookLogin, function(req, res, next) {
     };
 
     next();
-}, utils.generateToken, utils.sendToken3);
+}, utils.generateToken, utils.sendToken);
 
 //E2: Get currently logged in user
 router.get('/get_user', utils.authenticate, utils.getCurrentUser, utils.getOne);
@@ -36,23 +36,5 @@ router.get('/checklogin', requireAuth, function(req, res){
     console.log('protected route');
     res.json(req.user);
 });
-
-/*router.get('/protected', function(req, res, next) {
-    passport.authenticate('jwt', {session: false}, function(err, user, info) {
-      if (err) {
-        return next(err); // will generate a 500 error
-      }
-      // Generate a JSON response reflecting authentication status
-      if (! user) {
-        return res.send(401,{ success : false, message : 'authentication failed' });
-      }
-      req.login(user, function(err){
-        if(err){
-          return next(err);
-        }
-        return res.send({ success : true, message : 'authentication succeeded' });        
-      });
-    })(req, res, next);
-  });*/
 
 module.exports = router;
