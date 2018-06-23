@@ -30,8 +30,8 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
         where: {'facebook_id': profile.id},
         raw: true       //raw json
     })
-    .then(function(users_res) {
-        if (users_res.length == 0) {
+    .then(function(user) {
+        if (user.length == 0) {
             users.create({
                 facebook_id: profile.id,
                 first_name: profile.displayName.split(' ')[0],
@@ -41,18 +41,17 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
                 updated_at: new Date()
             })
             .then(function(user){
-                //we could return the raw json result above and then send 'user' instead of 'profile'.
                 var new_profile = setProfileContent(user);
-                return cb(false, new_profile)           //returning our profile
+                return cb(false, new_profile)           //returning our modified profile without sensitive data
             })
             .catch(function(error){
                 return cb(error, []);
             });
         }
         else {
-            var new_profile = setProfileContent(users_res);
-            console.log('New profile: ' + JSON.stringify(new_profile));
-            //cb(false, profile);     //we are returning the FACEBOOK profile here, not our own ***Start here tomorrow****
+            var new_profile = setProfileContent(user);
+            console.log('Modified profile: ' + JSON.stringify(new_profile));
+            //cb(false, profile);     //we are returning the FACEBOOK profile here, not our own 
             cb(false, new_profile);     //Return OUR profile via callback
         }
     })
@@ -93,10 +92,11 @@ methods.generateToken = function (req, res, next) {
     next();
 };
 
+/*
 methods.sendToken3 = function (req, res) {
     res.setHeader('x-auth-token', req.token);
     res.status(200).send(req.auth);
-};
+};*/
 
 methods.sendToken = function (req, res) {
     res.status(200).json({
@@ -105,29 +105,6 @@ methods.sendToken = function (req, res) {
     });
 };
 
-//new
-methods.sendToken2 = function(req, res, next){
- 
-    //var userInfo = setUserInfo(req.user);
-    var userInfo = {            //We need to look at this with the debugger to see if the user data is accessible. Need to send some user data back to client.
-        id: request.id,
-        email: request.email,
-        role: request.role
-    };
- 
-    res.status(200).json({
-        token: 'JWT ' + generateToken2(req.auth),
-        user: userInfo
-    });
- 
-}
-
-function generateToken2(user){
-    return jwt.sign(user, jwt_config.secret, {
-        expiresIn: 10080
-    });
-}
-//end new
 
 methods.getCurrentUser = function(req, res, next) {
     users.findAll({
