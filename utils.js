@@ -93,18 +93,6 @@ methods.sendToken = function (req, res) {
     });
 };
 
-//Middleware for authenticating every incoming API request. Checks to see if JWT is valid, and if so, sets req.auth with the decoded JSON object.
-//We are not using this right now, but have implemented new middleware to serve this function with passport-jwt. 
-methods.authenticate = expressJwt({
-    secret: jwt_config.secret,        //change this
-    requestProperty: 'auth',
-    getToken: function(req) {
-        if (req.headers['x-auth-token']) {
-            return req.headers['x-auth-token'];
-        }
-        return null;
-    }
-});
 
 //We are not currently using these next two methods to retreive the current user, however, we will leave them in case they are needed in the future.
 methods.getCurrentUser = function(req, res, next) {
