@@ -3,3 +3,5 @@ node_modules
 .DS_Store
 test.http
 seeders/20180330013440-initial-seed.js
+.vscode/
+config/new_passport.js
