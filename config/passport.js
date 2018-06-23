@@ -1,6 +1,8 @@
 'use strict';
 var FacebookTokenStrategy = require('passport-facebook-token');
 var utils = require('../utils');
+var model = require('../models/index');
+var users = model.users;
 
 /*var passport = require('passport');
 var model = require('../models/index');
@@ -48,8 +50,49 @@ console.log('\x1b[0m'), '';     //reset console text color to default
 passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
     console.log('Control never comes here');
     console.log('\x1b[36m%s\x1b[0m', 'Control never comes here Control never comes here Control never comes here Control never comes here');  //cyan
+/*
+    users.findOne({where: {id: jwt_payload.id }}).then(user => {
+        if (user) {
+            return done(null, jwt_payload);
+        } else {
+            return done(null, false);
+        }
 
-    users.findOne({id: jwt_payload.sub }, function (err, user) {
+    }).catch(function(error){
+        return done(err, false);
+    });*/
+
+
+    users.findOne({
+        where: {id: jwt_payload.id}
+    }).then(function(user) {
+        console.log('in then clause***************************************************');
+        if (!user) {
+            return done(null, false, {
+                message: 'User does not exist'
+            });
+        }
+
+       // var userinfo = user.get();
+        return done(null, jwt_payload);
+
+    }).catch(function(err) {
+
+        console.log("Error:", err);
+
+        return done(null, false, {
+            message: 'Something went wrong with your Signin'
+        });
+
+    });
+
+    /*
+
+    Project.findOne({ where: {title: 'aProject'} }).then(project => {
+        // project will be the first entry of the Projects table with the title 'aProject' || null
+      })
+
+    users.findOne({where: {id: jwt_payload.id }}, function (err, user) {
         if (err) {
             return done(err, false);
         }
@@ -59,16 +102,12 @@ passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
             return done(null, false);
         }
     });
-    /*users.findOne({ _id: jwt_payload.sub }, function (err, user) {
-        if (err) {
-            return done(err, false);
-        }
-        if (user) {
-            return done(null, user);
-        } else {
-            return done(null, false);
-        }
-    });*/
+
+    
+    Project.findOne({ where: {title: 'aProject'} }).then(project => {
+        // project will be the first entry of the Projects table with the title 'aProject' || null
+      })
+    */
 }));
 
 
