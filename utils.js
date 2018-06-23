@@ -75,7 +75,7 @@ methods.createToken = function(auth) {
 };
 
 methods.generateToken = function (req, res, next) {
-    //req.token = methods.createToken(req.auth);      //req.auth has one attribute, which is id. It is the facebook id. We probably need to switch it for our id.
+    //req.token = methods.createToken(req.auth);      //req.auth has one attribute, which is id. 
     req.token = methods.createToken(req.user);          
     next();
 };
@@ -92,7 +92,6 @@ methods.sendToken = function (req, res) {
         user: req.user
     });
 };
-
 
 //We are not currently using these next two methods to retreive the current user, however, we will leave them in case they are needed in the future.
 methods.getCurrentUser = function(req, res, next) {
