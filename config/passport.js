@@ -74,14 +74,14 @@ passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
         }
 
        // var userinfo = user.get();
-        return done(null, jwt_payload);
+        return done(null, user);
 
     }).catch(function(err) {
 
         console.log("Error:", err);
 
         return done(null, false, {
-            message: 'Something went wrong with your Signin'
+            message: 'Problem with JWT login (check passport.js JwtStrategy code).'
         });
 
     });

@@ -27,7 +27,8 @@ router.get('/get_user', utils.authenticate, utils.getCurrentUser, utils.getOne);
 
 router.get('/protected', passport.authenticate('jwt', {session: false}), function(req, res){
     console.log('protected');
-    res.send({ content: 'Success'});
+    //res.send({ content: 'Success'});
+    res.json(req.user);
 }); 
 
 /*router.get('/protected', requireAuth, function(req, res){
