@@ -80,7 +80,7 @@ methods.createToken = function(auth) {
             last_name: auth.last_name,
             email: auth.email,
             image_link: auth.image_link
-        }, 'secret',         //change this
+        }, jwt_config.secret,         //change this
         {
             expiresIn: 60 * 120
         });

@@ -1,25 +1,20 @@
 'use strict';
+var passport = require('passport');
 var FacebookTokenStrategy = require('passport-facebook-token');
+var JwtStrategy = require('passport-jwt').Strategy;
+var ExtractJwt = require('passport-jwt').ExtractJwt;
+var jwt_config = require('./jwt_config');
+
 var utils = require('../utils');
 var model = require('../models/index');
 var users = model.users;
 
-/*
 
-
-var jwt_config = require('./jwt_config');
-/*
-
-opts.secretOrKey = 'S4Dfk^h80fyg9%KreuHkrTF0CY^Hb%Kr'; */
-
-var passport = require('passport');
-var JwtStrategy = require('passport-jwt').Strategy;
-var ExtractJwt = require('passport-jwt').ExtractJwt;
-
-
+//Configure Jwt Strategy
 var opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('JWT');
-opts.secretOrKey = 'secret';
+//opts.secretOrKey = 'secret';
+opts.secretOrKey = jwt_config.secret;           //We need to change this for production (storing our key in the repo is not secure).
 
 
 passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
@@ -54,14 +49,14 @@ passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
     
 }));
 
-
+  //Direct Facebook login  
   passport.use(new FacebookTokenStrategy({
       clientID: '777523425775694',
       clientSecret: 'aef628c4f6b7d7349beaa77c09258f98'
     },
     function (access_token, refreshToken, profile, done) {
       utils.checkFacebookUser(access_token, refreshToken, profile, function(err, user) {
-        return done(err, user);   //Now user is the facebook profile
+        return done(err, user);   
       });
     }));
 
