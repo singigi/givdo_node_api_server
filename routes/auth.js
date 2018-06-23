@@ -22,19 +22,13 @@ router.post('/facebook/callback', facebookLogin, function(req, res, next) {
     next();
 }, utils.generateToken, utils.sendToken);
 
-//E2: Get currently logged in user
-router.get('/get_user', utils.authenticate, utils.getCurrentUser, utils.getOne);
-
-/*
-router.get('/protected', passport.authenticate('jwt', {session: false}), function(req, res){
-    console.log('protected');
-    //res.send({ content: 'Success'});
-    res.json(req.user);
-}); */
 
 router.get('/checklogin', requireAuth, function(req, res){
     console.log('protected route');
     res.json(req.user);
 });
+
+//Get currently logged in user. We are not using this right now, since we switched from expressJwt to passport-jwt and are doing this in the /checklogin route.
+//router.get('/get_user', utils.authenticate, utils.getCurrentUser, utils.getOne);
 
 module.exports = router;
