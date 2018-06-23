@@ -13,7 +13,6 @@ var users = model.users;
 //Configure Jwt Strategy
 var opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('JWT');
-//opts.secretOrKey = 'secret';
 opts.secretOrKey = jwt_config.secret;           //We need to change this for production (storing our key in the repo is not secure).
 
 

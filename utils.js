@@ -42,7 +42,7 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
             })
             .then(function(user){
                 var new_profile = setProfileContent(user);
-                return cb(false, new_profile)           //returning our modified profile without sensitive data
+                return cb(false, new_profile)           //Return our modified profile without sensitive data
             })
             .catch(function(error){
                 return cb(error, []);
@@ -51,8 +51,7 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
         else {
             var new_profile = setProfileContent(user);
             console.log('Modified profile: ' + JSON.stringify(new_profile));
-            //cb(false, profile);     //we are returning the FACEBOOK profile here, not our own 
-            cb(false, new_profile);     //Return OUR profile via callback
+            cb(false, new_profile);                     //Return our modified profile via callback
         }
     })
     .catch(function(error){
@@ -60,17 +59,6 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
     });
 };
 
-//Middleware for authenticating every incoming API request. Checks to see if JWT is valid, and if so, sets req.auth with the decoded JSON object (I think this just has the fb id in it).
-methods.authenticate = expressJwt({
-    secret: 'my-secret',        //change this
-    requestProperty: 'auth',
-    getToken: function(req) {
-        if (req.headers['x-auth-token']) {
-            return req.headers['x-auth-token'];
-        }
-        return null;
-    }
-});
 
 methods.createToken = function(auth) {
     //These are the attributes that will be encoded in the jwt
@@ -80,7 +68,7 @@ methods.createToken = function(auth) {
             last_name: auth.last_name,
             email: auth.email,
             image_link: auth.image_link
-        }, jwt_config.secret,         //change this
+        }, jwt_config.secret,         //Change this for production
         {
             expiresIn: 60 * 120
         });
@@ -93,7 +81,7 @@ methods.generateToken = function (req, res, next) {
 };
 
 /*
-methods.sendToken3 = function (req, res) {
+methods.sendToken = function (req, res) {
     res.setHeader('x-auth-token', req.token);
     res.status(200).send(req.auth);
 };*/
@@ -105,7 +93,20 @@ methods.sendToken = function (req, res) {
     });
 };
 
+//Middleware for authenticating every incoming API request. Checks to see if JWT is valid, and if so, sets req.auth with the decoded JSON object.
+//We are not using this right now, but have implemented new middleware to serve this function with passport-jwt. 
+methods.authenticate = expressJwt({
+    secret: jwt_config.secret,        //change this
+    requestProperty: 'auth',
+    getToken: function(req) {
+        if (req.headers['x-auth-token']) {
+            return req.headers['x-auth-token'];
+        }
+        return null;
+    }
+});
 
+//We are not currently using these next two methods to retreive the current user, however, we will leave them in case they are needed in the future.
 methods.getCurrentUser = function(req, res, next) {
     users.findAll({
         where: {facebook_id: req.auth.id},
@@ -121,24 +122,11 @@ methods.getCurrentUser = function(req, res, next) {
         });
 };
 
+//Called after getCurrentUser (above) to send back the user profile
 methods.getOne = function (req, res) {
     var user = req.user;
-    delete user['facebookProvider'];        //We don't need this, or the next line, as we do not have these db fields.
-    delete user['__v'];
-    res.json(user);         //So this sends back the entire user in JSON format. We really only need to send the user id. But would it be better to send everything?
+    res.json(user);         //Sends back the user profile in JSON format. 
 };
-
-/*
-methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
-    //Check to see if the users exist in our database and add if not. Return to the callback function.
-    users.findAll({
-        where: {'facebook_id': profile.id}
-    })
-    console.log("checkFacebookUser called - need to implement this method in utils.js");
-    console.log("View SELECT statement two lines above this to see your facebook user id");
-
-};
-*/
 
 module.exports = methods;
 
