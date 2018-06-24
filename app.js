@@ -24,9 +24,6 @@ var question_categories = require('./routes/question_categories');
 var player_response = require('./routes/player_response');
 var auth = require('./routes/auth');
 
-var passportConfig = require('./config/passport');
-var router = express.Router();
-
 var app = express();
 
 app.use(bodyParser.json());
@@ -56,8 +53,6 @@ app.use('/question_categories', question_categories);
 app.use('/player_response', player_response);
 app.use('/auth', auth);
 
-//set up configuration for facebook login
-//passportConfig(); //commented out for auth restructure
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
