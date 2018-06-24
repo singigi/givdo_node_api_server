@@ -56,9 +56,7 @@ app.use('/question_categories', question_categories);
 app.use('/player_response', player_response);
 app.use('/auth', auth);
 
-//var router = express.Router();
-
-//setup configuration for facebook login
+//set up configuration for facebook login
 //passportConfig(); //commented out for auth restructure
 
 // catch 404 and forward to error handler
@@ -68,7 +66,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-/* error handler
+/// error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -81,6 +79,6 @@ app.use(function(err, req, res, next) {
     error: err
 });
 return;
-});*/
+});
 
 module.exports = app;
