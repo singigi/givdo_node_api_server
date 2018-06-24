@@ -30,7 +30,7 @@ var router = express.Router();
 var app = express();
 
 app.use(bodyParser.json());
-//app.use(cors());
+app.use(cors());
 app.use(validator());
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -61,21 +61,6 @@ app.use('/auth', auth);
 //setup configuration for facebook login
 //passportConfig(); //commented out for auth restructure
 
-/*/Configure cors to expose proper headers for authentication
-var corsOption = {
-  origin: 'http://localhost:8100',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-  exposedHeaders: ['x-auth-token']
-};
-app.use(cors(corsOption)); */
-
-app.use(cors({
-  origin: 'http://localhost:8100',
-  exposedHeaders: ['x-auth-token']
-}));
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -97,23 +82,5 @@ app.use(function(err, req, res, next) {
 });
 return;
 });*/
-
-
-  //router.route('/auth/me').get(authenticate, getCurrentUser, next)
-
-  /*
-  router.route('/auth/me', function (req, res, next) {
-    console.log('the response will be sent by the next function ...')
-    next()
-  }, function (req, res) {
-    res.send('Hello from B!')
-  })  */
-
-/*  
-router.get('/auth/me', function (req, res, next) {
-    console.log("line 195");
-    console.log(req);
-    getCurrentUser(req, res, next);
-});  */
 
 module.exports = app;
