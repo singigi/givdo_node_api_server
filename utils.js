@@ -12,13 +12,13 @@ var jwt_config = require('./config/jwt_config.js')
 var methods = {};
 
 //Data we want to go back to the client in the JWT is set here (we don't want to send things like passwords or sensitive information).
-function setProfileContent(request){
+function setProfileContent(profile){
     return {
-        id: request[0].id,
-        first_name: request[0].first_name,
-        last_name: request[0].last_name,
-        email: request[0].email,
-        image_link: request[0].image_link
+        id: profile.id,
+        first_name: profile.first_name,
+        last_name: profile.last_name,
+        email: profile.email,
+        image_link: profile.image_link
     };
 }
 
@@ -26,7 +26,7 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
     //Check to see if the users exist in our database and add if not. Return to the callback function.
     profile.access_token = accessToken;
 
-    users.findAll({
+    users.findOne({
         where: {'facebook_id': profile.id},
         raw: true       //raw json
     })
