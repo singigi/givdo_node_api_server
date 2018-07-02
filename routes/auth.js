@@ -4,7 +4,6 @@ var utils = require('../utils');
 var passport = require('passport');
 var passportService = require('../config/passport');
 
-//var requireAuth = passport.authenticate('jwt', {session: false});       //Use this for protected routes
 var facebookLogin = passport.authenticate('facebook-token', {session: false});
 var requireAuth = passport.authenticate('jwt', {session: false});         //Use this for protected routes
 

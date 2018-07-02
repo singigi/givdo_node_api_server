@@ -2,9 +2,9 @@
     This is where we configure the Passport strategies. We have two strategies: one for direct Facebook login, and one
     which decodes and verifies JSON web tokens (JWTs) in order to log in a previously authorized user whose token is not yet expired.
 
-    With the first strategy, our client app obtains authorization from the user for our app (which is registered on Facebook) to access their 
+    With the first strategy, our client app obtains authorization from the user for our app (our app is registered on Facebook) to access their 
     Facebook profile, and Facebook sends an access token to the client app. The access token uniquely identifies the user. The client then sends 
-    this access token to us (the server), and we pass it in to the FacebookTokenStrategy below, along with our Facebook app id (which the user 
+    this access token to us (the server), and we pass it to the FacebookTokenStrategy below, along with our Facebook app id (which the user 
     has authorized via the client app). 
     
     That strategy will send the access token to Facebook for them to verify that we are the intended recipient of the user's information, 
@@ -12,11 +12,11 @@
     already exists in our database. If they do, we return their existing Givdo profile.
 
     If the user does not exist yet, we create a record for them in our database and return the new profile, along with a JSON web token, which the client 
-    needs to store in the browser's local storage for authentication for protected routes.
+    needs to store in the browser's local storage for authentication in protected routes.
 
     The second strategy simply takes a JWT sent by the client, decodes it, and checks to see if it is valid and unexpired. Our valid JWTs have the user 
-    profile information encoded within them. If it is valid, we look up the user in our database and return thier Givdo profile data. If not, the
-    call will fail and the user will have to log in with the Facebook login route.
+    profile information encoded within them. If it is valid, we look up the user in our database and return their Givdo profile data. If not, the
+    call will fail, and the client will redirect the user to the login page. There, the user will be able to to log in with the Facebook login route.
 
 */
 
