@@ -5,8 +5,6 @@ var debug = require('debug')('express-sequelize');
 var http = require('http');
 
 var sequelize_fixtures = require('sequelize-fixtures');
-
-
 var db = require('../models');
 
 var port = normalizePort(process.env.PORT || '3000');
