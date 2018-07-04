@@ -89,19 +89,15 @@ router.post('/insert',function (req, res, next) {
      * Validations
      */
 
-    // game_id validation
+    req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');    
+
     req.checkBody('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('game_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // user_id validation
-    req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
-    // score validation
     req.checkBody('score').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Score should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // won validation
     req.checkBody('won').trim().escape().isLength({ min: 1, max: 1 }).withMessage('Won should be at least ' +
         '1 char and at most 1 char').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
 
@@ -138,23 +134,18 @@ router.put('/:id', function (req, res, next) {
      * Validations
      */
 
-    // id validation
     req.checkParams('id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // game_id validation
+    req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
+        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');    
+
     req.checkBody('game_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('game_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // user_id validation
-    req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
-        '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
-
-    // score validation
     req.checkBody('score').trim().escape().isLength({ min: 1, max: 11 }).withMessage('Score should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // won validation
     req.checkBody('won').trim().escape().isLength({ min: 1, max: 1 }).withMessage('Won should be at least ' +
         '1 char and at most 1 char').matches(/^[0-1]$/i).withMessage('Only Boolean values are allowed');
 

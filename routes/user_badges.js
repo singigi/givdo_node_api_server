@@ -43,11 +43,9 @@ router.post('/insert',function (req, res, next) {
      * Validations
      */
 
-    // badge_id validation
     req.checkBody('badge_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('badge_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // user_id validation
     req.checkBody('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
@@ -82,11 +80,9 @@ router.delete('/:user_id/:badge_id', function (req, res, next) {
      * Validations
      */
 
-    // badge_id validation
     req.checkParams('badge_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('badge_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
-    // user_id validation
     req.checkParams('user_id').trim().escape().isLength({ min: 1, max: 11 }).withMessage('user_id should be at least ' +
         '1 chars and at most 11 chars').isInt().withMessage('Only numeric values are allowed');
 
