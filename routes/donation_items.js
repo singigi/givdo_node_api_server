@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var donation_items = model.donation_items;
 
-//?1: GET all donation items; returns NULL if no active donation items exist
+//K1: GET all donation items; returns NULL if no active donation items exist
 router.get('/', function (req, res, next) {
     donation_items.findAll({
         attributes: ['id', 'name', 'category', 'description'],
@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//?2: GET donation item by id; returns NULL if no active admin with specified id exists
+//K2: GET donation item by id; returns NULL if no active admin with specified id exists
 router.get('/:id', function (req, res, next) {
     donation_items.findAll({
         attributes: ['id', 'name', 'category', 'description'],
@@ -41,7 +41,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 
-//?3: Add donation item
+//K3: Add donation item
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -85,7 +85,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?4: Update donation item
+//K4: Update donation item
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -132,7 +132,7 @@ router.put('/:id', function (req, res, next) {
     }
 );
 
-//?5: Inactivate donation item by id
+//K5: Inactivate donation item by id
 router.delete('/:id', function (req, res, next) {
 
     /**

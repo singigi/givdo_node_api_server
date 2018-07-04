@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var player_response = model.player_response;
 
-//?1: GET all player responses; returns empty array if no active player response records exist
+//I1: GET all player responses; returns empty array if no active player response records exist
 router.get('/', function (req, res, next) {
     player_response.findAll({
         attributes: ['id', 'user_id', 'game_id', 'question_id', 'question_option_id']        
@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//?2: GET player response by id; returns empty array if no active admin with specified id exists
+//I2: GET player response by id; returns empty array if no active admin with specified id exists
 router.get('/:id', function (req, res, next) {
     player_response.findAll({
         attributes: ['id', 'user_id', 'game_id', 'question_id', 'question_option_id'],
@@ -39,7 +39,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 
-//?3: Add player response 
+//I3: Add player response 
 router.post('/insert',function (req, res, next) {
 
     /**

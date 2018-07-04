@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var questions = model.questions;
 
-//?1: GET all questions
+//D1: GET all questions
 router.get('/', function (req, res, next) {
     questions.findAll({
             attributes: ['id', 'question_text', 'category_id', 'created_at', 'updated_at'],
@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//?2: GET question by id
+//D2: GET question by id
 router.get('/:id', function (req, res, next) {
     questions.findAll({
             attributes: ['id', 'question_text', 'category_id', 'created_at', 'updated_at'],
@@ -42,7 +42,7 @@ router.get('/:id', function (req, res, next) {
 
 
 
-//?3: Add question
+//D3: Add question
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -82,7 +82,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?4: Update question
+//D4: Update question
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -124,7 +124,7 @@ router.put('/:id', function (req, res, next) {
     }
 });
 
-//?5: Inactivate question by id
+//D5: Inactivate question by id
 router.delete('/:id', function (req, res, next) {
 
     /**

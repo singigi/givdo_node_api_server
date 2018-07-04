@@ -5,7 +5,7 @@ var check = require('express-validator/check');
 var user_game_attempts = model.user_game_attempts;
 
 
-//GET all user_game_attempt records
+//N1: GET all user_game_attempt records
 router.get('/', function (req, res, next) {
 
     /**
@@ -26,7 +26,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//?2: GET user_game_attempt by user_id
+//N2: GET user_game_attempt by user_id
 router.get('/:user_id/', function (req, res, next) {
 
     /**
@@ -52,7 +52,7 @@ router.get('/:user_id/', function (req, res, next) {
     }));
 });
 
-//?3: GET user_game_attempt by user_id and game_id
+//N3: GET user_game_attempt by user_id and game_id
 router.get('/:user_id/:game_id/', function (req, res, next) {
 
     /**
@@ -82,7 +82,7 @@ router.get('/:user_id/:game_id/', function (req, res, next) {
     }));
 });
 
-//?4: Add a user_game_attempt record
+//N4: Add a user_game_attempt record
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -127,7 +127,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?5: Update a user_game_attempt record; consider removing this route before deployment if a valid use is not found
+//N5: Update a user_game_attempt record; consider removing this route before deployment if a valid use is not found
 router.put('/:id', function (req, res, next) {
 
     /**

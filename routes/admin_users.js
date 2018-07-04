@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var admins = model.admin_users;
 
-//E1: GET all admin users; returns NULL if no active admin users exist
+//O1: GET all admin users; returns NULL if no active admin users exist
 router.get('/', function (req, res, next) {
     admins.findAll({
         attributes: ['id', 'first_name', 'last_name', 'email'],
@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//E2: GET admin user by id; returns NULL if no active admin with specified id exists
+//O2: GET admin user by id; returns NULL if no active admin with specified id exists
 router.get('/:id', function (req, res, next) {
     admins.findAll({
         attributes: ['id', 'first_name', 'last_name', 'email'],
@@ -40,7 +40,7 @@ router.get('/:id', function (req, res, next) {
     }));
 });
 
-//E3: Add admin user
+//O3: Add admin user
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -85,7 +85,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//E4: Update admin user; will only update an EXISTING user with the given id. Non-existing users will not be created.
+//O4: Update admin user; will only update an EXISTING user with the given id. Non-existing users will not be created.
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -134,7 +134,7 @@ router.put('/:id', function (req, res, next) {
     }
 );
 
-//E5: Inactivate admin user by id
+//O5: Inactivate admin user by id
 router.delete('/:id', function (req, res, next) {
 
     /**

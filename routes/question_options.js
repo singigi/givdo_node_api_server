@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var question_options = model.question_options;
 
-//?1: GET all question_option records by question_id
+//E1: GET all question_option records by question_id
 router.get('/:question_id', function (req, res, next) {
 
     /**
@@ -39,7 +39,7 @@ router.get('/:question_id', function (req, res, next) {
     }
 });
 
-//?2: GET question option by question_id and question option id
+//E2: GET question option by question_id and question option id
 router.get('/:question_id/:id', function (req, res, next) {
 
     /**
@@ -78,7 +78,7 @@ router.get('/:question_id/:id', function (req, res, next) {
 });
 
 
-//?3: Add question_option record
+//E3: Add question_option record
 router.post('/insert',function (req, res, next) {
 
     
@@ -146,7 +146,7 @@ router.post('/insert',function (req, res, next) {
 }); 
 
 
-//?4: Update question_option record 
+//E4: Update question_option record 
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -192,7 +192,7 @@ router.put('/:id', function (req, res, next) {
     }
 });
 
-//?5: Inactivate question_option record by id
+//E5: Inactivate question_option record by id
 router.delete('/:id', function (req, res, next) {
 
     /**

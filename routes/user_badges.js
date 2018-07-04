@@ -5,7 +5,7 @@ var sequelize = model.sequelize;
 var check = require('express-validator/check');
 var user_badges = model.user_badges;
 
-//?1: GET user_badges by user_id
+//L1: GET user_badges by user_id
 router.get('/:user_id', function (req, res, next) {
 
     /**
@@ -36,7 +36,7 @@ router.get('/:user_id', function (req, res, next) {
     }
 });
 
-//?2: Add user_badge
+//L2: Add user_badge
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -73,7 +73,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?3: Inactivate a user_badge by badge_id and user_id
+//L3: Inactivate a user_badge by badge_id and user_id
 router.delete('/:user_id/:badge_id', function (req, res, next) {
 
     /**

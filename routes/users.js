@@ -6,7 +6,7 @@ var users = model.users;
 
 
 
-//E1: GET all active users; returns NULL if no active users exist
+//A1: GET all active users; returns NULL if no active users exist
 router.get('/', function (req, res, next) {
     users.findAll({
         attributes: ['id', 'first_name', 'last_name', 'email', 'image_link', 'facebook_id', 'has_create_privileges', 'created_at', 'updated_at'],
@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//E2: GET user by id; returns NULL if no active user with specified id exists
+//A2: GET user by id; returns NULL if no active user with specified id exists
 router.get('/:id', function (req, res, next) {
     users.findAll({
         attributes: ['id', 'first_name', 'last_name', 'email', 'image_link', 'facebook_id', 'has_create_privileges', 'created_at', 'updated_at'],
@@ -43,7 +43,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 
-//E3: Add user
+//A3: Add user
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -91,7 +91,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//E4: Update user
+//A4: Update user
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -138,7 +138,7 @@ router.put('/:id', function (req, res, next) {
     }
 );
 
-//E5: Inactivate user by id
+//A5: Inactivate user by id
 router.delete('/:id', function (req, res, next) {
 
     /**

@@ -5,7 +5,7 @@ var sequelize = model.sequelize;
 var check = require('express-validator/check');
 var user_causes = model.user_causes;
 
-//?1: GET user_causes by user_id
+//M1: GET user_causes by user_id
 router.get('/:user_id', function (req, res, next) {
 
     /**
@@ -37,7 +37,7 @@ router.get('/:user_id', function (req, res, next) {
 });
 
 
-//?2: Add user_cause
+//M2: Add user_cause
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -76,7 +76,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?3: Inactivate a user_cause by user_id and cause_id 
+//M3: Inactivate a user_cause by user_id and cause_id 
 router.delete('/:user_id/:cause_id', function (req, res, next) {
 
     /**

@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var causes = model.causes;
 
-//?1: GET all causes
+//C1: GET all causes
 router.get('/', function (req, res, next) {
     causes.findAll({
             attributes: ['id', 'name', 'image_link', 'created_at', 'updated_at'],
@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
 });
 
 
-//?2: GET cause by id
+//C2: GET cause by id
 router.get('/:id', function (req, res, next) {
 
     /**
@@ -56,7 +56,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 
-//?3: Add cause
+//C3: Add cause
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -93,7 +93,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?4: Update cause
+//C4: Update cause
 router.put('/:id', function (req, res, next) {
 
         /**
@@ -134,7 +134,7 @@ router.put('/:id', function (req, res, next) {
     }
 );
 
-//?5: Delete cause by id
+//C5: Delete cause by id
 router.delete('/:id', function (req, res, next) {
 
     /**

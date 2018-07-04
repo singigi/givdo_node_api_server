@@ -7,7 +7,7 @@ var passportService = require('../config/passport');
 var facebookLogin = passport.authenticate('facebook-token', {session: false});
 var requireAuth = passport.authenticate('jwt', {session: false});         //Use this for protected routes
 
-//E1: Facebook Server side auth route
+//R1: Facebook Server side auth route
 router.post('/facebook/callback', facebookLogin, function(req, res, next) {
     if (!req.user) {
         return res.send(401, 'User Not Authenticated');
@@ -21,7 +21,7 @@ router.post('/facebook/callback', facebookLogin, function(req, res, next) {
     next();
 }, utils.generateToken, utils.sendToken);
 
-
+//R2: Verifies JSON web token from client to see if user is currently logged in
 router.get('/checklogin', requireAuth, function(req, res){
     console.log('protected route');
     res.json(req.user);
