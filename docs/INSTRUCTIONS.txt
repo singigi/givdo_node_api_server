@@ -1,0 +1,15 @@
+In this folder, you will find the API documentation, as well as an ER diagram showing the database structure (as of 7/4/18). There is a Postman
+collection containing examples of how to use each individual API call. 
+
+To begin working with the server, you should do the following:
+
+1. Set up your database and server by following the instructions in the server repo (https://github.com/Givdo/givdo_node_api_server)
+2. Install a database visualizer program like Sequel Pro (https://www.sequelpro.com/), and create a connection for the givdo-development database
+3. Install the Postman API development environment (https://www.getpostman.com/)
+4. Import the provided postmand collection in this folder into Postman. To do this, open Postman and choose Preferences in the dropdown menu 
+    (on a Mac this is found by selectin Postman > Preferences, but on Windows it is different). A preferences window will open. Go to the tab 
+    marked "Data." Then choose "Import Data" and select the postman collection file from your drive. A screenshot of the relevant menu is 
+    also provided in this folder. 
+5. When the collection is imported, it will show up on in the left pane of your Postman workspace. From there, you can browse individual calls 
+    and run any one you want. You can understand the CRUD operations by running the calls in Postmand and viewing the results in Sequel Pro.
+    
