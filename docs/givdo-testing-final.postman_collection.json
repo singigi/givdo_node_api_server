@@ -1,0 +1,2297 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+			"name": "Givdo API",
+			"description": null,
+			"auth": null,
+			"events": null,
+			"variables": null,
+			"order": [],
+			"folders_order": [
+				"ce829507-01b4-4ac4-9456-f525f1ab0367",
+				"cb361151-80e1-4720-a1d8-6fd52c6a14f0",
+				"4cffe3aa-c820-4630-8d38-eb465faea4e3",
+				"50a72f60-de6d-4939-9957-5b9e90ac6819",
+				"f3faa210-500e-42e3-b226-6a4df32fc257",
+				"f638febc-779a-4037-8eb7-14f0d7333d6e",
+				"8f7ee562-1e4f-456c-ad4c-864a91f97ac0",
+				"4f534f75-80c5-40a8-89b3-b4c046d7050e",
+				"eca2a049-1817-46e9-a69a-8bc8aeaac1b3",
+				"ec6027b2-9de8-4180-82e7-be10d8eeba6d",
+				"22975c8c-3621-453e-863c-b07281178b1f",
+				"b4dbd855-79dc-471f-9be9-b0e84e59c8e9",
+				"65cbb2fd-e4fc-4709-94c6-f5131a10bf03",
+				"e40de808-77cd-4fe7-8868-3e16f13e46ce",
+				"ff667dad-fe17-47d7-b134-9b3144205985",
+				"0b0a485f-7e44-4601-ab0c-b9f7f4f4dbfb",
+				"e2db18b1-3972-4a1d-8d04-667f54d95711"
+			],
+			"folders": [
+				{
+					"id": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"name": "admin_users",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"28f63fb1-5cde-4507-9050-1fb862821990",
+						"6ab58596-88ea-4f2e-a32c-36d57dfdbfdd",
+						"b5aa8fec-9547-4831-9907-ef88e025d43f",
+						"3e9bcd1f-fac6-4600-8008-eef01d69f60e",
+						"527feba9-c1eb-4b9c-aafa-17174b0fd5f4",
+						"57e6318e-29e6-4934-824e-4efd16c3aeb7",
+						"31b7e55d-45e7-4ac8-8c93-bfef40d2cfea",
+						"e823c2ca-6028-4195-974a-76af71019152"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "ce829507-01b4-4ac4-9456-f525f1ab0367"
+				},
+				{
+					"id": "cb361151-80e1-4720-a1d8-6fd52c6a14f0",
+					"name": "advertisements",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"bf0584ff-0bf5-46e2-b6b1-f1ec8a257a13",
+						"c9675cc4-98b5-463f-a694-9a3a91f82ae5",
+						"6c539067-32a0-4c96-99ad-1757f4150aad",
+						"6962e9e1-5154-46a2-bfa9-7bbe8e5aff4e",
+						"cbd24801-e6b3-42f5-a38d-ebac455ee749"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "cb361151-80e1-4720-a1d8-6fd52c6a14f0"
+				},
+				{
+					"id": "b4dbd855-79dc-471f-9be9-b0e84e59c8e9",
+					"name": "badges",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"ea4abd7c-1ee0-4b6a-a6f1-8e74f49584c6",
+						"7842a302-5fb2-4ed8-9025-6566ab040c92",
+						"0f53b6c0-acea-4178-b6e6-a0cc9267324b",
+						"6a1d9a91-35ab-4b91-a9fe-439b9e3a687c",
+						"1da06c1a-42f0-42be-933f-4b9926aa8f78"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "b4dbd855-79dc-471f-9be9-b0e84e59c8e9"
+				},
+				{
+					"id": "22975c8c-3621-453e-863c-b07281178b1f",
+					"name": "causes",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"5cfcc087-fc89-488e-a1cc-31529f4cecd7",
+						"2820f46e-743f-44d3-a44a-7c16df2058f2",
+						"4ac8aa43-2948-4fb4-9997-8b8a6c1d3fb3",
+						"b74f75c9-17c6-426c-9d12-3af3541d14cf",
+						"0461df1a-ea7b-4bd2-af0b-487ecbc4cdc9"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "22975c8c-3621-453e-863c-b07281178b1f"
+				},
+				{
+					"id": "4cffe3aa-c820-4630-8d38-eb465faea4e3",
+					"name": "donation_items",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"c67f48bf-d619-470f-bfaa-5cb2d76a45b9",
+						"80afad21-a859-482a-88d7-240d59eb8e66",
+						"f960b871-013f-408a-b43b-f2ccae86284b",
+						"12504b56-ecd9-437a-8e1c-e05f96590b36",
+						"c3ed4cd8-828d-4a9d-9b2d-9e942c192e10"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "4cffe3aa-c820-4630-8d38-eb465faea4e3"
+				},
+				{
+					"id": "50a72f60-de6d-4939-9957-5b9e90ac6819",
+					"name": "donations",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"629f8501-7461-43b0-96a5-5632ed196ba8",
+						"66f72b64-0ca7-4ba9-894e-3856e0653a6f",
+						"1059bc8b-b391-411f-8033-f81eb51deff9",
+						"5a90cdcc-ce14-487d-8c7d-908fbe42041a"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "50a72f60-de6d-4939-9957-5b9e90ac6819"
+				},
+				{
+					"id": "65cbb2fd-e4fc-4709-94c6-f5131a10bf03",
+					"name": "game_questions",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"1f92fd69-ffb5-4940-8eb5-d4a44044178f",
+						"f1263596-f57e-41c6-86e5-b3b092854f97"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "65cbb2fd-e4fc-4709-94c6-f5131a10bf03"
+				},
+				{
+					"id": "f3faa210-500e-42e3-b226-6a4df32fc257",
+					"name": "games",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"a06895df-b646-4859-880a-e3c50e4f6660",
+						"0b65bcc7-b9b0-4488-b9ab-d60104001c66",
+						"3694f515-b86c-4406-8dfb-fc4b800cdc0b",
+						"b10ed35d-b5fe-4796-b46f-635040474258"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "f3faa210-500e-42e3-b226-6a4df32fc257"
+				},
+				{
+					"id": "e40de808-77cd-4fe7-8868-3e16f13e46ce",
+					"name": "organizations",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"c6c174b7-5725-4190-80b6-8271bebad6dd",
+						"7fdb9051-1e95-4a61-94cd-cc82d51807d3",
+						"db12f6fb-187e-4290-a17d-09d7a9dcd37e",
+						"8fbdaf56-b7ea-40bf-b642-e4f84d106678",
+						"b2be5b48-5908-434d-9d29-cbfffddc3d38"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "e40de808-77cd-4fe7-8868-3e16f13e46ce"
+				},
+				{
+					"id": "f638febc-779a-4037-8eb7-14f0d7333d6e",
+					"name": "player_response",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"e9b5ded5-c8ae-4159-a7db-b4049afefa15",
+						"63ca8256-4cea-4d6d-89f6-3156a268d4ec",
+						"347efc50-c898-4d96-8d9b-8771107c4c28"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "f638febc-779a-4037-8eb7-14f0d7333d6e"
+				},
+				{
+					"id": "ff667dad-fe17-47d7-b134-9b3144205985",
+					"name": "question_categories",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"b57f94b3-a181-4cee-b1b3-f1208a3b06ef",
+						"f9b4c8bd-7ff4-49df-9b30-bc463273072f",
+						"5d2d9b1d-18ad-4243-b00d-af16a1d9a660",
+						"da505533-f87d-43b4-bb0b-1f1c380fb6d1",
+						"56d70b7a-85d8-45a1-bb26-8eee2e22200e"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "ff667dad-fe17-47d7-b134-9b3144205985"
+				},
+				{
+					"id": "0b0a485f-7e44-4601-ab0c-b9f7f4f4dbfb",
+					"name": "question_options",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"50e0714a-c8cc-4226-9e53-d16a4515c171",
+						"78040120-df22-41b1-be98-136590d974f2",
+						"93c0cb22-0ee7-4a4a-8c33-9cf5a080cc5e",
+						"1974c943-ac26-4d77-8bf2-fadd8df6bc37",
+						"a026dd27-c511-4836-9d1b-162005ba7bc8"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "0b0a485f-7e44-4601-ab0c-b9f7f4f4dbfb"
+				},
+				{
+					"id": "e2db18b1-3972-4a1d-8d04-667f54d95711",
+					"name": "questions",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"dff1a436-9023-48df-aced-90ed0120dace",
+						"c8be1b75-e600-4ce6-b719-b96c1520e241",
+						"988e1d15-9270-4cb7-9b59-869114347180",
+						"47407d63-f508-4852-b5a9-8053097c75d6",
+						"c0e31b7a-f2fd-4b26-8e61-c6fc3b5dac29"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "e2db18b1-3972-4a1d-8d04-667f54d95711"
+				},
+				{
+					"id": "eca2a049-1817-46e9-a69a-8bc8aeaac1b3",
+					"name": "user_badges",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"ace62f88-2fe6-41f2-805b-11bcc659c550",
+						"f0ccfdab-dbe7-4199-9d1c-c9e1c708641a",
+						"0dc788b7-01b4-4318-94ac-0d7d99580358"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "eca2a049-1817-46e9-a69a-8bc8aeaac1b3"
+				},
+				{
+					"id": "ec6027b2-9de8-4180-82e7-be10d8eeba6d",
+					"name": "user_causes",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"ff66290b-b65a-4b93-9f75-eb919f40151b",
+						"9771d246-9d35-4488-8492-fa9e9741eb1c",
+						"4b8d49cf-c49b-4f15-a4fd-5f27d289565d"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "ec6027b2-9de8-4180-82e7-be10d8eeba6d"
+				},
+				{
+					"id": "8f7ee562-1e4f-456c-ad4c-864a91f97ac0",
+					"name": "user_game_attempts",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"6fc2f10d-3f74-4e99-9f86-9cfc24b7d0be",
+						"38282aeb-dfb8-4b41-bb28-9a5f39ad89df",
+						"730cd2fa-7785-4bad-a27c-d6a9eebba9b2",
+						"771b6995-4557-4094-9a94-a741792e282f",
+						"18e9418c-d71f-4095-82b9-2bfbb3d90dd3"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "8f7ee562-1e4f-456c-ad4c-864a91f97ac0"
+				},
+				{
+					"id": "4f534f75-80c5-40a8-89b3-b4c046d7050e",
+					"name": "users",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folder": null,
+					"order": [
+						"ad4ce8a5-863b-4f36-8619-27f1936c7527",
+						"fee0376e-3d79-49c5-89e1-5196046da9d9",
+						"df7f397e-db50-4216-b675-726a71640ddf",
+						"80883e95-5f46-4ada-9b18-33e42967f607",
+						"5afda38a-5920-46dd-9295-790c48268403"
+					],
+					"folders_order": [],
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"folderId": "4f534f75-80c5-40a8-89b3-b4c046d7050e"
+				}
+			],
+			"requests": [
+				{
+					"id": "0461df1a-ea7b-4bd2-af0b-487ecbc4cdc9",
+					"name": "http://localhost:3000/causes/:id/",
+					"url": "http://localhost:3000/causes/7/",
+					"description": "Inactivate a cause",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "22975c8c-3621-453e-863c-b07281178b1f",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Dogs\",\n\t\"image_link\": \"www.dog.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "0b65bcc7-b9b0-4488-b9ab-d60104001c66",
+					"name": "http://localhost:3000/games/insert",
+					"url": "http://localhost:3000/games/insert",
+					"description": "Add a game",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "f3faa210-500e-42e3-b226-6a4df32fc257",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"creator_user_id\": \"5\",\n            \"single_player\": \"0\"\n            \n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "0dc788b7-01b4-4318-94ac-0d7d99580358",
+					"name": "http://localhost:3000/user_badges/insert/",
+					"url": "http://localhost:3000/user_badges/insert/",
+					"description": "Add a user badge",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "eca2a049-1817-46e9-a69a-8bc8aeaac1b3",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"user_id\": \"2\",\n\t\"badge_id\": \"3\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "0f53b6c0-acea-4178-b6e6-a0cc9267324b",
+					"name": "http://localhost:3000/badges/:id",
+					"url": "http://localhost:3000/badges/6",
+					"description": "Update badge",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "b4dbd855-79dc-471f-9be9-b0e84e59c8e9",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Genius\",\n    \"image_link\": \"www.ourhost.com/image6\",\n    \"score\": 500\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "1059bc8b-b391-411f-8033-f81eb51deff9",
+					"name": "http://localhost:3000/donations/insert",
+					"url": "http://localhost:3000/donations/insert",
+					"description": "Add a donation",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "50a72f60-de6d-4939-9957-5b9e90ac6819",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"user_id\": \"1\",\n            \"item_id\": \"2\",\n            \"organization_id\": \"2\",\n            \"is_monetary\": \"1\",\n            \"amount\": \"10\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "12504b56-ecd9-437a-8e1c-e05f96590b36",
+					"name": "http://localhost:3000/donation_items/:id",
+					"url": "http://localhost:3000/donation_items/1",
+					"description": "Update donation_item by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4cffe3aa-c820-4630-8d38-eb465faea4e3",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"name\": \"CompanyUpdated\",\n            \"category\": \"Housewares\",\n            \"description\": \"Something really neat\"\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "18e9418c-d71f-4095-82b9-2bfbb3d90dd3",
+					"name": "http://localhost:3000/user_game-attempts/:id",
+					"url": "http://localhost:3000/user_game_attempts/5",
+					"description": "Update a user_game_attempt by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "8f7ee562-1e4f-456c-ad4c-864a91f97ac0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"user_id\": \"2\",\n            \"game_id\": \"4\",\n            \"score\": \"1\",\n            \"won\": \"0\"\n            \n}\n\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "1974c943-ac26-4d77-8bf2-fadd8df6bc37",
+					"name": "http://localhost:3000/question_options/:id",
+					"url": "http://localhost:3000/question_options/1",
+					"description": "Update question_option record",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "0b0a485f-7e44-4601-ab0c-b9f7f4f4dbfb",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"text\": \"Pluto\",\n            \"question_id\": 2,\n            \"is_correct\": 1\n            \n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "1da06c1a-42f0-42be-933f-4b9926aa8f78",
+					"name": "http://localhost:3000/badges/:id",
+					"url": "http://localhost:3000/badges/6",
+					"description": "Inactivate badge by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "b4dbd855-79dc-471f-9be9-b0e84e59c8e9",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Animals\",\n\t\"image_link\": \"www.animals.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "1f92fd69-ffb5-4940-8eb5-d4a44044178f",
+					"name": "http://localhost:3000/game_questions/:game_id ",
+					"url": "http://localhost:3000/game_questions/1",
+					"description": "GET all game_question records by game_id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "65cbb2fd-e4fc-4709-94c6-f5131a10bf03",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Animals\",\n\t\"image_link\": \"www.animals.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "2820f46e-743f-44d3-a44a-7c16df2058f2",
+					"name": "http://localhost:3000/causes/:id/",
+					"url": "http://localhost:3000/causes/3",
+					"description": "GET cause by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "22975c8c-3621-453e-863c-b07281178b1f",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Animals\",\n\t\"image_link\": \"www.animals.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "28f63fb1-5cde-4507-9050-1fb862821990",
+					"name": "http://localhost:3000/admin_users/1",
+					"url": "http://localhost:3000/admin_users/insert",
+					"description": "Update User",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"id\": 1,\n            \"first_name\": \"Sara\",\n            \"last_name\": \"New\",\n            \"email\": \"sam@email.com\",\n            \"facebook_id\": null\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "31b7e55d-45e7-4ac8-8c93-bfef40d2cfea",
+					"name": "http://localhost:3000/admin_users/2",
+					"url": "http://localhost:3000/admin_users/1",
+					"description": "Get admin by id",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "347efc50-c898-4d96-8d9b-8771107c4c28",
+					"name": "http://localhost:3000/player_response/insert",
+					"url": "http://localhost:3000/player_response/insert",
+					"description": "Add a player response",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "f638febc-779a-4037-8eb7-14f0d7333d6e",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"creator_user_id\": \"2\",\n            \"single_player\": \"1\",\n            \"category_id\": \"1\",\n            \"organization_id\": \"1\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "3694f515-b86c-4406-8dfb-fc4b800cdc0b",
+					"name": "http://localhost:3000/games/1",
+					"url": "http://localhost:3000/games/1",
+					"description": "update a game",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "f3faa210-500e-42e3-b226-6a4df32fc257",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"creator_user_id\": \"2\",\n            \"single_player\": \"1\"\n            \n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "38282aeb-dfb8-4b41-bb28-9a5f39ad89df",
+					"name": "http://localhost:3000/user_game-attempts/:user_id/:game_id/",
+					"url": "http://localhost:3000/user_game_attempts/1/4/",
+					"description": "Get user_game_attempt by user id and game id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "8f7ee562-1e4f-456c-ad4c-864a91f97ac0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"user_id\": \"2\",\n            \"game_id\": \"1\",\n            \"question_id\": \"1\",\n            \"question_option_id\": \"1\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "3e9bcd1f-fac6-4600-8008-eef01d69f60e",
+					"name": "http://localhost:3000/admin_users/2",
+					"url": "http://localhost:3000/admin_users/2",
+					"description": "Get admin by id",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "47407d63-f508-4852-b5a9-8053097c75d6",
+					"name": "http://localhost:3000/questions/:id",
+					"url": "http://localhost:3000/questions/1",
+					"description": "Update question record",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e2db18b1-3972-4a1d-8d04-667f54d95711",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"question_text\": \"What is the nucleic acid that pairs with adenine?\",\n            \"category_id\": 2\n            \n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "4ac8aa43-2948-4fb4-9997-8b8a6c1d3fb3",
+					"name": "http://localhost:3000/causes/insert/",
+					"url": "http://localhost:3000/causes/insert/",
+					"description": "Add a cause",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "22975c8c-3621-453e-863c-b07281178b1f",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Cats\",\n\t\"image_link\": \"www.cat.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "4b8d49cf-c49b-4f15-a4fd-5f27d289565d",
+					"name": "http://localhost:3000/user_causes/:id",
+					"url": "http://localhost:3000/user_causes/1/2/",
+					"description": "Inactivate user cause by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ec6027b2-9de8-4180-82e7-be10d8eeba6d",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"first_name\": \"Lisa\",\n\t\"last_name\": \"UpdatedAgain\",\n\t\"email\": \"my.email.com\",\n\t\"facebook_id\": \"01234567\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "50e0714a-c8cc-4226-9e53-d16a4515c171",
+					"name": "http://localhost:3000/question_options/:id",
+					"url": "http://localhost:3000/question_options/1",
+					"description": "GET question_option records by questino_id\n",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "0b0a485f-7e44-4601-ab0c-b9f7f4f4dbfb",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\t\t\t\n\t\"name\": \"Widget\",\n\t\"category\": \"Amazing Things\",\n    \"description\": \"A really great item that can be donated for a good cause.\"\n\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "527feba9-c1eb-4b9c-aafa-17174b0fd5f4",
+					"name": "http://localhost:3000/admin_users/1",
+					"url": "http://localhost:3000/admin_users/1",
+					"description": "Update an admin_user",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\t\t\t\n\t\"first_name\": \"Sam\",\n\t\"last_name\": \"Updated\",\n    \"email\": \"new@email.com\",\n    \"encrypted_password\": \"new_password\"\n    \n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "56d70b7a-85d8-45a1-bb26-8eee2e22200e",
+					"name": "http://localhost:3000/question_categories/:id",
+					"url": "http://localhost:3000/question_categories/1",
+					"description": "Inactivate question_category record \n",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ff667dad-fe17-47d7-b134-9b3144205985",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"name\": \"Universe\",\n            \"created_at\": \"2016-08-12T10:42:30.000Z\",\n            \"updated_at\": \"2018-05-10T00:35:52.000Z\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "57e6318e-29e6-4934-824e-4efd16c3aeb7",
+					"name": "http://localhost:3000/admin_users/2",
+					"url": "http://localhost:3000/admin_users/2",
+					"description": "Delete admin by id",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "5a90cdcc-ce14-487d-8c7d-908fbe42041a",
+					"name": "http://localhost:3000/donations/1",
+					"url": "http://localhost:3000/donations/1",
+					"description": "Update a donation",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "50a72f60-de6d-4939-9957-5b9e90ac6819",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"user_id\": \"1\",\n    \"item_id\": \"2\",\n    \"organization_id\": \"2\",\n    \"is_monetary\": \"0\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "5afda38a-5920-46dd-9295-790c48268403",
+					"name": "http://localhost:3000/users/",
+					"url": "http://localhost:3000/users/4",
+					"description": "Delete user by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4f534f75-80c5-40a8-89b3-b4c046d7050e",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "5cfcc087-fc89-488e-a1cc-31529f4cecd7",
+					"name": "http://localhost:3000/causes/",
+					"url": "http://localhost:3000/causes/",
+					"description": "GET all causes",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "22975c8c-3621-453e-863c-b07281178b1f",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Animals\",\n\t\"image_link\": \"www.animals.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "5d2d9b1d-18ad-4243-b00d-af16a1d9a660",
+					"name": "http://localhost:3000/question_categories/insert",
+					"url": "http://localhost:3000/question_categories/insert",
+					"description": "Add question_category record \n",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ff667dad-fe17-47d7-b134-9b3144205985",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"name\": \"Nature\",\n            \"created_at\": \"2016-08-12T10:42:30.000Z\",\n            \"updated_at\": \"2018-05-10T00:35:52.000Z\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "629f8501-7461-43b0-96a5-5632ed196ba8",
+					"name": "http://localhost:3000/donations/",
+					"url": "http://localhost:3000/donations/",
+					"description": "GET all donations",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "50a72f60-de6d-4939-9957-5b9e90ac6819",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "63ca8256-4cea-4d6d-89f6-3156a268d4ec",
+					"name": "http://localhost:3000/player_response/:id",
+					"url": "http://localhost:3000/player_response/1",
+					"description": "Get player response by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "f638febc-779a-4037-8eb7-14f0d7333d6e",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"creator_user_id\": \"2\",\n            \"single_player\": \"1\",\n            \"category_id\": \"1\",\n            \"organization_id\": \"1\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "66f72b64-0ca7-4ba9-894e-3856e0653a6f",
+					"name": "http://localhost:3000/donations/:id",
+					"url": "http://localhost:3000/donations/1",
+					"description": "GET donation by id",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "50a72f60-de6d-4939-9957-5b9e90ac6819",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "6962e9e1-5154-46a2-bfa9-7bbe8e5aff4e",
+					"name": "http://localhost:3000/advertisements/",
+					"url": "http://localhost:3000/advertisements/1",
+					"description": "Add an advertisement",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "cb361151-80e1-4720-a1d8-6fd52c6a14f0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"id\": 1,\n            \"company_name\": \"Company8pdated\",\n            \"image_link\": \"http://www.myCMP.com/image1\",\n            \"impressions\": 0,\n            \"default\": 0\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "6a1d9a91-35ab-4b91-a9fe-439b9e3a687c",
+					"name": "http://localhost:3000/badges/insert/",
+					"url": "http://localhost:3000/badges/insert/",
+					"description": "Add a badge",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "b4dbd855-79dc-471f-9be9-b0e84e59c8e9",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Genius\",\n    \"image_link\": \"www.ourhost.com/image3\",\n    \"score\": 500\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "6ab58596-88ea-4f2e-a32c-36d57dfdbfdd",
+					"name": "http://localhost:3000/admin_users/",
+					"url": "http://localhost:3000/admin_users/",
+					"description": "get admin users",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "6c539067-32a0-4c96-99ad-1757f4150aad",
+					"name": "http://localhost:3000/advertisements/:id",
+					"url": "http://localhost:3000/advertisements/1",
+					"description": "Update advertisement by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "cb361151-80e1-4720-a1d8-6fd52c6a14f0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"id\": 1,\n            \"company_name\": \"CompanyUpdated\",\n            \"image_link\": \"http://www.myCMP.com/image1\",\n            \"impressions\": 0,\n            \"default\": 0\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "6fc2f10d-3f74-4e99-9f86-9cfc24b7d0be",
+					"name": "http://localhost:3000/user_game-attempts/",
+					"url": "http://localhost:3000/user_game_attempts/",
+					"description": "GET all user_game_attempts",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "8f7ee562-1e4f-456c-ad4c-864a91f97ac0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"user_id\": \"2\",\n            \"game_id\": \"1\",\n            \"question_id\": \"1\",\n            \"question_option_id\": \"1\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "730cd2fa-7785-4bad-a27c-d6a9eebba9b2",
+					"name": "http://localhost:3000/user_game-attempts/:id",
+					"url": "http://localhost:3000/user_game_attempts/2",
+					"description": "GET all user_game_attempts by user_id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "8f7ee562-1e4f-456c-ad4c-864a91f97ac0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"user_id\": \"2\",\n            \"game_id\": \"1\",\n            \"question_id\": \"1\",\n            \"question_option_id\": \"1\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "771b6995-4557-4094-9a94-a741792e282f",
+					"name": "http://localhost:3000/user_game-attempts/insert/",
+					"url": "http://localhost:3000/user_game_attempts/insert/",
+					"description": "Add a user_game_attempt ",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "8f7ee562-1e4f-456c-ad4c-864a91f97ac0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"user_id\": \"2\",\n            \"game_id\": \"4\",\n            \"score\": \"1\",\n            \"won\": \"1\"\n            \n}\n\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "78040120-df22-41b1-be98-136590d974f2",
+					"name": "http://localhost:3000/question_options/:question_id/:id",
+					"url": "http://localhost:3000/question_options/1/2",
+					"description": "GET question_option records by question_id and question_option_id\n",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "0b0a485f-7e44-4601-ab0c-b9f7f4f4dbfb",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\t\t\t\n\t\"name\": \"Widget\",\n\t\"category\": \"Amazing Things\",\n    \"description\": \"A really great item that can be donated for a good cause.\"\n\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "7842a302-5fb2-4ed8-9025-6566ab040c92",
+					"name": "http://localhost:3000/badges/:id",
+					"url": "http://localhost:3000/badges/5",
+					"description": "GET badge by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "b4dbd855-79dc-471f-9be9-b0e84e59c8e9",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Animals\",\n\t\"image_link\": \"www.animals.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "7fdb9051-1e95-4a61-94cd-cc82d51807d3",
+					"name": "http://localhost:3000/organizations/:id",
+					"url": "http://localhost:3000/organizations/3",
+					"description": "Get organization by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e40de808-77cd-4fe7-8868-3e16f13e46ce",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"game_id\": \"4\",\n\t\"question_id\": \"2\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "80883e95-5f46-4ada-9b18-33e42967f607",
+					"name": "http://localhost:3000/users/:id",
+					"url": "http://localhost:3000/users/4",
+					"description": "Get user by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4f534f75-80c5-40a8-89b3-b4c046d7050e",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\t\t\t\n\t\"first_name\": \"Phillip\",\n\t\"last_name\": \"Morris\",\n    \"email\": \"morrie@email.com\",\n    \"image_link\": \"www.link.com\",\n\t\"facebook_id\": \"012345\",\n\t\"has_create_privileges\": \"0\"\n\n}\n\n\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "80afad21-a859-482a-88d7-240d59eb8e66",
+					"name": "http://localhost:3000/donation_items/:id",
+					"url": "http://localhost:3000/donation_items/1",
+					"description": "GET donation_item by id",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4cffe3aa-c820-4630-8d38-eb465faea4e3",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "8fbdaf56-b7ea-40bf-b642-e4f84d106678",
+					"name": "http://localhost:3000/organizations/1",
+					"url": "http://localhost:3000/organizations/1",
+					"description": "UPdate organization",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e40de808-77cd-4fe7-8868-3e16f13e46ce",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"id\": 2,\n            \"name\": \"Charity4\",\n            \"facebook_id\": null,\n            \"picture\": null,\n            \"state\": \"FL\",\n            \"city\": \"Tallahassee\",\n            \"zip\": \"32304\",\n            \"street\": \"High Rd.\",\n            \"mission\": \"Do good things\",\n            \"created_at\": \"2016-08-12T10:42:30.000Z\",\n            \"updated_at\": \"2018-05-10T00:35:52.000Z\"\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "93c0cb22-0ee7-4a4a-8c33-9cf5a080cc5e",
+					"name": "http://localhost:3000/question_options/insert",
+					"url": "http://localhost:3000/question_options/insert/",
+					"description": "Add question_option record",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "0b0a485f-7e44-4601-ab0c-b9f7f4f4dbfb",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"text\": \"Earth\",\n            \"question_id\": 3,\n            \"is_correct\": 1\n            \n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "9771d246-9d35-4488-8492-fa9e9741eb1c",
+					"name": "http://localhost:3000/user_causes/insert/",
+					"url": "http://localhost:3000/user_causes/insert/",
+					"description": "Add a user cause by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ec6027b2-9de8-4180-82e7-be10d8eeba6d",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"user_id\": \"2\",\n\t\"cause_id\": \"3\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "988e1d15-9270-4cb7-9b59-869114347180",
+					"name": "http://localhost:3000/questions/insert",
+					"url": "http://localhost:3000/questions/insert",
+					"description": "Add question record",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e2db18b1-3972-4a1d-8d04-667f54d95711",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"question_text\": \"What is the nucleic acid that pairs with thymine?\",\n            \"category_id\": 2\n            \n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "a026dd27-c511-4836-9d1b-162005ba7bc8",
+					"name": "http://localhost:3000/question_options/:id",
+					"url": "http://localhost:3000/question_options/1",
+					"description": "Delete question_option record",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "0b0a485f-7e44-4601-ab0c-b9f7f4f4dbfb",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\t\t\t\n\t\"name\": \"Widget\",\n\t\"category\": \"Amazing Things\",\n    \"description\": \"A really great item that can be donated for a good cause.\"\n\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "a06895df-b646-4859-880a-e3c50e4f6660",
+					"name": "http://localhost:3000/games/",
+					"url": "http://localhost:3000/games/",
+					"description": "Get all games",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "f3faa210-500e-42e3-b226-6a4df32fc257",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"creator_user_id\": \"2\",\n            \"single_player\": \"1\",\n            \"category_id\": \"1\",\n            \"organization_id\": \"1\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "ace62f88-2fe6-41f2-805b-11bcc659c550",
+					"name": "http://localhost:3000/user_badges/:id",
+					"url": "http://localhost:3000/user_badges/1",
+					"description": "GET user badges by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "eca2a049-1817-46e9-a69a-8bc8aeaac1b3",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"first_name\": \"Lisa\",\n\t\"last_name\": \"UpdatedAgain\",\n\t\"email\": \"my.email.com\",\n\t\"facebook_id\": \"01234567\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "ad4ce8a5-863b-4f36-8619-27f1936c7527",
+					"name": "http://localhost:3000/users/",
+					"url": "http://localhost:3000/users/",
+					"description": "Get all users",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4f534f75-80c5-40a8-89b3-b4c046d7050e",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "b10ed35d-b5fe-4796-b46f-635040474258",
+					"name": "http://localhost:3000/games/finalize/4",
+					"url": "http://localhost:3000/games/finalize/6",
+					"description": "Record end time for a game played",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "f3faa210-500e-42e3-b226-6a4df32fc257",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"creator_user_id\": \"2\",\n            \"single_player\": \"1\",\n            \"category_id\": \"1\",\n            \"organization_id\": \"1\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "b2be5b48-5908-434d-9d29-cbfffddc3d38",
+					"name": "http://localhost:3000/organizations/:id",
+					"url": "http://localhost:3000/organizations/1",
+					"description": "Inactivate organization by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e40de808-77cd-4fe7-8868-3e16f13e46ce",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"game_id\": \"4\",\n\t\"question_id\": \"2\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "b57f94b3-a181-4cee-b1b3-f1208a3b06ef",
+					"name": "http://localhost:3000/question_categories/",
+					"url": "http://localhost:3000/question_categories/",
+					"description": "GET all question_category records\n",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ff667dad-fe17-47d7-b134-9b3144205985",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\t\t\t\n\t\"name\": \"Widget\",\n\t\"category\": \"Amazing Things\",\n    \"description\": \"A really great item that can be donated for a good cause.\"\n\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "b5aa8fec-9547-4831-9907-ef88e025d43f",
+					"name": "http://localhost:3000/admin_users/2",
+					"url": "http://localhost:3000/admin_users/2",
+					"description": "Get admin by id",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "b74f75c9-17c6-426c-9d12-3af3541d14cf",
+					"name": "http://localhost:3000/causes/:id/",
+					"url": "http://localhost:3000/causes/9",
+					"description": "Update a cause",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "22975c8c-3621-453e-863c-b07281178b1f",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"birds\",\n\t\"image_link\": \"www.birds.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "bf0584ff-0bf5-46e2-b6b1-f1ec8a257a13",
+					"name": "http://localhost:3000/advertisements/",
+					"url": "http://localhost:3000/advertisements/",
+					"description": "GET all advertisements",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "cb361151-80e1-4720-a1d8-6fd52c6a14f0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "c0e31b7a-f2fd-4b26-8e61-c6fc3b5dac29",
+					"name": "http://localhost:3000/questions/:id",
+					"url": "http://localhost:3000/questions/1",
+					"description": "Inactivate question record by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e2db18b1-3972-4a1d-8d04-667f54d95711",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"question_text\": \"What is the nucleic acid that pairs with adenine?\",\n            \"category_id\": 2\n            \n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "c3ed4cd8-828d-4a9d-9b2d-9e942c192e10",
+					"name": "http://localhost:3000/donation_items/:id",
+					"url": "http://localhost:3000/donation_items/1",
+					"description": "Inactivate donation_item by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4cffe3aa-c820-4630-8d38-eb465faea4e3",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"name\": \"Something Updated\",\n            \"category\": \"Housewares\",\n            \"description\": \"Something really neat\"\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "c67f48bf-d619-470f-bfaa-5cb2d76a45b9",
+					"name": "http://localhost:3000/donation_items/",
+					"url": "http://localhost:3000/donation_items/",
+					"description": "GET all donation_items",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4cffe3aa-c820-4630-8d38-eb465faea4e3",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "c6c174b7-5725-4190-80b6-8271bebad6dd",
+					"name": "http://localhost:3000/organizations/",
+					"url": "http://localhost:3000/organizations",
+					"description": "Get all organizations",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e40de808-77cd-4fe7-8868-3e16f13e46ce",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"game_id\": \"4\",\n\t\"question_id\": \"2\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "c8be1b75-e600-4ce6-b719-b96c1520e241",
+					"name": "http://localhost:3000/questions/:id",
+					"url": "http://localhost:3000/questions/1",
+					"description": "Get question record by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e2db18b1-3972-4a1d-8d04-667f54d95711",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"text\": \"Moon\",\n            \"question_id\": 3,\n            \"is_correct\": 1\n            \n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "c9675cc4-98b5-463f-a694-9a3a91f82ae5",
+					"name": "http://localhost:3000/advertisements/:id",
+					"url": "http://localhost:3000/advertisements/1",
+					"description": "GET advertisement by id",
+					"data": null,
+					"dataMode": "params",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "cb361151-80e1-4720-a1d8-6fd52c6a14f0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "cbd24801-e6b3-42f5-a38d-ebac455ee749",
+					"name": "http://localhost:3000/advertisements/:id",
+					"url": "http://localhost:3000/advertisements/1",
+					"description": "Inactivate an advertisement",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "cb361151-80e1-4720-a1d8-6fd52c6a14f0",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"id\": 1,\n            \"company_name\": \"Company Posted\",\n            \"image_link\": \"http://www.myCMP.com/image3\",\n            \"impressions\": 0,\n            \"default\": 0\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "da505533-f87d-43b4-bb0b-1f1c380fb6d1",
+					"name": "http://localhost:3000/question_categories/:id",
+					"url": "http://localhost:3000/question_categories/1",
+					"description": "Update question_category record \n",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "PUT",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ff667dad-fe17-47d7-b134-9b3144205985",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"name\": \"Nature\",\n            \"created_at\": \"2016-08-12T10:42:30.000Z\",\n            \"updated_at\": \"2018-05-10T00:35:52.000Z\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "db12f6fb-187e-4290-a17d-09d7a9dcd37e",
+					"name": "http://localhost:3000/organizations/insert",
+					"url": "http://localhost:3000/organizations/insert",
+					"description": "Add organization",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e40de808-77cd-4fe7-8868-3e16f13e46ce",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"id\": 2,\n            \"name\": \"Charity4\",\n            \"facebook_id\": null,\n            \"picture\": null,\n            \"state\": \"FL\",\n            \"city\": \"Tallahassee\",\n            \"zip\": \"32304\",\n            \"street\": \"High Rd.\",\n            \"mission\": \"Do good things\",\n            \"created_at\": \"2016-08-12T10:42:30.000Z\",\n            \"updated_at\": \"2018-05-10T00:35:52.000Z\"\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "df7f397e-db50-4216-b675-726a71640ddf",
+					"name": "http://localhost:3000/users/:id",
+					"url": "http://localhost:3000/users/insert/",
+					"description": "Update user by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4f534f75-80c5-40a8-89b3-b4c046d7050e",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\t\t\t\n\t\"first_name\": \"Phillip\",\n\t\"last_name\": \"Morris\",\n    \"email\": \"morrie@email.com\",\n    \"image_link\": \"www.link.com\",\n\t\"facebook_id\": \"012345\"\n\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "dff1a436-9023-48df-aced-90ed0120dace",
+					"name": "http://localhost:3000/questions/",
+					"url": "http://localhost:3000/questions/",
+					"description": "Get all question records",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "e2db18b1-3972-4a1d-8d04-667f54d95711",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"text\": \"Moon\",\n            \"question_id\": 3,\n            \"is_correct\": 1\n            \n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "e823c2ca-6028-4195-974a-76af71019152",
+					"name": "http://localhost:3000/admin_users/insert/",
+					"url": "http://localhost:3000/admin_users/insert",
+					"description": "add admin User",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ce829507-01b4-4ac4-9456-f525f1ab0367",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"id\": 1,\n            \"first_name\": \"Sara\",\n            \"last_name\": \"New\",\n            \"email\": \"sami@email.com\",\n            \"encrypted_password\": \"asdddref\"\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "e9b5ded5-c8ae-4159-a7db-b4049afefa15",
+					"name": "http://localhost:3000/player_response/",
+					"url": "http://localhost:3000/player_response/",
+					"description": "Get all player responses",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "f638febc-779a-4037-8eb7-14f0d7333d6e",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"creator_user_id\": \"2\",\n            \"single_player\": \"1\",\n            \"category_id\": \"1\",\n            \"organization_id\": \"1\"\n}\n",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "ea4abd7c-1ee0-4b6a-a6f1-8e74f49584c6",
+					"name": "http://localhost:3000/badges/",
+					"url": "http://localhost:3000/badges/",
+					"description": "GET all badges",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "b4dbd855-79dc-471f-9be9-b0e84e59c8e9",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"name\": \"Animals\",\n\t\"image_link\": \"www.animals.com\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "f0ccfdab-dbe7-4199-9d1c-c9e1c708641a",
+					"name": "http://localhost:3000/user_badges/:id",
+					"url": "http://localhost:3000/user_badges/2/1/",
+					"description": "Inactivate user badges by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "eca2a049-1817-46e9-a69a-8bc8aeaac1b3",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"first_name\": \"Lisa\",\n\t\"last_name\": \"UpdatedAgain\",\n\t\"email\": \"my.email.com\",\n\t\"facebook_id\": \"01234567\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "f1263596-f57e-41c6-86e5-b3b092854f97",
+					"name": "http://localhost:3000/game_questions/insert",
+					"url": "http://localhost:3000/game_questions/insert/",
+					"description": "Add game_question record",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "65cbb2fd-e4fc-4709-94c6-f5131a10bf03",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"game_id\": \"4\",\n\t\"question_id\": \"2\"\n\t\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "f960b871-013f-408a-b43b-f2ccae86284b",
+					"name": "http://localhost:3000/donation_items/:id",
+					"url": "http://localhost:3000/donation_items/insert",
+					"description": "Update donation_item by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4cffe3aa-c820-4630-8d38-eb465faea4e3",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n            \"name\": \"CompanyUpdated\",\n            \"category\": \"Housewares\",\n            \"description\": \"Something really neat\"\n        }",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "f9b4c8bd-7ff4-49df-9b30-bc463273072f",
+					"name": "http://localhost:3000/question_categories/:id",
+					"url": "http://localhost:3000/question_categories/1",
+					"description": "GET question_category record by id\n",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ff667dad-fe17-47d7-b134-9b3144205985",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\t\t\t\n\t\"name\": \"Widget\",\n\t\"category\": \"Amazing Things\",\n    \"description\": \"A really great item that can be donated for a good cause.\"\n\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "fee0376e-3d79-49c5-89e1-5196046da9d9",
+					"name": "http://localhost:3000/users/:id",
+					"url": "http://localhost:3000/users/1",
+					"description": "Get user by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "4f534f75-80c5-40a8-89b3-b4c046d7050e",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "ff66290b-b65a-4b93-9f75-eb919f40151b",
+					"name": "http://localhost:3000/user_causes/:id",
+					"url": "http://localhost:3000/user_causes/3",
+					"description": "GET user causes by id",
+					"data": [],
+					"dataMode": "raw",
+					"headerData": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "ec6027b2-9de8-4180-82e7-be10d8eeba6d",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "38810293-64d5-47a3-a65a-dec2c62c91a2",
+					"rawModeData": "{\n\t\"first_name\": \"Lisa\",\n\t\"last_name\": \"UpdatedAgain\",\n\t\"email\": \"my.email.com\",\n\t\"facebook_id\": \"01234567\"\n}",
+					"headers": "Content-Type: application/json\n",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [],
+	"headerPresets": [],
+	"globals": []
+}
