@@ -77,6 +77,7 @@ passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
       clientSecret: 'aef628c4f6b7d7349beaa77c09258f98'
     },
     function (access_token, refreshToken, profile, done) {
+      console.log('\x1b[36m%s\x1b[0m', 'Got response from Facebook, will try to check database for user now.');  //Print in cyan  
       utils.checkFacebookUser(access_token, refreshToken, profile, function(err, user) {
         return done(err, user);   
       });

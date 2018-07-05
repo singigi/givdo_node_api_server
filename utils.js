@@ -31,7 +31,7 @@ methods.checkFacebookUser = function(accessToken, refreshToken, profile, cb) {
         raw: true       //raw json
     })
     .then(function(user) {
-        if (user.length == 0) {
+        if (!user) {
             users.create({
                 facebook_id: profile.id,
                 first_name: profile.displayName.split(' ')[0],
