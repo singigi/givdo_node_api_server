@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var badges = model.badges;
 
-//?1: GET all badges
+//B1: GET all badges
 router.get('/', function (req, res, next) {
     badges.findAll({
         attributes: ['id', 'name', 'image_link', 'score', 'created_at', 'updated_at'],
@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
 });
 
 
-//?2: GET badge by id
+//B2: GET badge by id
 router.get('/:id', function (req, res, next) {
 
     /**
@@ -56,7 +56,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 
-//?3: Add badge
+//B3: Add badge
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -98,7 +98,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?4: Update badge
+//B4: Update badge
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -144,7 +144,7 @@ router.put('/:id', function (req, res, next) {
     }
 );
 
-//?5: Delete badge by id
+//B5: Delete badge by id
 router.delete('/:id', function (req, res, next) {
 
     /**

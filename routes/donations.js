@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var donations = model.donations;
 
-//?1: GET all donation records
+//J1: GET all donation records
 router.get('/', function (req, res, next) {
     donations.findAll({
         attributes: ['user_id', 'item_id', 'organization_id', 'is_monetary', 'amount']        
@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//?2: GET donation record by id;
+//J2: GET donation record by id;
 router.get('/:id', function (req, res, next) {
     donations.findAll({
         attributes: ['user_id', 'item_id', 'organization_id', 'is_monetary', 'amount'],
@@ -39,7 +39,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 
-//?3: Add donation record
+//J3: Add donation record
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -89,7 +89,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?4: Update donation record (we may not need this, and should evaluate before deployment to avoid accounting discrepancies)
+//J4: Update donation record (we may not need this, and should evaluate before deployment to avoid accounting discrepancies)
 router.put('/:id', function (req, res, next) {
 
     /**

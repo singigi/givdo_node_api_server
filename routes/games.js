@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var games = model.games;
 
-//E1: GET all games played
+//G1: GET all games played
 router.get('/', function (req, res, next) {
 
     
@@ -29,7 +29,7 @@ router.get('/', function (req, res, next) {
 });
 
 
-//E2: GET all games by specified user_id
+//G2: GET all games by specified user_id
 router.get('/:creator_user_id', function (req, res, next) {
 
     /**
@@ -62,7 +62,7 @@ router.get('/:creator_user_id', function (req, res, next) {
     }
 });
 
-//E3: Add a game record
+//G3: Add a game record
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -102,7 +102,7 @@ router.post('/insert',function (req, res, next) {
 
 
 
-//E4: Update a game record by game_id; need to reevaluate whether we need this before deployment, as it could lead to record discrepancies
+//G4: Update a game record by game_id; need to reevaluate whether we need this before deployment, as it could lead to record discrepancies
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -144,7 +144,7 @@ router.put('/:id', function (req, res, next) {
     }
 });
 
-//E5: Set an end time for a game; call when game is finished
+//G5: Set an end time for a game; call when game is finished
 router.put('/finalize/:id', function (req, res, next) {
 
     /**

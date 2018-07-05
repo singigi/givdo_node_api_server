@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var organizations = model.organizations;
 
-//E1: GET all organizations
+//P1: GET all organizations
 router.get('/', function (req, res, next) {
     organizations.findAll({
             attributes: ['id', 'name', 'facebook_id', 'image_link', 'state', 
@@ -22,7 +22,7 @@ router.get('/', function (req, res, next) {
     }));
 });
 
-//E2: GET organization by id
+//P2: GET organization by id
 router.get('/:id', function (req, res, next) {
     organizations.findAll({
             attributes: ['id', 'name', 'facebook_id', 'image_link', 'state', 
@@ -44,7 +44,7 @@ router.get('/:id', function (req, res, next) {
 
 
 
-//?3: Add organization
+//P3: Add organization
 router.post('/insert',function (req, res, next) {
 
     /**
@@ -98,7 +98,7 @@ router.post('/insert',function (req, res, next) {
     }
 });
 
-//?4: Update organization
+//P4: Update organization
 router.put('/:id', function (req, res, next) {
 
     /**
@@ -157,7 +157,7 @@ router.put('/:id', function (req, res, next) {
     }
 );
 
-//?5: Inactivate organization by id
+//P5: Inactivate organization by id
 router.delete('/:id', function (req, res, next) {
 
     /**

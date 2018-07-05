@@ -4,7 +4,7 @@ var model = require('../models/index');
 var check = require('express-validator/check');
 var game_questions = model.game_questions;
 
-//?1: GET game_question records by game_id
+//H1: GET game_question records by game_id
 router.get('/:game_id', function (req, res, next) {
 
     /**
